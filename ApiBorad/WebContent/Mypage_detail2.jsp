@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>나의 찜 차량</title>
 </head>
 <style>
 	@font-face {
