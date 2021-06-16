@@ -16,6 +16,15 @@
 	body{
 	font-family: 'InfinitySans-RegularA1';
 	}
+	#wrap{
+	width:1300px;
+		height:94vh;
+		min-height:1000px;
+		max-height:1000px;
+		background-color:white;
+
+		margin:2.5vh auto;
+		}
 	#menu_top{
 		background: #000000;
 		width:100%;
@@ -153,37 +162,39 @@
 			<li><a href="#">커뮤니티</a></li>
 		</ul>	
 	</div>
-	 <h2>마이페이지</h2>
-	<div id="menu_sub">
-	      <ul id="navi2">
-	         <li class="group2">
-	            <div class="title">나의 부가 정보</div>
-	            <ul class="sub2">
-	               <li><a href="#">-나의 견적내역</a></li>
-	               <li><a href="#">-나의 찜 차량</a></li>
-	               <li><a href="#">-내가 쓴 글 관리</a></li>
-	            </ul>
-	         </li>
-	         <li class="group2">
-	            <div class="title">회원</div>
-	            <ul class="sub2">
-	               <li><a href="#">-회원정보 수정</a></li>
-	               <li><a href="#">-회원탈퇴</a></li>
-	            </ul>
-	         </li>
-	      </ul>
-	</div>
-	
-		<div id="page_main">
-			<p>홍길동님 일반회원</p>
-			<div id="d1" align="center">견적내역
+	<div id="wrap">
+		 <h2>마이페이지</h2>
+		<div id="menu_sub">
+		      <ul id="navi2">
+		         <li class="group2">
+		            <div class="title">나의 부가 정보</div>
+		            <ul class="sub2">
+		               <li><a href="#">-나의 견적내역</a></li>
+		               <li><a href="#">-나의 찜 차량</a></li>
+		               <li><a href="#">-내가 쓴 글 관리</a></li>
+		            </ul>
+		         </li>
+		         <li class="group2">
+		            <div class="title">회원</div>
+		            <ul class="sub2">
+		               <li><a href="#">-회원정보 수정</a></li>
+		               <li><a href="#">-회원탈퇴</a></li>
+		            </ul>
+		         </li>
+		      </ul>
+		</div>
+		
+			<div id="page_main">
+				<p>홍길동님 일반회원</p>
+				<div id="d1" align="center">견적내역
+					<br><br><br><div>?건</div>
+				</div>
+				<div id="d2"  align="center">찜 차량
 				<br><br><br><div>?건</div>
-			</div>
-			<div id="d2"  align="center">찜 차량
-			<br><br><br><div>?건</div>
-			</div>
-			<div id="d3"  align="center">내가 쓴 글
-			<br><br><br><div>?건</div>
+				</div>
+				<div id="d3"  align="center">내가 쓴 글
+				<br><br><br><div>?건</div>
+				</div>
 			</div>
 		</div>
 </body>

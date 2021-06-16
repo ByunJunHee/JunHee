@@ -15,6 +15,16 @@
 }
 	body{
 	font-family: 'InfinitySans-RegularA1';
+	
+	}
+	#wrap{
+		width:1500px;
+		height:94vh;
+		min-height:1000px;
+		max-height:1000px;
+		background-color:white;
+
+		margin:2.5vh auto;			
 	}
 	#menu_top{
 		background: #000000;
@@ -157,36 +167,37 @@
 			<li><a href="#">커뮤니티</a></li>
 		</ul>	
 	</div>
-	 <h2>회원탈퇴</h2>
-	<div id="menu_sub">
-	      <ul id="navi2">
-	         <li class="group2">
-	            <div class="title">나의 부가 정보</div>
-	            <ul class="sub2">
-	               <li><a href="#">-나의 견적내역</a></li>
-	               <li><a href="#">-나의 찜 차량</a></li>
-	               <li><a href="#">-내가 쓴 글 관리</a></li>
-	            </ul>
-	         </li>
-	         <li class="group2">
-	            <div class="title">회원</div>
-	            <ul class="sub2">
-	               <li><a href="#">-회원정보 수정</a></li>
-	               <li><a href="#">-회원탈퇴</a></li>
-	            </ul>
-	         </li>
-	      </ul>
-	</div>
-	<div id="page_main">
-		<div align="center">
-			<p>그동안 CC를 이용해 주셔서 감사합니다.</p>
-
+	<div id="wrap">
+		 <h2>회원탈퇴</h2>
+		<div id="menu_sub">
+		      <ul id="navi2">
+		         <li class="group2">
+		            <div class="title">나의 부가 정보</div>
+		            <ul class="sub2">
+		               <li><a href="#">-나의 견적내역</a></li>
+		               <li><a href="#">-나의 찜 차량</a></li>
+		               <li><a href="#">-내가 쓴 글 관리</a></li>
+		            </ul>
+		         </li>
+		         <li class="group2">
+		            <div class="title">회원</div>
+		            <ul class="sub2">
+		               <li><a href="#">-회원정보 수정</a></li>
+		               <li><a href="#">-회원탈퇴</a></li>
+		            </ul>
+		         </li>
+		      </ul>
+			</div>
+		<div id="page_main">
+			<div align="center">
+				<p>그동안 CC를 이용해 주셔서 감사합니다.</p>
+			</div>
 		</div>
-	</div>
-	<div class="button">
-		<button id="cancle">취소</button>
-		<!-- 탈퇴 버튼 누르면 alert창 띄우기 -->
-		<button id="submit">탈퇴</button>
+			<div class="button">
+				<button id="cancle">취소</button>
+				<!-- 탈퇴 버튼 누르면 alert창 띄우기 -->
+				<button id="submit">탈퇴</button>
+			</div>
 	</div>
 </body>
 </html>
