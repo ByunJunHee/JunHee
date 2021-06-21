@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Estimate</title>
+<title>렌트견적문의</title>
 <script src="./jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 
