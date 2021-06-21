@@ -182,7 +182,7 @@
 				</tr>
 			</table>
 			<div>
-				<h5>Aa</h5>
+				<h5>A</h5>
 				<textarea></textarea>
 			</div>
 			<div class="btn">

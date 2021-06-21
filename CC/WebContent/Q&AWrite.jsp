@@ -192,7 +192,7 @@
 				</tr>
 				<tr>
 					<th height="20%">비밀번호</th>
-					<td><input id="pwd" type="password" maxlength="12" ></td>
+					<td><input id="pwd" type="password" maxlength="15" ></td>
 				</tr>
 			</table>
 			<div class="btnArea">
