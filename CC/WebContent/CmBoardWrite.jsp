@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>커뮤니티 자유게시판</title>
+<title>커뮤니티 글쓰기</title>
 <script src="jquery-3.6.0.min.js"></script>
 <style>
 	@font-face {
@@ -118,6 +118,9 @@
 			width:99%;
 			height:93%;
 	}
+	.cm a{
+		text-decoration:none;
+	}
 </style>
 </head>
 <body>
@@ -145,28 +148,28 @@
 					<td><a href="">-자유 게시판</a></td>
 				</tr>
 				<tr class="c2">
-					<td height="20px">-출고인증</td>
+					<td height="20px"><a href="#">-출고인증</td>
 				</tr>
 				<tr>
-					<td height="20px">-차량 갤러리</td>
+					<td height="20px"><a href="#">-차량 갤러리</td>
 				</tr>
 				<tr class="c1">
 					<th height="30px">고객센터</th>
 				</tr>
 				<tr class="c2">
-					<td>-Q&A</td>
+					<td><a href="#">-Q&A</td>
 				</tr>
 				<tr>
-					<td class="c3">-FAQ</td>
+					<td class="c3"><a href="#">-FAQ</td>
 				</tr>
 				<tr class="c1">
 					<th height="30px">자유 게시판</th>
 				</tr>
 				<tr class="c2">
-					<td>-이벤트</td>
+					<td><a href="#">-이벤트</td>
 				</tr>
 				<tr class="c3">
-					<td>-공지사항</td>
+					<td><a href="#">-공지사항</td>
 				</tr>
 			</table>
 		</div>

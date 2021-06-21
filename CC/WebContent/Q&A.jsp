@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>커뮤니티 자유게시판</title>
+<title>Q&A</title>
 
 <style>
 	@font-face {
@@ -125,7 +125,7 @@
 					<th width="120px" height="30px">게시판</th>
 				</tr>
 				<tr class="c2">
-					<td><a href="#">-자유 게시판</a></td>
+					<td><a href="">-자유 게시판</a></td>
 				</tr>
 				<tr class="c2">
 					<td height="20px"><a href="#">-출고인증</td>
@@ -154,7 +154,7 @@
 			</table>
 		</div>
 		<div class="board">
-			자유 게시판
+			Q&A
 		</div>
 		<div class="board2">
 			<table border="1">
@@ -163,14 +163,21 @@
 					<th >제목</th>
 					<th width="12%">작성자</th>
 					<th width="15%">작성일</th>
-					<th width="10%">조회수</th>
+					<th width="10%">답변여부</th>
 				</tr>
 				<tr>
 					<td>1</td>
 					<td>반갑습니다</td>
 					<td>홍길동</td>
 					<td>2020-05-05</td>
-					<td>11</td>
+					<td><button type="button" >대기</button></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>반갑습니다2</td>
+					<td>홍길동2</td>
+					<td>2020-05-05</td>
+					<td><button type="button" >완료</button></td>
 				</tr>
 			</table>
 			<br>

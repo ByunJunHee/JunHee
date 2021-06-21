@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>커뮤니티 자유게시판</title>
-
+<title>Q&A 글쓰기</title>
+<script src="jquery-3.6.0.min.js"></script>
 <style>
 	@font-face {
     font-family: 'InfinitySans-RegularA1';
@@ -67,9 +67,6 @@
 	.board{
 		position:absolute; left:220px; top:150px;
 	}
-	.board2{
-		position:absolute; left:220px; top:220px;
-	}
 	.button{
 		position:relative;
 		left:560px;
@@ -82,7 +79,7 @@
 	.search{
 		text-align:right;
 	}
-	table{
+	.board1-1{
 		border-collapse:collapse;
 		border-right:hidden;
 		border-left:hidden;
@@ -97,6 +94,29 @@
 	}
 	.c3{
 		border-bottom: 2px solid black;
+	}
+	.board2{
+		position:absolute; left:220px; top:220px;
+		width:500px;
+	}
+	.board2-2{
+		border-right:hidden;
+		border-left:hidden;
+	}
+	
+	.btnArea{
+			position:relative;
+            left:500px;
+	}
+	textarea{
+				border-width:1px;
+				resize:none;
+				width:99%;
+				height:97%;
+	}
+	#title{
+			width:99%;
+			height:93%;
 	}
 	.cm a{
 		text-decoration:none;
@@ -120,7 +140,7 @@
 	</header>
 	<section>
 		<div class="cm">
-			<table border="1" >
+			<table border="1" class="board1-1" >
 				<tr class="c1">
 					<th width="120px" height="30px">게시판</th>
 				</tr>
@@ -154,50 +174,30 @@
 			</table>
 		</div>
 		<div class="board">
-			자유 게시판
+			Q&A
 		</div>
 		<div class="board2">
-			<table border="1">
+			<table border="1" class="board2-2" width="600" height="450">
 				<tr>
-					<th width="7%">번호</th>
-					<th >제목</th>
-					<th width="12%">작성자</th>
-					<th width="15%">작성일</th>
-					<th width="10%">조회수</th>
+					<th height="5%" >제목</th>
+					<td><input type="text" id="title"></td>
 				</tr>
 				<tr>
-					<td>1</td>
-					<td>반갑습니다</td>
-					<td>홍길동</td>
-					<td>2020-05-05</td>
-					<td>11</td>
+					<th height="75%">내용</th>
+					<td><textarea></textarea></td>
+				</tr>
+				<tr>
+					<th height="20%">파일첨부</th>
+					<td><input type="file" onchange=""></td>
+				</tr>
+				<tr>
+					<th height="20%">비밀번호</th>
+					<td><input id="pwd" type="password" maxlength="12" ></td>
 				</tr>
 			</table>
-			<br>
-			<div class="button">
-				<button type="button">글쓰기</button>
-			</div>
-			<br>
-			<div class="pagingArea">
-				<a href="">&lt;</a>
-				<a href="">1</a>
-				<a href="">2</a>
-				<a href="">3</a>
-				<a href="">4</a>
-				<a href="">5</a>
-				<a href="">&gt;</a>
-			</div>
-			<br>
-			<div class="search">
-				<form action="#" method="get">
-					<select name="searchType">
-						<option value="1">제목</option>
-						<option value="2">제목+내용</option>
-						<option value="3">작성자</option>
-					</select>
-					<input type="text" name="searchText">
-					<input type="submit" value="검색">
-				</form>
+			<div class="btnArea">
+				<button type="button" href="#">저장</button>
+				<button type="button" href="#">취소</button>
 			</div>
 		</div>
 	</section>
