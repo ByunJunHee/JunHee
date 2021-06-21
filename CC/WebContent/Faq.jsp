@@ -178,7 +178,7 @@
 			</div>
 			<hr>
 			<div class="board3" >
-				<h3>자주 하는 질문 BEST</h3>
+				<h3>자주 하는 질문  BEST</h3>
 				<ol>
 					<li><a href="#">예약/취소 수수료</li>
 					<li><a href="#">대여 자격(나이, 면허) 기준</li>
