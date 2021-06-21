@@ -197,7 +197,7 @@
 			</div>
 		</div>
 		<div class="board_cmt">
-    	<div class="tit" style="margin-left: 6px;"><em id="totalCmt" class="bico_comment"></em>Comments</div>
+    	<div class="tit" style="margin-left: 6px"><em id="totalCmt" class="bico_comment"></em>Comments</div>
      		<div class="board_cmt_write">
          		<div class="bx"> 
              		<textarea id="cmtContent" placeholder="소중한 댓글을 작성해주세요^^" maxlength="150"></textarea>
