@@ -2,28 +2,30 @@ package dbconn;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
 public class DBconn {
-	
 	Connection conn = null;
 	
 	
+	String url ="jdbc:oracle:thin:@127.0.0.1:1521:xe";
+	String id = "system";
+	String password = "1234";		
+	
+	public Connection getConnection() { 
 		String url ="jdbc:oracle:thin:@127.0.0.1:1521:xe";
 		String id = "system";
-		String password = "1234";		
-		
-		public Connection getConnection() { 
-			try{	
-				//靛扼捞滚 按眉 积己
-				Class.forName("oracle.jdbc.driver.OracleDriver");
-				//靛扼捞滚 楷搬
-				conn = DriverManager.getConnection(url, id, password);
-				//out.println("立加己傍");
-			}catch(Exception e){
-				e.printStackTrace();
-				//out.println("立加角菩");
+		String password = "1234";
+		try{	
+			//霌滊澕鞚措矂 臧濎泊 靸濎劚
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			//霌滊澕鞚措矂 鞐瓣舶
+			conn = DriverManager.getConnection(url, id, password);
+			System.out.println("鞝戩啀靹标车");
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println("鞝戩啀鞁ろ尐");
 			}
-			return conn;
-		}
+		return conn;
+	}
+
 
 }
