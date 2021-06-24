@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>커뮤니티 자유게시판</title>
+<title>자주하는 질문</title>
 
 <style>
 	@font-face {
-    font-family: 'InfinitySans-RegularA1';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+	    font-family: 'InfinitySans-RegularA1';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+	}
 	body{
 	font-family: 'InfinitySans-RegularA1';
 	}
@@ -35,7 +35,7 @@
 		list-style:none;
 	}
 	#menu_top a{
-	text-decoration: none;
+		text-decoration: none;
 		color:#FFFFFF
 	}
 	#menu_top ul li a:hover{
@@ -57,7 +57,7 @@
 		margin-left:10px;
 	}
 	#mypage p{
-		font-size:13px;
+		 font-size:13px;
 		 position: absolute;
  		 top: 5px; right: 20px;;
 	}
@@ -80,7 +80,7 @@
 		margin-left:35%;
 	}
 	.search{
-		text-align:right;
+		text-align:center;
 	}
 	table{
 		border-collapse:collapse;
@@ -98,8 +98,23 @@
 	.c3{
 		border-bottom: 2px solid black;
 	}
+	#d1{
+		background-color:black;
+		color:white;
+	}
+	.board3{
+		border:1px solid black;
+		width:600px;
+		height:300px;
+	}
+	.board2 a{
+		text-decoration:none;
+	}
 	.cm a{
 		text-decoration:none;
+	}
+	#input{
+		width:400px;
 	}
 </style>
 </head>
@@ -128,7 +143,7 @@
 					<td><a href="#">-자유 게시판</a></td>
 				</tr>
 				<tr class="c2">
-					<td height="20px"><a href="#">-출고인증</td>
+					<td height="20px" ><a href="#">-출고인증</td>
 				</tr>
 				<tr>
 					<td height="20px"><a href="#">-차량 갤러리</td>
@@ -154,50 +169,23 @@
 			</table>
 		</div>
 		<div class="board">
-			자유 게시판
+			FAQ
 		</div>
 		<div class="board2">
-			<table border="1">
-				<tr>
-					<th width="7%">번호</th>
-					<th >제목</th>
-					<th width="12%">작성자</th>
-					<th width="15%">작성일</th>
-					<th width="10%">조회수</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>반갑습니다</td>
-					<td>홍길동</td>
-					<td>2021-05-05</td>
-					<td>11</td>
-				</tr>
-			</table>
-			<br>
-			<div class="button">
-				<button type="button">글쓰기</button>
-			</div>
-			<br>
-			<div class="pagingArea">
-				<a href="">&lt;</a>
-				<a href="">1</a>
-				<a href="">2</a>
-				<a href="">3</a>
-				<a href="">4</a>
-				<a href="">5</a>
-				<a href="">&gt;</a>
-			</div>
-			<br>
 			<div class="search">
-				<form action="#" method="get">
-					<select name="searchType">
-						<option value="1">제목</option>
-						<option value="2">제목+내용</option>
-						<option value="3">작성자</option>
-					</select>
-					<input type="text" name="searchText">
-					<input type="submit" value="검색">
-				</form>
+				<input type="text" id="input">
+				<input type="submit" id="d1" value="검색">
+			</div>
+			<hr>
+			<div class="board3" >
+				<h3>자주 하는 질문  BEST</h3>
+				<ol>
+					<li><a href="#">예약/취소 수수료</li>
+					<li><a href="#">대여 자격(나이, 면허) 기준</li>
+					<li><a href="#">보험</li>
+					<li><a href="#">대여요금/ 무료이용권</li>
+					<li><a href="#">혜택</li>
+				</ol>
 			</div>
 		</div>
 	</section>

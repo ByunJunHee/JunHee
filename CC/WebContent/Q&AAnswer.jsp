@@ -82,7 +82,7 @@
 	.search{
 		text-align:right;
 	}
-	table{
+	.cm table{
 		border-collapse:collapse;
 		border-right:hidden;
 		border-left:hidden;
@@ -100,6 +100,20 @@
 	}
 	.cm a{
 		text-decoration:none;
+	}
+	.board2 table{
+		border-collapse:collapse;
+		border-right:hidden;
+		border-left:hidden;
+	}
+	textarea{
+				border-width:1px;
+				resize:none;
+				width:99%;
+				height:200px;
+	}
+	.btn{
+		text-align:right;
 	}
 </style>
 </head>
@@ -159,45 +173,21 @@
 		<div class="board2">
 			<table border="1">
 				<tr>
-					<th width="7%">번호</th>
-					<th >제목</th>
-					<th width="12%">작성자</th>
-					<th width="15%">작성일</th>
-					<th width="10%">조회수</th>
+					<td width="500px">[Q]렌터가 문의 합니다.</td>
+					<td width="100px">홍길동</td>
+					<td width="100px">2021-05-05</td>
 				</tr>
 				<tr>
-					<td>1</td>
-					<td>반갑습니다</td>
-					<td>홍길동</td>
-					<td>2021-05-05</td>
-					<td>11</td>
+					<td colspan="3" height="100px">렌터카 견적 신청하면 차량을 몇일만에 받을 수 있나요?</td>
 				</tr>
 			</table>
-			<br>
-			<div class="button">
-				<button type="button">글쓰기</button>
+			<div>
+				<h5>A</h5>
+				<textarea></textarea>
 			</div>
-			<br>
-			<div class="pagingArea">
-				<a href="">&lt;</a>
-				<a href="">1</a>
-				<a href="">2</a>
-				<a href="">3</a>
-				<a href="">4</a>
-				<a href="">5</a>
-				<a href="">&gt;</a>
-			</div>
-			<br>
-			<div class="search">
-				<form action="#" method="get">
-					<select name="searchType">
-						<option value="1">제목</option>
-						<option value="2">제목+내용</option>
-						<option value="3">작성자</option>
-					</select>
-					<input type="text" name="searchText">
-					<input type="submit" value="검색">
-				</form>
+			<div class="btn">
+				<input type="submit" value="등록">
+				<input type="submit" value="취소">
 			</div>
 		</div>
 	</section>
