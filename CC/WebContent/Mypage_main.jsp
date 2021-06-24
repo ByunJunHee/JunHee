@@ -28,16 +28,16 @@
 		         <li class="group2">
 		            <div class="title">나의 부가 정보</div>
 		            <ul class="sub2">
-		               <li><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail.do">-나의 견적내역</a></li>
-		               <li><a href="#">-나의 찜 차량</a></li>
-		               <li><a href="#">-내가 쓴 글 관리</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail1.do">-나의 견적내역</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail2.do">-나의 찜 차량</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail3.do">-내가 쓴 글 관리</a></li>
 		            </ul>
 		         </li>
 		         <li class="group2">
 		            <div class="title">회원</div>
 		            <ul class="sub2">
-		               <li><a href="#">-회원정보 수정</a></li>
-		               <li><a href="#">-회원탈퇴</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail4.do">-회원정보 수정</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail5.do">-회원탈퇴</a></li>
 		            </ul>
 		         </li>
 		      </ul>
