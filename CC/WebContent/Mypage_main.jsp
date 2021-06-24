@@ -152,7 +152,7 @@
 <body>
 	<div id="menu_top">
 		<div id="mypage">
-			<p>ooo님 | <a href="#">Logout | </a><a href="#"> Mypage</a></p>
+			<p>ooo님 | <a href="#">Logout | </a><a href="/Mypage/Mypage_main.do"> Mypage</a></p>
 		</div>
 		<ul id="navi">
 			<li><a href="#">Logoimage</a></li>
@@ -169,7 +169,7 @@
 		         <li class="group2">
 		            <div class="title">나의 부가 정보</div>
 		            <ul class="sub2">
-		               <li><a href="#">-나의 견적내역</a></li>
+		               <li><a href="/Mypage/Mypage_detail.do">-나의 견적내역</a></li>
 		               <li><a href="#">-나의 찜 차량</a></li>
 		               <li><a href="#">-내가 쓴 글 관리</a></li>
 		            </ul>
