@@ -10,7 +10,7 @@
 <body>
 	<div id="menu_top">
 		<div id="mypage">
-			<p>ooo님 | <a href="#">Logout | </a><a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do""> Mypage</a></p>
+			<p>ooo님 | <a href="#">Logout | </a><a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do"> Mypage</a></p>
 		</div>
 		<ul id="navi">
 			<li><a href="#">Logoimage</a></li>
