@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>회원 정보 수정</title>
 </head>
- <link rel="stylesheet" href="./resource/Mypage_detail4css.css">
+ <link href="resource/Mypage_detail4css.css" rel="stylesheet" type="text/css">
 <body>
 	<div id="menu_top">
 		<div id="mypage">

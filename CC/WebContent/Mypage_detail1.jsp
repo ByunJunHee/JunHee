@@ -6,11 +6,11 @@
 <meta charset="UTF-8">
 <title>나의 견적내역</title>
 </head>
- <link rel="stylesheet" href="./resource/Mypage_detail1css.css">
+<link href="resource/Mypage_detail1css.css" rel="stylesheet" type="text/css">
 <body>
 	<div id="menu_top">
 		<div id="mypage">
-			<p>ooo님 | <a href="#">Logout | </a><a href="#"> Mypage</a></p>
+			<p>ooo님 | <a href="#">Logout | </a><a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do""> Mypage</a></p>
 		</div>
 		<ul id="navi">
 			<li><a href="#">Logoimage</a></li>
@@ -27,16 +27,16 @@
 		         <li class="group2">
 		            <div class="title">나의 부가 정보</div>
 		            <ul class="sub2">
-		               <li><a href="#">-나의 견적내역</a></li>
-		               <li><a href="#">-나의 찜 차량</a></li>
-		               <li><a href="#">-내가 쓴 글 관리</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail1.do">-나의 견적내역</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail2.do">-나의 찜 차량</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail3.do">-내가 쓴 글 관리</a></li>
 		            </ul>
 		         </li>
 		         <li class="group2">
 		            <div class="title">회원</div>
 		            <ul class="sub2">
-		               <li><a href="#">-회원정보 수정</a></li>
-		               <li><a href="#">-회원탈퇴</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail4.do">-회원정보 수정</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail5.do">-회원탈퇴</a></li>
 		            </ul>
 		         </li>
 		      </ul>

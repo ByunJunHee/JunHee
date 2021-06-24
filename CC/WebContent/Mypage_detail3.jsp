@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>내가 쓴 글 관리</title>
 </head>
- <link rel="stylesheet" href="./resource/Mypage_detail3css.css">
+ <link href="resource/Mypage_detail3css.css" rel="stylesheet" type="text/css">
 <body>
 	<div id="menu_top">
 		<div id="mypage">

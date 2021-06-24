@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>mypage_main</title>
 
- <link rel="stylesheet" href="./resource/Mypage_maincss.css">
+<link href="resource/Mypage_maincss.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="menu_top">
@@ -46,7 +46,8 @@
 			<div id="page_main">
 				<p>홍길동님 일반회원</p>
 				<div id="d1" align="center">견적내역
-					<br><br><br><div>?건</div>
+					<br><br><br>
+					<div><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail1.do">?</a>건</div>
 				</div>
 				<div id="d2"  align="center">찜 차량
 				<br><br><br><div>?건</div>

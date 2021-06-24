@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>나의 찜 차량</title>
 </head>
- <link rel="stylesheet" href="./resource/Mypage_detail2css.css">
+ <link href="resource/Mypage_detail2css.css" rel="stylesheet" type="text/css">
 <body>
 	<div id="menu_top">
 		<div id="mypage">
