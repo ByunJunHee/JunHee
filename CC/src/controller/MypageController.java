@@ -29,6 +29,9 @@ public class MypageController extends HttpServlet {
 	if(str.equals("/Mypage/Mypage_main.do")) {		
 		RequestDispatcher rd = request.getRequestDispatcher("/Mypage_main.jsp");
 		rd.forward(request, response);
+	}else if(str.equals("/Mypage/Mypage_detail1.do")) {
+		RequestDispatcher rd = request.getRequestDispatcher("/Mypage_detail1.jsp");
+		rd.forward(request, response);
 	}
 	
 	}
