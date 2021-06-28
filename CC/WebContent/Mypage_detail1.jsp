@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>나의 견적내역</title>
 </head>
-<link href="/resource/Mypage_detail1css.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/resource/Mypage_detail1css.css" rel="stylesheet" type="text/css">
 <body>
 	<div id="menu_top">
 		<div id="mypage">

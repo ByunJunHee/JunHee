@@ -2,16 +2,17 @@ package dbconn;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 public class DBconn {
-	Connection conn = null;
+Connection conn = null;
 	
 	
-	String url ="jdbc:oracle:thin:@127.0.0.1:1521:xe";
+	String url ="jdbc:oracle:thin:@192.168.0.8:1521:xe";
 	String id = "system";
 	String password = "1234";		
 	
 	public Connection getConnection() { 
-		String url ="jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		String url ="jdbc:oracle:thin:@192.168.0.8:1521:xe";
 		String id = "system";
 		String password = "1234";
 		try{	
@@ -29,3 +30,4 @@ public class DBconn {
 
 
 }
+	

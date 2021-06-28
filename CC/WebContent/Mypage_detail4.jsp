@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>회원 정보 수정</title>
 </head>
- <link href="resource/Mypage_detail4css.css" rel="stylesheet" type="text/css">
+ <link href="<%=request.getContextPath()%>/resource/Mypage_detail4css.css" rel="stylesheet" type="text/css">
 <body>
 	<div id="menu_top">
 		<div id="mypage">
@@ -16,7 +16,7 @@
 			<li><a href="#">Logoimage</a></li>
 			<li><a href="#">회사소개</a></li>
 			<li><a href="#">차량비교</a></li>
-			<li><a href="#">렌트</a></li>
+			<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
 			<li><a href="#">커뮤니티</a></li>
 		</ul>	
 	</div>
