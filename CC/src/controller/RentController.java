@@ -28,6 +28,9 @@ public class RentController extends HttpServlet {
 		if(str.equals("/Rentpage_main.do")) {		
 			RequestDispatcher rd = request.getRequestDispatcher("/Rentpage_main.jsp");
 			rd.forward(request, response);
+		}else if(str.equals("/Rent_Esimate.do")) {
+			RequestDispatcher rd = request.getRequestDispatcher("/Rent_Estimate.jsp");
+			rd.forward(request, response);
 		}
 	}
 

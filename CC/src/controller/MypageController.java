@@ -16,9 +16,9 @@ public class MypageController extends HttpServlet {
    
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	//response.getWriter().append("Served at: ").append(request.getContextPath());
 	request.setCharacterEncoding("UTF-8");
 	response.setContentType("text/html; charset=utf-8"); 
+	response.getWriter().append("Served at: ").append(request.getContextPath());
 	
 	String uri = request.getRequestURI();
 	int pnamelength = request.getContextPath().length();
