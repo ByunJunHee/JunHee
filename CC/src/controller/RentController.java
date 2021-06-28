@@ -16,6 +16,8 @@ public class RentController extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=utf-8"); 
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		String uri = request.getRequestURI();
@@ -23,7 +25,7 @@ public class RentController extends HttpServlet {
 		String str = uri.substring(pnamelength);
 		System.out.println("url주소:"+str);
 
-		if(str.equals("/Rent/Rentpage_main.do")) {		
+		if(str.equals("/Rentpage_main.do")) {		
 			RequestDispatcher rd = request.getRequestDispatcher("/Rentpage_main.jsp");
 			rd.forward(request, response);
 		}

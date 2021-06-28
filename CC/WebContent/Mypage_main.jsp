@@ -18,7 +18,7 @@
 			<li><a href="#">Logoimage</a></li>
 			<li><a href="#">회사소개</a></li>
 			<li><a href="#">차량비교</a></li>
-			<li><a href="#">렌트</a></li>
+			<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
 			<li><a href="#">커뮤니티</a></li>
 		</ul>	
 	</div>
@@ -48,13 +48,15 @@
 				<p>홍길동님 일반회원</p>
 				<div id="d1" align="center">견적내역
 					<br><br><br>
-					<div><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail1.do">?</a>건</div>
+					<div><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail1.do" style="text-decoration:none" class="click">?</a>건</div>
 				</div>
 				<div id="d2"  align="center">찜 차량
-				<br><br><br><div>?건</div>
+					<br><br><br>
+					<div><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail2.do" style="text-decoration:none" class="click">?</a>건</div>
 				</div>
 				<div id="d3"  align="center">내가 쓴 글
-				<br><br><br><div>?건</div>
+					<br><br><br>
+					<div><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail3.do" style="text-decoration:none" class="click">?</a>건</div>
 				</div>
 			</div>
 		</div>

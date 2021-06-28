@@ -11,13 +11,13 @@
 	<header>
 		<div id="menu_top">
 			<div id="mypage">
-				<p>ooo님 | <a href="#">Logout | </a><a href="#"> Mypage</a></p>
+				<p>ooo님 | <a href="#">Logout | </a><a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do"> Mypage</a></p>
 			</div>
 			<ul id="navi">
 				<li><a href="#">Logoimage</a></li>
 				<li><a href="#">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="#">렌트</a></li>
+				<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
 				<li><a href="#">커뮤니티</a></li>
 			</ul>	
 		</div>
