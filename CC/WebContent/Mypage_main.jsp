@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>mypage_main</title>
-<link href="resource/Mypage_maincss.css" rel="stylesheet" type="text/css">
+<link href="./resource/Mypage_maincss.css" rel="stylesheet" type="text/css">
 
 
 </head>

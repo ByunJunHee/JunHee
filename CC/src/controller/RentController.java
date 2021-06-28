@@ -43,10 +43,7 @@ public class RentController extends HttpServlet {
 			String r_division = request.getParameter("r_division");
 			int r_num = 0;
 
-			RentDao rd = new RentDao();
-			System.out.println("rd"+rd);
-			int value = rd.RentInsert(r_name, r_phone, r_addr, r_interest, r_division,r_num);
-			System.out.println("value"+value);
+			
 		}
 	}
 

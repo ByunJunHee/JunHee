@@ -5,21 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>렌트견적문의</title>
-<script src="/jquery-3.6.0.min.js"></script>
+<script src="jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	function check(){
 		
 		var fm = document.frm;	
-		
-		if(fm.name.value ==""){
-			alert("이름입력");
-			fm.name.focus();
-			return;
-		}else if(fm.phone.value ==""){
-			alert("휴대폰번호 입력");
-			fm.phone.focus();
-			return;
-		}
+
 		fm.action ="<%=request.getContextPath()%>/Rent_EstimateAction.do";
 		fm.method = "post";
 		fm.submit();	
@@ -31,6 +22,7 @@
  <link rel="stylesheet" href="./resource/Estimatecss.css">
  </head>
 <body>
+	<form name="frm">
 	<div id="content">
 	<!-- NAME -->
 	<div>
@@ -125,5 +117,6 @@
 		<button type="button" class="submit" onclick="check()">확인</button>
 	</div>
 </div>
+</form>
 </body>
 </html>
