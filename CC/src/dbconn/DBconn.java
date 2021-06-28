@@ -26,7 +26,7 @@ Connection conn = null;
 			System.out.println("접속실패");
 			}
 		return conn;
-	}
+	} 
 
 
 }
