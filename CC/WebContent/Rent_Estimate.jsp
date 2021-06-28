@@ -5,10 +5,28 @@
 <head>
 <meta charset="UTF-8">
 <title>렌트견적문의</title>
-<script src="./jquery-3.6.0.min.js"></script>
+<script src="/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+	function check(){
+		
+		var fm = document.frm;	
+		
+		if(fm.name.value ==""){
+			alert("이름입력");
+			fm.name.focus();
+			return;
+		}else if(fm.phone.value ==""){
+			alert("휴대폰번호 입력");
+			fm.phone.focus();
+			return;
+		}
+		fm.action ="<%=request.getContextPath()%>/Rent_EstimateAction.do";
+		fm.method = "post";
+		fm.submit();	
 
-
+	return;
+	}
+	
 </script>
  <link rel="stylesheet" href="./resource/Estimatecss.css">
  </head>
@@ -20,7 +38,7 @@
 			<label for="name">이름</label>
 		</h3>
 		<span class="box int_name">
-			<input type="text" id="name" class="int" maxlength="20">
+			<input type="text" name="name" id="name" class="int" maxlength="20">
 		</span>
 		<span class="error_next_box"></span>
 	</div>
@@ -30,7 +48,7 @@
 			<label for="phone">연락처</label>
 		</h3>
 		<span class="box int_phone">
-			<input type="text" id="phone" class="int" maxlength="20">
+			<input type="text" name="phone"id="phone" class="int" maxlength="20">
 		</span>
 		<span class="error_next_box"></span>
 	</div>
@@ -104,7 +122,7 @@
 	</ul>
 	<!-- 확인버튼 -->
 	<div id="btn">
-		<button type="button">확인</button>
+		<button type="button" class="submit" onclick="check()">확인</button>
 	</div>
 </div>
 </body>
