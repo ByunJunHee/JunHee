@@ -33,28 +33,28 @@
 					<td><a href="<%=request.getContextPath() %>/Board/CmBoard.do">-자유 게시판</a></td>
 				</tr>
 				<tr class="c2">
-					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard2.do">-출고인증</td>
+					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard2.do">-출고인증</a></td>
 				</tr>
 				<tr>
-					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard3.do">-차량 갤러리</td>
+					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard3.do">-차량 갤러리</a></td>
 				</tr>
 				<tr class="c1">
 					<th height="30px">고객센터</th>
 				</tr>
 				<tr class="c2">
-					<td><a href="#">-Q&A</td>
+					<td><a href="#">-Q&A</a></td>
 				</tr>
 				<tr>
-					<td class="c3"><a href="#">-FAQ</td>
+					<td class="c3"><a href="#">-FAQ</a></td>
 				</tr>
 				<tr class="c1">
 					<th height="30px">자유 게시판</th>
 				</tr>
 				<tr class="c2">
-					<td><a href="#">-이벤트</td>
+					<td><a href="#">-이벤트</a></td>
 				</tr>
 				<tr class="c3">
-					<td><a href="#">-공지사항</td>
+					<td><a href="#">-공지사항</a></td>
 				</tr>
 			</table>
 		</div>
@@ -80,7 +80,7 @@
 			</table>
 			<br>
 			<div class="button">
-				<button type="button">글쓰기</button>
+				<a href="<%=request.getContextPath() %>/Board/CmBoardWrite.do"><button type="button">글쓰기</button></a>
 			</div>
 			<br>
 			<div class="pagingArea">

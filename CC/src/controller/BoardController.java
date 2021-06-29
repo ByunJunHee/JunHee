@@ -36,17 +36,20 @@ public class BoardController extends HttpServlet {
 			
 			RequestDispatcher rd =request.getRequestDispatcher("/CmBoard.jsp");
 			rd.forward(request, response);
-		}else if(str.equals("/board/boardWriteAction.do")) {
-			//값을 넘겨받는다
-			String title = request.getParameter("title");
-			String contents = request.getParameter("contents");
-			String writer = request.getParameter("writer");
 		}else if(str.equals("/Board/CmBoard2.do")) {
 			RequestDispatcher rd =request.getRequestDispatcher("/CmBoard2.jsp");
 			rd.forward(request, response);
 		}else if(str.equals("/Board/CmBoard3.do")) {
 			RequestDispatcher rd =request.getRequestDispatcher("/CmBoard3.jsp");
 			rd.forward(request, response);
+		}else if(str.equals("/Board/CmBoardWrite.do")) {
+			RequestDispatcher rd =request.getRequestDispatcher("/CmBoardWrite.jsp");
+			rd.forward(request, response);
+		}else if(str.equals("/board/boardWriteAction.do")) {
+			//값을 넘겨받는다
+			String title = request.getParameter("title");
+			String contents = request.getParameter("contents");
+			String writer = request.getParameter("writer");
 		}
 	}
 

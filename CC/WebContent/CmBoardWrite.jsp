@@ -6,19 +6,19 @@
 <meta charset="UTF-8">
 <title>커뮤니티 글쓰기</title>
 <script src="jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="./resource/CmBoardWritecss.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resource/CmBoardWritecss.css">
 </head>
 <body>
 	<header>
 		<div id="menu_top">
 			<div id="mypage">
-				<p>ooo님 | <a href="#">Logout | </a><a href="#"> Mypage</a></p>
+				<p>ooo님 | <a href="#">Logout | </a><a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do"> Mypage</a></p>
 			</div>
 			<ul id="navi">
 				<li><a href="#">Logoimage</a></li>
 				<li><a href="#">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="#">렌트</a></li>
+				<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
 				<li><a href="#">커뮤니티</a></li>
 			</ul>	
 		</div>
@@ -30,31 +30,31 @@
 					<th width="120px" height="30px">게시판</th>
 				</tr>
 				<tr class="c2">
-					<td><a href="">-자유 게시판</a></td>
+					<td><a href="<%=request.getContextPath() %>/Board/CmBoard.do">-자유 게시판</a></td>
 				</tr>
 				<tr class="c2">
-					<td height="20px"><a href="#">-출고인증</td>
+					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard2.do">-출고인증</a></td>
 				</tr>
 				<tr>
-					<td height="20px"><a href="#">-차량 갤러리</td>
+					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard3.do">-차량 갤러리</a></td>
 				</tr>
 				<tr class="c1">
 					<th height="30px">고객센터</th>
 				</tr>
 				<tr class="c2">
-					<td><a href="#">-Q&A</td>
+					<td><a href="#">-Q&A</a></td>
 				</tr>
 				<tr>
-					<td class="c3"><a href="#">-FAQ</td>
+					<td class="c3"><a href="#">-FAQ</a></td>
 				</tr>
 				<tr class="c1">
 					<th height="30px">자유 게시판</th>
 				</tr>
 				<tr class="c2">
-					<td><a href="#">-이벤트</td>
+					<td><a href="#">-이벤트</a></td>
 				</tr>
 				<tr class="c3">
-					<td><a href="#">-공지사항</td>
+					<td><a href="#">-공지사항</a></td>
 				</tr>
 			</table>
 		</div>
