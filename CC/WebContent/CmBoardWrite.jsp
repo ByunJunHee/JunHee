@@ -5,7 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>커뮤니티 글쓰기</title>
-<script src="jquery-3.6.0.min.js"></script>
+
+<script>
+	function check(){
+		
+		alert("등록합니다.");
+			document.frm.action ="<%=request.getContextPath()%>/Board/CmBoardWriteAction.do";
+			document.frm.method = "post";
+			document.frm.enctype="multipart/form-data";
+			document.frm.submit(); 
+			return;
+			}
+</script>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/CmBoardWritecss.css">
 </head>
 <body>
@@ -62,14 +73,15 @@
 			자유 게시판
 		</div>
 		<div class="board2">
+		<form name="frm">
 			<table border="1" class="board2-2" width="600" height="450">
 				<tr>
 					<th height="5%" >제목</th>
-					<td><input type="text" id="title"></td>
+					<td><input type="text" name="b_title" id="title"></td>
 				</tr>
 				<tr>
 					<th height="75%">내용</th>
-					<td><textarea></textarea></td>
+					<td><textarea name="b_contents"></textarea></td>
 				</tr>
 				<tr>
 					<th height="20%">파일첨부</th>
@@ -77,19 +89,12 @@
 				</tr>
 			</table>
 			<div class="btnArea">
-				<button type="button" href="#">저장</button>
+				<input type="button" value="확인" onClick="check()"> 
 				<button type="button" href="#">취소</button>
 			</div>
+			</form>
 		</div>
-		<div class="board_cmt">
-    	<div class="tit" style="margin-left: 6px"><em id="totalCmt" class="bico_comment"></em>Comments</div>
-     		<div class="board_cmt_write">
-         		<div class="bx"> 
-             		<textarea id="cmtContent" placeholder="소중한 댓글을 작성해주세요^^" maxlength="150"></textarea>
-         		</div>
-        		<button id="btn_insert_cmt">등록</button>
-     		</div>
-		</div>
+		
 	</section>
 </body>
 </html>

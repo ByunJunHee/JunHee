@@ -14,7 +14,8 @@ import javax.servlet.http.HttpSession;
 
 import domain.PageMaker;
 import domain.SearchCriteria;
-import service.BoardDao;
+import service.Cm_BoardDao;
+import service.RentDao;
 import service.BoardVo;
 
 @WebServlet("/BoardController")
@@ -47,9 +48,25 @@ public class BoardController extends HttpServlet {
 			rd.forward(request, response);
 		}else if(str.equals("/board/boardWriteAction.do")) {
 			//값을 넘겨받는다
-			String title = request.getParameter("title");
-			String contents = request.getParameter("contents");
-			String writer = request.getParameter("writer");
+			String b_title = request.getParameter("title");
+			String b_contents = request.getParameter("contents");
+			String b_writer = request.getParameter("writer");
+			
+			System.out.println("b_title->"+b_title);
+			System.out.println("b_contents->"+b_contents);
+			System.out.println("b_writer->"+b_writer);
+			
+			int b_num = 0;
+			
+			Cm_BoardDao rd = new Cm_BoardDao();
+			int value = rd.boardInsert(b_title, b_contents, b_writer);
+			System.out.println("value:"+value);
+			
+			if(value >0) {
+				response.sendRedirect(request.getContextPath()+"/Board/CmBoard.do?b_num="+b_num);	
+			}else{
+				response.sendRedirect(request.getContextPath()+"/Board/CmBoardwrite.do?b_num="+b_num);
+			}
 		}
 	}
 

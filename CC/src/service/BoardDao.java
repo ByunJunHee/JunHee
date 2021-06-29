@@ -20,22 +20,18 @@ public class BoardDao {
 		this.conn = dbconn.getConnection();
 	}
 	
-	public int boardInsert(String subject, String contents, String writer, String password, String fileName, String ip, int midx) {
+	public int boardInsert1(String b_title, String b_contents, String b_writer) {
 		int value=0;
 		
-		String sql="insert into board_api(bidx,originbidx,depth,llevel,"
-				+ "subject,contents,password,writer,filename,ip,midx) "
-				+ "values(bidx_seq.nextval,bidx_seq.nextval,0,0,?,?,?,?,?,?,?)";
+		String sql="insert into board_api(b_num,b_title,b_contents,b_writer) "
+				+ "values(b_num.nextval,?,?,?)";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, subject);
-			pstmt.setString(2, contents);
-			pstmt.setString(3, writer);
-			pstmt.setString(4, password);
-			pstmt.setString(5, fileName);
-			pstmt.setString(6, ip);
-			pstmt.setInt(7, midx);
+			pstmt.setString(1, b_title);
+			pstmt.setString(2, b_contents);
+			pstmt.setString(3, b_writer);
+			
 			
 			value= pstmt.executeUpdate();
 			
