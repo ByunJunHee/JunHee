@@ -30,7 +30,7 @@
 			<label for="name">이름</label>
 		</h3>
 		<span class="box int_name">
-			<input type="text" name="name" id="name" class="int" maxlength="20">
+			<input type="text" name="r_name" id="name" class="int" maxlength="20">
 		</span>
 		<span class="error_next_box"></span>
 	</div>
@@ -40,7 +40,7 @@
 			<label for="phone">연락처</label>
 		</h3>
 		<span class="box int_phone">
-			<input type="text" name="phone"id="phone" class="int" maxlength="20">
+			<input type="text" name="r_phone"id="phone" class="int" maxlength="20">
 		</span>
 		<span class="error_next_box"></span>
 	</div>
@@ -50,7 +50,7 @@
 			<label for="area">지역</label>
 		</h3>
 		<span class="box int_area">
-			<select class="int">
+			<select class="int" name="r_addr">
 				<option>지역선택</option>
 				<option value="1">서울</option>
 				<option value="2">인천</option>
@@ -70,7 +70,7 @@
 			<label for="car">관심차종</label>
 		</h3>
 		<span class="box int_car">
-			<input type="text" id="car" class="int" maxlength="20">
+			<input type="text" name="r_interest"id="car" class="int" maxlength="20">
 		</span>
 		<span class="error_next_box"></span>
 	</div>
@@ -81,11 +81,11 @@
 		</h3>
 		<span class="box int_division">
 			<lable>
-				<input type="radio" name="select" id="division" value="individual" checked="checked">
+				<input type="radio" name="r_division" id="division" value="individual" checked="checked">
 			개인/개인사업자
 			</lable>
 			<lable>
-				<input type="radio"  name="select" id="division2" value="Corporation">
+				<input type="radio"  name="r_division" id="division2" value="Corporation">
 				법인사업자
 			</lable>
 		</span>

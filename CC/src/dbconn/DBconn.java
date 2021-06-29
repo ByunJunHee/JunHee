@@ -12,9 +12,7 @@ Connection conn = null;
 	String password = "1234";		
 	
 	public Connection getConnection() { 
-		String url ="jdbc:oracle:thin:@192.168.0.8:1521:xe";
-		String id = "system";
-		String password = "1234";
+		
 		try{	
 			//드라이버 객체 생성
 			Class.forName("oracle.jdbc.driver.OracleDriver");
