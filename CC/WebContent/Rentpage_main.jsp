@@ -18,7 +18,7 @@
 				<li><a href="#">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
 				<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
-				<li><a href="#">커뮤니티</a></li>
+				<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
 	</header>
@@ -66,7 +66,7 @@
 					</p>
 					<p class="p1">K8</p>
 					<p class="p2">노블레스2.5(G)</p>
-					<0p class="p3">월 41만원대</p>
+					<p class="p3">월 41만원대</p>
 					<p class="p4">월 33만원대~</p>
 					<p class="p5">(세금/보험료/방문정비 포함)</p>
 					<div class="btn">
@@ -86,7 +86,7 @@
 					<p class="p2">노블레스2.5(G)</p>
 					<p class="p3">월 41만원대</p>
 					<p class="p4">월 33만원대~</p>
-					<p class="p5">(세금/보험료/방문정비 포함)</p>
+					<p class="p.5">(세금/보험료/방문정비 포함)</p>
 					<div class="btn">
 					<button type="button">간편견적신청</button>
 					</div>

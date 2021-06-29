@@ -33,10 +33,10 @@
 					<td><a href="<%=request.getContextPath() %>/Board/CmBoard.do">-자유 게시판</a></td>
 				</tr>
 				<tr class="c2">
-					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard2.do">-출고인증</a></td>
+					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard2.do">-출고인증</td>
 				</tr>
 				<tr>
-					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard3.do">-차량 갤러리</a></td>
+					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard3.do">-차량 갤러리</td>
 				</tr>
 				<tr class="c1">
 					<th height="30px">고객센터</th>
@@ -59,7 +59,7 @@
 			</table>
 		</div>
 		<div class="board">
-			자유 게시판
+			차량갤러리
 		</div>
 		<div class="board2">
 			<table border="1">

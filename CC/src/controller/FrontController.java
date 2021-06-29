@@ -36,10 +36,12 @@ public class FrontController extends HttpServlet {
 			ManagerController mc = new ManagerController();
 			mc.doGet(request,response);
 			
+		}else if(str2.equals("Board")) {
+			BoardController bc = new BoardController();
+			bc.doGet(request, response);
 		}else {
 			RentController rc = new RentController();
-			rc.doGet(request,response);
-			
+			rc.doGet(request,response);	
 		}
 	}
 

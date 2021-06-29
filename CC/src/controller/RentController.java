@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import service.BoardDao;
 import service.RentDao;
 
 
@@ -42,7 +42,17 @@ public class RentController extends HttpServlet {
 			String r_interest = request.getParameter("r_interest");
 			String r_division = request.getParameter("r_division");
 			int r_num = 0;
-
+			
+			RentDao rd = new RentDao();
+			int value = rd.RentInsert(r_name, r_phone, r_addr, r_interest, r_division, r_num);
+			System.out.println("value:"+value);
+			
+			//3. �̵��Ѵ�
+			if(value >0) {
+				response.sendRedirect(request.getContextPath()+"/Mypage/Mypage_detail1.do?r_num="+r_num);	
+			}else{
+				response.sendRedirect(request.getContextPath()+"/Rent_Estimate.do?r_num="+r_num);
+			}
 			
 		}
 	}
