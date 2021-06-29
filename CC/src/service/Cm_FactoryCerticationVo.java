@@ -1,6 +1,6 @@
 package service;
 
-public class Cm_FactoryCertication {
+public class Cm_FactoryCerticationVo {
 	private int fc_idx;
 	private String fc_title;
 	private String fc_contents;

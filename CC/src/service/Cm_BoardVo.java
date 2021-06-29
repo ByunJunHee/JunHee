@@ -1,6 +1,6 @@
 package service;
 
-public class Cm_Board {
+public class Cm_BoardVo {
 	private int b_dix;
 	private String b_title;
 	private String b_contents;

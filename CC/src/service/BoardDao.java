@@ -65,7 +65,7 @@ public class BoardDao {
 				+ "where B.rnum >=?";
 		
 		try {
-			pstmt = conn.prepareStatement(sql); // Äõ¸® ¹®ÀÚ¿­À» ´ã¾Æ¼­ ±¸¹®È­(Äõ¸®È­)½ÃÅ°´Â°Í
+			pstmt = conn.prepareStatement(sql); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½È­(ï¿½ï¿½ï¿½ï¿½È­)ï¿½ï¿½Å°ï¿½Â°ï¿½
 			pstmt.setString(1, "%"+keyword+"%");
 			pstmt.setInt(2, page*15);
 			pstmt.setInt(3, 1+(page-1)*15);
@@ -110,7 +110,7 @@ public class BoardDao {
 			pstmt.setInt(1, bidx);
 			rs = pstmt.executeQuery();
 			
-			//´ÙÀ½ ÇàÀÌ Á¸ÀçÇÏ¸é
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½
 			if (rs.next()) {
 				bv = new BoardVo();
 				bv.setBidx(rs.getInt("bidx"));
@@ -253,5 +253,10 @@ public class BoardDao {
 		}
 		
 		return cnt;
+	}
+
+	public int boardInsert(String title, String contents, String writer) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

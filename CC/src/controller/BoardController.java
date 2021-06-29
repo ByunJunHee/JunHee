@@ -30,191 +30,24 @@ public class BoardController extends HttpServlet {
 		String uri = request.getRequestURI();		
 		int pnamelength = request.getContextPath().length();
 		String str = uri.substring(pnamelength);
-		System.out.println("urlÁÖ¼Ò:"+str);
+		System.out.println("urlì£¼ì†Œ:"+str);
 		
-		if(str.equals("/board/boardWrite.do")) {
+		if(str.equals("/Board/CmBoard.do")) {
 			
-			RequestDispatcher rd =request.getRequestDispatcher("/boardWrite.jsp");
+			RequestDispatcher rd =request.getRequestDispatcher("/CmBoard.jsp");
 			rd.forward(request, response);
 		}else if(str.equals("/board/boardWriteAction.do")) {
-			//°ªÀ» ³Ñ°Ü ¹Ş´Â´Ù
-			String subject = request.getParameter("subject");
+			//ê°’ì„ ë„˜ê²¨ë°›ëŠ”ë‹¤
+			String title = request.getParameter("title");
 			String contents = request.getParameter("contents");
 			String writer = request.getParameter("writer");
-			String password = request.getParameter("password");
-			
-			//¸Ş¼Òµå¸¦ È£ÃâÇÑ´Ù.
-			//filenameÀº ÀÏ´Ü nullÃ³¸®
-			String fileName = null;
-			String ip = InetAddress.getLocalHost().getHostAddress();
-			
-			HttpSession session = request.getSession();
-			int midx = 0;
-			if(session.getAttribute("midx")== null) {
-				midx= 32;
-			}else {
-				midx = (int)session.getAttribute("midx");
-			}
-			System.out.println("midx"+midx);
-			BoardDao bd = new BoardDao();
-			System.out.println("bd"+bd);
-			int value = bd.boardInsert(subject, contents, writer, password, fileName, ip, midx);
-			System.out.println("value"+value);
-			//Ã³¸® ÈÄ ÀÌµ¿ÇÑ´Ù.
-			if(value > 0) {
-			response.sendRedirect(request.getContextPath()+"/board/boardList.do");
-			}else {
-			response.sendRedirect(request.getContextPath()+"/board/boardWrite.do");
-			}
-		}else if(str.equals("/board/boardList.do")) {
-			
-			String page = request.getParameter("page");
-			if (page== null) page="1";
-			int page2 = Integer.parseInt(page);
-			System.out.println("page2"+page2);
-			
-			String keyword = request.getParameter("keyword");	//Å°¿öµå °Ë»öÀ» À§ÇØ
-			if(keyword == null)keyword = "";
-			
-			SearchCriteria scri = new SearchCriteria();		// ½áÄ¡ Å©¸®Å×¸®¾Æ¿¡ Å°¿öµå¿Í ÆäÀÌÁö¸¦ ´ã¾ÆµĞ´Ù.
-			scri.setKeyword(keyword);
-			scri.setPage(page2);
-			System.out.println("scri"+scri);
-			
-			BoardDao bd = new BoardDao();
-			int cnt = bd.boardTotalCount(keyword);		//ÀüÃ¼ ¸®½ºÆ® °¹±¸¸¦ ±¸ÇÑ´Ù
-			System.out.println("cnt"+cnt);
-			
-			PageMaker pm = new PageMaker();
-			pm.setScri(scri);					//ÆäÀÌÁöÆäÀÌÄ¿¿¡ ¼­Ä¡Å©¸®Å×¸®¾Æ¸¦ ´ã´Â´Ù.
-			pm.setTotalCount(cnt);				//ÀüÃ¼ °¹¼ö¸¦ ´ãÀºÈÄ¿¡ ÆäÀÌÁö ³×ºñ°ÔÀÌ¼Ç¿¡ ½ÃÀÛ°ú ³¡, ÀÌÀü°ú ´ÙÀ½
-			
-			
-			
-			ArrayList<BoardVo> alist = bd.boardSelectAll(page2, keyword);
-			
-			request.setAttribute("alist", alist);
-			request.setAttribute("pm", pm);
-			
-			RequestDispatcher rd = request.getRequestDispatcher("/boardList.jsp");
+		}else if(str.equals("/Board/CmBoard2.do")) {
+			RequestDispatcher rd =request.getRequestDispatcher("/CmBoard2.jsp");
 			rd.forward(request, response);
-			
-		}else if (str.equals("/board/boardContents.do")) {
-			String bidx = request.getParameter("bidx");
-			int bidx2 = Integer.parseInt(bidx);
-			
-			BoardDao bd = new BoardDao();
-			BoardVo bv = bd.boardSelectOne(bidx2);
-			bd.boardViewCount(bidx2);
-			
-			request.setAttribute("bv", bv);
-			RequestDispatcher rd = request.getRequestDispatcher("/boardContents.jsp");
+		}else if(str.equals("/Board/CmBoard3.do")) {
+			RequestDispatcher rd =request.getRequestDispatcher("/CmBoard3.jsp");
 			rd.forward(request, response);
-		}else if (str.equals("/board/boardModify.do")) {
-			
-			String bidx = request.getParameter("bidx");
-			int bidx2 = Integer.parseInt(bidx);
-			
-			BoardDao bd = new BoardDao();
-			BoardVo bv = bd.boardSelectOne(bidx2);
-			
-			request.setAttribute("bv", bv);
-			RequestDispatcher rd = request.getRequestDispatcher("/boardModify.jsp");
-			rd.forward(request, response);
-			
-		}else if(str.equals("/board/boardModifyAction.do")) {
-			
-			System.out.println("test");
-			//1. °ªÀ» ³Ñ°Ü ¹Ş´Â´Ù
-			String bidx = request.getParameter("bidx");
-			int bidx2 = Integer.parseInt(bidx);
-			
-			String password = request.getParameter("password");
-			String subject = request.getParameter("subject");
-			String contents = request.getParameter("contents");
-			String writer = request.getParameter("writer");
-			
-			//2. Ã³¸®ÇÑ´Ù
-			BoardDao bd = new BoardDao();
-			int value = bd.boardModify(bidx2, password, subject, contents, writer);
-			System.out.println("value:"+value);
-			
-			//3. ÀÌµ¿ÇÑ´Ù
-			if(value >0) {
-				response.sendRedirect(request.getContextPath()+"/board/boardContents.do?bidx="+bidx);	
-			}else{
-				response.sendRedirect(request.getContextPath()+"/board/boardModify.do?bidx="+bidx);
-			}
-			
-		}else if(str.equals("/board/boardDelete.do")) {
-			
-			String bidx = request.getParameter("bidx");
-			int bidx2 = Integer.parseInt(bidx);
-			
-			BoardDao bd = new BoardDao();
-			BoardVo bv = bd.boardSelectOne(bidx2);
-			
-			request.setAttribute("bv", bv);
-			
-			RequestDispatcher rd = request.getRequestDispatcher("/boardDelete.jsp");
-			rd.forward(request, response);
-		}else if(str.equals("/board/boardDeleteAction.do")) {
-			
-			//1. °ªÀ» ³Ñ°Ü ¹Ş´Â´Ù
-			String bidx = request.getParameter("bidx");
-			int bidx2 = Integer.parseInt(bidx);
-			String password = request.getParameter("password");
-			
-			//2. Ã³¸®ÇÑ´Ù.
-			BoardDao bd = new BoardDao();
-			int value = bd.boardDelete(bidx2, password);
-			
-			//3. ÀÌµ¿ÇÑ´Ù
-			if(value > 0) {
-				response.sendRedirect(request.getContextPath()+"/board/boardList.do");
-			}else {
-				response.sendRedirect(request.getContextPath()+"/board/boardDelete.do?bidx="+bidx);	
-			}
-		}else if(str.equals("/board/boardReply.do")) {
-			String bidx = request.getParameter("bidx");
-			String originbidx = request.getParameter("originbidx");			
-			String depth = request.getParameter("depth");
-			String llevel = request.getParameter("llevel");
-
-			request.setAttribute("bidx", bidx);
-			request.setAttribute("originbidx", originbidx);
-			request.setAttribute("depth", depth);
-			request.setAttribute("llevel", llevel);
-			
-			RequestDispatcher rd = request.getRequestDispatcher("/boardReply.jsp");
-			rd.forward(request, response);
-		}else if(str.equals("/board/boardReplyAction.do")) {
-			//1.³Ñ¾î¿Â°ª
-			System.out.println("test");
-			int bidx = Integer.parseInt(request.getParameter("bidx"));
-			int originbidx = Integer.parseInt(request.getParameter("originbidx"));			
-			int depth = Integer.parseInt(request.getParameter("depth"));
-			int llevel = Integer.parseInt(request.getParameter("llevel"));
-			
-			String subject = request.getParameter("subject");
-			String contents = request.getParameter("contents");
-			String writer = request.getParameter("writer");
-			String password = request.getParameter("password");
-			
-			String ip = InetAddress.getLocalHost().getHostAddress();	//ipÁÖ¼Ò ºÒ·¯¿À´Â¹ı
-			
-			HttpSession session = request.getSession();	//midx °¡Á®¿À´Â¹ı
-			int midx = (int)session.getAttribute("midx");
-			System.out.println("midx:"+midx);
-			//2.Ã³¸®ÇÑ´Ù.
-			BoardDao bd = new BoardDao();
-			bd.boardReply(bidx, originbidx, depth, llevel, subject, contents, writer, password, ip, midx);
-			
-			
-			//3.ÀÌµ¿ÇÑ´Ù.
-			response.sendRedirect(request.getContextPath()+"/board/boardList.do");
 		}
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
