@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import ="java.util.*" %>    
+<%@ page import ="service.*" %> 
+<%@ page import ="domain.*" %> 
+<% ArrayList<Cm_BoardVo> alist = (ArrayList<Cm_BoardVo>)request.getAttribute("alist");
+	PageMaker pm =(PageMaker)request.getAttribute("pm");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,6 +69,7 @@
 		</div>
 		<div class="board2">
 			<table border="1">
+				
 				<tr>
 					<th width="7%">번호</th>
 					<th >제목</th>
@@ -70,13 +77,15 @@
 					<th width="15%">작성일</th>
 					<th width="10%">조회수</th>
 				</tr>
+				<%for(Cm_BoardVo bv : alist) { %>
 				<tr>
-					<td>1</td>
-					<td>반갑습니다</td>
-					<td>홍길동</td>
-					<td>2021-05-05</td>
-					<td>11</td>
+					<td><%=bv.getB_num() %></td>
+					<td><%=bv.getB_title() %></td>
+					<td>?</td>
+					<td><%=bv.getB_writeday() %></td>
+					<td><%=bv.getB_hit() %></td>
 				</tr>
+				<% } %>
 			</table>
 			<br>
 			<div class="button">

@@ -46,26 +46,25 @@ public class BoardController extends HttpServlet {
 		}else if(str.equals("/Board/CmBoardWrite.do")) {
 			RequestDispatcher rd =request.getRequestDispatcher("/CmBoardWrite.jsp");
 			rd.forward(request, response);
-		}else if(str.equals("/board/boardWriteAction.do")) {
+		}else if(str.equals("/Board/CmBoardWriteAction.do")) {
 			//값을 넘겨받는다
-			String b_title = request.getParameter("title");
-			String b_contents = request.getParameter("contents");
-			String b_writer = request.getParameter("writer");
+			String b_title = request.getParameter("b_title");
+			String b_contents = request.getParameter("b_contents");
+			
 			
 			System.out.println("b_title->"+b_title);
 			System.out.println("b_contents->"+b_contents);
-			System.out.println("b_writer->"+b_writer);
 			
-			int b_num = 0;
+			
 			
 			Cm_BoardDao rd = new Cm_BoardDao();
-			int value = rd.boardInsert(b_title, b_contents, b_writer);
+			int value = rd.boardInsert(b_title, b_contents);
 			System.out.println("value:"+value);
 			
 			if(value >0) {
-				response.sendRedirect(request.getContextPath()+"/Board/CmBoard.do?b_num="+b_num);	
+				response.sendRedirect(request.getContextPath()+"/Board/CmBoard.do");	
 			}else{
-				response.sendRedirect(request.getContextPath()+"/Board/CmBoardwrite.do?b_num="+b_num);
+				response.sendRedirect(request.getContextPath()+"/Board/CmBoardwrite.do");
 			}
 		}
 	}

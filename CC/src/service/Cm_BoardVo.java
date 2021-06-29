@@ -1,18 +1,18 @@
 package service;
 
 public class Cm_BoardVo {
-	private int b_dix;
+	private int b_num;
 	private String b_title;
 	private String b_contents;
 	private String b_writer;
 	private String b_writeday;
 	private String b_hit;
 	private String b_image;
-	public int getB_dix() {
-		return b_dix;
+	public int getB_num() {
+		return b_num;
 	}
-	public void setB_dix(int b_dix) {
-		this.b_dix = b_dix;
+	public void setB_num(int b_num) {
+		this.b_num = b_num;
 	}
 	public String getB_title() {
 		return b_title;

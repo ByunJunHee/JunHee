@@ -20,17 +20,16 @@ public class Cm_BoardDao {
 		this.conn = dbconn.getConnection();
 	}
 	
-	public int boardInsert(String b_title, String b_contents, String b_writer) {
+	public int boardInsert(String b_title, String b_contents) {
 		int value=0;
 		
-		String sql="insert into board_api(b_num,b_title,b_contents,b_writer) "
-				+ "values(b_num.nextval,?,?,?)";
+		String sql="insert into Cm_Board(b_num,b_title,b_contents,b_writeday) "
+				+ "values(b_num.nextval,?,?,sysdate)";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, b_title);
 			pstmt.setString(2, b_contents);
-			pstmt.setString(3, b_writer);
 			
 			
 			value= pstmt.executeUpdate();
@@ -43,7 +42,6 @@ public class Cm_BoardDao {
 		
 		return value;
 	}
-	
 
 	
 }

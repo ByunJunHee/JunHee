@@ -12,7 +12,6 @@
 		alert("등록합니다.");
 			document.frm.action ="<%=request.getContextPath()%>/Board/CmBoardWriteAction.do";
 			document.frm.method = "post";
-			document.frm.enctype="multipart/form-data";
 			document.frm.submit(); 
 			return;
 			}
