@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>관리자 렌트등록</title>
 
- <link rel="stylesheet" href="./resource/Manager_rentcar_writecss.css">
+ <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/Manager_rentcar_writecss.css">
 </head>
 <body>
 	<header>

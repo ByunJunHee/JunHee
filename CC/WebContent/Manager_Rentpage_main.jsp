@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>관리자 렌트관리</title>
- <link rel="stylesheet" href="./resource/Manager_Rentpage_maincss.css">
+ <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/Manager_Rentpage_maincss.css">
 </head>
 <body>
 	<header>
@@ -154,6 +154,6 @@
 			</li>
 		</ul>
 	</div>
-	<button type="button" id="submit">글등록</button>
+	<a href="<%=request.getContextPath()%>/Manager/Manager_rentcar_write.do"><button type="button" id="submit">글등록</button></a>
 </body>
 </html>

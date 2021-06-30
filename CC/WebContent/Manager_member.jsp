@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>관리자_회원리스트</title>
 
- <link rel="stylesheet" href="./resource/Manager_member.css">
+ <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/Manager_membercss.css">
 </head>
 <body>
 	<!-- 상단메뉴 -->
@@ -24,11 +24,11 @@
 				<li><a href="#">관리자메뉴</a>
 				
 					<ul id="Secnavi">
-						<li>메인관리</li>
-						<li>회원관리</li>
-						<li>렌트관리</li>
-						<li>차량관리</li>
-						<li>커뮤니티관리</li>
+						<li><a href="#">메인관리</a></li>
+						<li><a href="<%=request.getContextPath()%>/Manager/Manager_member.do">회원관리</a></li>
+						<li><a href="<%=request.getContextPath()%>/Manager/Manager_Rentpage_main.do">렌트관리</a></li>
+						<li><a href="<%=request.getContextPath()%>/Manager/Manager_cardb.do">차량관리</a></li>
+						<li><a href="#">커뮤니티관리</a></li>
 					</ul>
 				</li>
 			</ul>	

@@ -6,21 +6,21 @@
 <meta charset="UTF-8">
 <title>관리자_회원정보</title>
 
- <link rel="stylesheet" href="./resource/Manager_member_detail.css">
+ <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/Manager_member_detail.css">
 </head>
 <body>
 	<!-- 상단메뉴 -->
 	<header>
 		<div id="menu_top">
 			<div id="mypage">
-				<p>관리자님 | <a href="#">Logout | </a><a href="#"> Mypage</a></p>
+				<p>관리자님 | <a href="#">Logout | </a><a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do"> Mypage</a></p>
 			</div>
 			<ul id="navi">
 				<li><a href="#">Logoimage</a></li>
 				<li><a href="#">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="#">렌트</a></li>
-				<li><a href="#">커뮤니티</a></li>
+				<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
+				<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do"">커뮤니티</a></li>
 				<li><a href="#">관리자메뉴</a>
 				
 					<ul id="Secnavi">

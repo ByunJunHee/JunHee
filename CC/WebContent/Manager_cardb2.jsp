@@ -6,18 +6,18 @@
 <meta charset="UTF-8">
 <title>차량추가</title>
 </head>
- <link rel="stylesheet" href="./resource/Manager_cardb2css.css">
+ <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/Manager_cardb2css.css">
 <body>
 	<div id="menu_top">
 		<div id="mypage">
-			<p>ooo님 | <a href="#">Logout | </a><a href="#"> Mypage</a></p>
+			<p>ooo님 | <a href="#">Logout | </a><a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do"> Mypage</a></p>
 		</div>
 		<ul id="navi">
 			<li><a href="#">Logoimage</a></li>
 			<li><a href="#">회사소개</a></li>
 			<li><a href="#">차량비교</a></li>
-			<li><a href="#">렌트</a></li>
-			<li><a href="#">커뮤니티</a></li>
+			<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
+			<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">커뮤니티</a></li>
 		</ul>	
 	</div>
 	<div id="wrap">
@@ -27,8 +27,8 @@
 		         <li class="group2">
 		            <div class="title">차량</div>
 		            <ul class="sub2">
-		               <li><a href="#">-등록차량목록</a></li>
-		               <li><a href="#">-차량추가</a></li>
+		               <li><a href="<%=request.getContextPath()%>/Manager/Manager_cardb.do">-등록차량목록</a></li>
+		               <li><a href="<%=request.getContextPath()%>/Manager/Manager_cardb2.do">-차량추가</a></li>
 		            </ul>
 		         </li>
 		      </ul>
