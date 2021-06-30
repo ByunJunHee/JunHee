@@ -1,32 +1,33 @@
 package service;
 
-public class Cm_CommunityComentVo {
-	private int c_dix;
-	private String c_writer;
-	private String c_contents;
-	private String c_writeday;
-	public int getC_dix() {
-		return c_dix;
+public class CmCommunityComentVo {
+	private int cDix;
+	private String cWriter;
+	private String cContents;
+	private String cWriteday;
+	public int getcDix() {
+		return cDix;
 	}
-	public void setC_dix(int c_dix) {
-		this.c_dix = c_dix;
+	public void setcDix(int cDix) {
+		this.cDix = cDix;
 	}
-	public String getC_writer() {
-		return c_writer;
+	public String getcWriter() {
+		return cWriter;
 	}
-	public void setC_writer(String c_writer) {
-		this.c_writer = c_writer;
+	public void setcWriter(String cWriter) {
+		this.cWriter = cWriter;
 	}
-	public String getC_contents() {
-		return c_contents;
+	public String getcContents() {
+		return cContents;
 	}
-	public void setC_contents(String c_contents) {
-		this.c_contents = c_contents;
+	public void setcContents(String cContents) {
+		this.cContents = cContents;
 	}
-	public String getC_writeday() {
-		return c_writeday;
+	public String getcWriteday() {
+		return cWriteday;
 	}
-	public void setC_writeday(String c_writeday) {
-		this.c_writeday = c_writeday;
+	public void setcWriteday(String cWriteday) {
+		this.cWriteday = cWriteday;
 	}
+	
 }

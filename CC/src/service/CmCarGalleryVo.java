@@ -1,54 +1,55 @@
 package service;
 
-public class Cm_CarGalleryVo {
-	private int cg_idx;
-	private String cg_title;
-	private String cg_contents;
-	private String cg_writer;
-	private String cg_writeday;
-	private String cg_hit;
-	private String cg_image;
-	public int getCg_idx() {
-		return cg_idx;
+public class CmCarGalleryVo {
+	private int cgIdx;
+	private String cgTitle;
+	private String cgContents;
+	private String cgWriter;
+	private String cgWriteday;
+	private String cgHit;
+	private String cgImage;
+	public int getCgIdx() {
+		return cgIdx;
 	}
-	public void setCg_idx(int cg_idx) {
-		this.cg_idx = cg_idx;
+	public void setCgIdx(int cgIdx) {
+		this.cgIdx = cgIdx;
 	}
-	public String getCg_title() {
-		return cg_title;
+	public String getCgTitle() {
+		return cgTitle;
 	}
-	public void setCg_title(String cg_title) {
-		this.cg_title = cg_title;
+	public void setCgTitle(String cgTitle) {
+		this.cgTitle = cgTitle;
 	}
-	public String getCg_contents() {
-		return cg_contents;
+	public String getCgContents() {
+		return cgContents;
 	}
-	public void setCg_contents(String cg_contents) {
-		this.cg_contents = cg_contents;
+	public void setCgContents(String cgContents) {
+		this.cgContents = cgContents;
 	}
-	public String getCg_writer() {
-		return cg_writer;
+	public String getCgWriter() {
+		return cgWriter;
 	}
-	public void setCg_writer(String cg_writer) {
-		this.cg_writer = cg_writer;
+	public void setCgWriter(String cgWriter) {
+		this.cgWriter = cgWriter;
 	}
-	public String getCg_writeday() {
-		return cg_writeday;
+	public String getCgWriteday() {
+		return cgWriteday;
 	}
-	public void setCg_writeday(String cg_writeday) {
-		this.cg_writeday = cg_writeday;
+	public void setCgWriteday(String cgWriteday) {
+		this.cgWriteday = cgWriteday;
 	}
-	public String getCg_hit() {
-		return cg_hit;
+	public String getCgHit() {
+		return cgHit;
 	}
-	public void setCg_hit(String cg_hit) {
-		this.cg_hit = cg_hit;
+	public void setCgHit(String cgHit) {
+		this.cgHit = cgHit;
 	}
-	public String getCg_image() {
-		return cg_image;
+	public String getCgImage() {
+		return cgImage;
 	}
-	public void setCg_image(String cg_image) {
-		this.cg_image = cg_image;
+	public void setCgImage(String cgImage) {
+		this.cgImage = cgImage;
 	}
+	
 	
 }

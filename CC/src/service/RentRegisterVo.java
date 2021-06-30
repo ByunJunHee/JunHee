@@ -1,54 +1,55 @@
 package service;
 
-public class Rent_RegisterVo {
-	private int rr_dix;
-	private String rr_name;
-	private String rr_spec;
-	private String rr_price;
-	private String rr_discount;
-	private String rr_dtoption;
-	private String rr_dbenefit;
-	public int getRr_dix() {
-		return rr_dix;
+public class RentRegisterVo {
+	private int rrDix;
+	private String rrName;
+	private String rrSpec;
+	private String rrPrice;
+	private String rrDiscount;
+	private String rrDtoption;
+	private String rrDbenefit;
+	public int getRrDix() {
+		return rrDix;
 	}
-	public void setRr_dix(int rr_dix) {
-		this.rr_dix = rr_dix;
+	public void setRrDix(int rrDix) {
+		this.rrDix = rrDix;
 	}
-	public String getRr_name() {
-		return rr_name;
+	public String getRrName() {
+		return rrName;
 	}
-	public void setRr_name(String rr_name) {
-		this.rr_name = rr_name;
+	public void setRrName(String rrName) {
+		this.rrName = rrName;
 	}
-	public String getRr_spec() {
-		return rr_spec;
+	public String getRrSpec() {
+		return rrSpec;
 	}
-	public void setRr_spec(String rr_spec) {
-		this.rr_spec = rr_spec;
+	public void setRrSpec(String rrSpec) {
+		this.rrSpec = rrSpec;
 	}
-	public String getRr_price() {
-		return rr_price;
+	public String getRrPrice() {
+		return rrPrice;
 	}
-	public void setRr_price(String rr_price) {
-		this.rr_price = rr_price;
+	public void setRrPrice(String rrPrice) {
+		this.rrPrice = rrPrice;
 	}
-	public String getRr_discount() {
-		return rr_discount;
+	public String getRrDiscount() {
+		return rrDiscount;
 	}
-	public void setRr_discount(String rr_discount) {
-		this.rr_discount = rr_discount;
+	public void setRrDiscount(String rrDiscount) {
+		this.rrDiscount = rrDiscount;
 	}
-	public String getRr_dtoption() {
-		return rr_dtoption;
+	public String getRrDtoption() {
+		return rrDtoption;
 	}
-	public void setRr_dtoption(String rr_dtoption) {
-		this.rr_dtoption = rr_dtoption;
+	public void setRrDtoption(String rrDtoption) {
+		this.rrDtoption = rrDtoption;
 	}
-	public String getRr_dbenefit() {
-		return rr_dbenefit;
+	public String getRrDbenefit() {
+		return rrDbenefit;
 	}
-	public void setRr_dbenefit(String rr_dbenefit) {
-		this.rr_dbenefit = rr_dbenefit;
+	public void setRrDbenefit(String rrDbenefit) {
+		this.rrDbenefit = rrDbenefit;
 	}
+	
 	
 }

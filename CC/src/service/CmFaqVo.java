@@ -1,47 +1,48 @@
 package service;
 
-public class Cm_faqVo {
-	private int faq_idx;
-	private String faq_title;
-	private String faq_contents;
-	private String faq_writer;
-	private String faq_writeday;
-	private String faq_hit;
-	public int getFaq_idx() {
-		return faq_idx;
+public class CmFaqVo {
+	private int faqIdx;
+	private String faqTitle;
+	private String faqContents;
+	private String faqWriter;
+	private String faqWriteday;
+	private String faqHit;
+	public int getFaqIdx() {
+		return faqIdx;
 	}
-	public void setFaq_idx(int faq_idx) {
-		this.faq_idx = faq_idx;
+	public void setFaqIdx(int faqIdx) {
+		this.faqIdx = faqIdx;
 	}
-	public String getFaq_title() {
-		return faq_title;
+	public String getFaqTitle() {
+		return faqTitle;
 	}
-	public void setFaq_title(String faq_title) {
-		this.faq_title = faq_title;
+	public void setFaqTitle(String faqTitle) {
+		this.faqTitle = faqTitle;
 	}
-	public String getFaq_contents() {
-		return faq_contents;
+	public String getFaqContents() {
+		return faqContents;
 	}
-	public void setFaq_contents(String faq_contents) {
-		this.faq_contents = faq_contents;
+	public void setFaqContents(String faqContents) {
+		this.faqContents = faqContents;
 	}
-	public String getFaq_writer() {
-		return faq_writer;
+	public String getFaqWriter() {
+		return faqWriter;
 	}
-	public void setFaq_writer(String faq_writer) {
-		this.faq_writer = faq_writer;
+	public void setFaqWriter(String faqWriter) {
+		this.faqWriter = faqWriter;
 	}
-	public String getFaq_writeday() {
-		return faq_writeday;
+	public String getFaqWriteday() {
+		return faqWriteday;
 	}
-	public void setFaq_writeday(String faq_writeday) {
-		this.faq_writeday = faq_writeday;
+	public void setFaqWriteday(String faqWriteday) {
+		this.faqWriteday = faqWriteday;
 	}
-	public String getFaq_hit() {
-		return faq_hit;
+	public String getFaqHit() {
+		return faqHit;
 	}
-	public void setFaq_hit(String faq_hit) {
-		this.faq_hit = faq_hit;
+	public void setFaqHit(String faqHit) {
+		this.faqHit = faqHit;
 	}
+	
 	
 }

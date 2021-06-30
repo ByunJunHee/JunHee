@@ -3,8 +3,8 @@
 <%@ page import ="java.util.*" %>    
 <%@ page import ="service.*" %> 
 <%@ page import ="domain.*" %> 
-<% ArrayList<Cm_BoardVo> alist = (ArrayList<Cm_BoardVo>)request.getAttribute("alist");
-	PageMaker pm =(PageMaker)request.getAttribute("pm");
+<% ArrayList<CmBoardVo> alist = (ArrayList<CmBoardVo>)request.getAttribute("alist");
+
 %>
 <!DOCTYPE html>
 <html>
@@ -25,7 +25,7 @@
 				<li><a href="#">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
 				<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
-				<li><a href="#">커뮤니티</a></li>
+				<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
 	</header>
@@ -77,15 +77,15 @@
 					<th width="15%">작성일</th>
 					<th width="10%">조회수</th>
 				</tr>
-				<%for(Cm_BoardVo bv : alist) { %>
+				<%for (CmBoardVo cbv : alist) { %>
 				<tr>
-					<td><%=bv.getB_num() %></td>
-					<td><%=bv.getB_title() %></td>
-					<td>?</td>
-					<td><%=bv.getB_writeday() %></td>
-					<td><%=bv.getB_hit() %></td>
+					<p>1</p>
+					<td><%=cbv.getbNum() %></td>
+					
+				
 				</tr>
 				<% } %>
+				
 			</table>
 			<br>
 			<div class="button">
