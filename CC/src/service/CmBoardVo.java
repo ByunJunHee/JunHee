@@ -2,52 +2,53 @@ package service;
 
 public class CmBoardVo {
 	private int bNum;
-//	private String b_title;
-//	private String b_contents;
-//	private String b_writer;
-//	private String b_writeday;
-//	private String b_hit;
-//	private String b_image;
+	private String bTitle;
+	private String bContents;
+	private String bWriter;
+	private String bWriteday;
+	private String bHit;
+	private String bImage;
 	public int getbNum() {
 		return bNum;
 	}
 	public void setbNum(int bNum) {
 		this.bNum = bNum;
 	}
-//	public String getB_title() {
-//		return b_title;
-//	}
-//	public void setB_title(String b_title) {
-//		this.b_title = b_title;
-//	}
-//	public String getB_contents() {
-//		return b_contents;
-//	}
-//	public void setB_contents(String b_contents) {
-//		this.b_contents = b_contents;
-//	}
-//	public String getB_writer() {
-//		return b_writer;
-//	}
-//	public void setB_writer(String b_writer) {
-//		this.b_writer = b_writer;
-//	}
-//	public String getB_writeday() {
-//		return b_writeday;
-//	}
-//	public void setB_writeday(String b_writeday) {
-//		this.b_writeday = b_writeday;
-//	}
-//	public String getB_hit() {
-//		return b_hit;
-//	}
-//	public void setB_hit(String b_hit) {
-//		this.b_hit = b_hit;
-//	}
-//	public String getB_image() {
-//		return b_image;
-//	}
-//	public void setB_image(String b_image) {
-//		this.b_image = b_image;
-//	}
+	public String getbTitle() {
+		return bTitle;
+	}
+	public void setbTitle(String bTitle) {
+		this.bTitle = bTitle;
+	}
+	public String getbContents() {
+		return bContents;
+	}
+	public void setbContents(String bContents) {
+		this.bContents = bContents;
+	}
+	public String getbWriter() {
+		return bWriter;
+	}
+	public void setbWriter(String bWriter) {
+		this.bWriter = bWriter;
+	}
+	public String getbWriteday() {
+		return bWriteday;
+	}
+	public void setbWriteday(String bWriteday) {
+		this.bWriteday = bWriteday;
+	}
+	public String getbHit() {
+		return bHit;
+	}
+	public void setbHit(String bHit) {
+		this.bHit = bHit;
+	}
+	public String getbImage() {
+		return bImage;
+	}
+	public void setbImage(String bImage) {
+		this.bImage = bImage;
+	}
+
 }

@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import dbconn.DBconn;
 //import oracle.net.aso.b;
 
-public class Cm_BoardDao {
+public class CmBoardDao {
 
 	
 	private PreparedStatement pstmt;
 	private Connection conn;
 	
-	public Cm_BoardDao() {
+	public CmBoardDao() {
 		DBconn dbconn = new DBconn();
 		this.conn = dbconn.getConnection();
 	}

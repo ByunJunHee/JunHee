@@ -12,11 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import domain.PageMaker;
-import domain.SearchCriteria;
-import service.Cm_BoardDao;
-import service.RentDao;
-import service.BoardVo;
+
+import service.CmBoardDao;
+
+import service.CmBoardVo;
 
 @WebServlet("/BoardController")
 public class BoardController extends HttpServlet {
@@ -57,7 +56,7 @@ public class BoardController extends HttpServlet {
 			
 			
 			
-			Cm_BoardDao rd = new Cm_BoardDao();
+			CmBoardDao rd = new CmBoardDao();
 			int value = rd.boardInsert(b_title, b_contents);
 			System.out.println("value:"+value);
 			
