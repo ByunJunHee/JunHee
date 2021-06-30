@@ -27,6 +27,7 @@ public class Cm_BoardDao {
 				+ "values(b_num.nextval,?,?,sysdate)";
 		
 		try {
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, b_title);
 			pstmt.setString(2, b_contents);
