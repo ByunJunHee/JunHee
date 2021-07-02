@@ -8,12 +8,12 @@ import java.util.ArrayList;
 
 import dbconn.DBconn;
 
-public class MemberDAO1 {
+public class MemberDAO {
 
 	private PreparedStatement pstmt;
 	private Connection conn;
 	private ResultSet rs;
-	public MemberDAO1() {
+	public MemberDAO() {
 		DBconn dbconn = new DBconn();
 		this.conn = dbconn.getConnection();
 	}
