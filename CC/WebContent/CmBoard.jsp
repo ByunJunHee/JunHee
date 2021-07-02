@@ -77,7 +77,16 @@
 					<th width="15%">작성일</th>
 					<th width="10%">조회수</th>
 				</tr>
+				<%
+					
+				for (CmBoardVo cbv : alist) { %>
+				<tr>
+					<p>1</p>
+					<td><%=cbv.getbNum() %></td>
+					
 				
+				</tr>
+				<% } %>
 				
 			</table>
 			<br>

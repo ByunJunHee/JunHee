@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import ="java.util.*" %>    
+<%@ page import ="service.*" %> 
+<%@ page import ="domain.*" %> 
+<% ArrayList<RentEstimateVo> alist = (ArrayList<RentEstimateVo>)request.getAttribute("alist");
+
+%>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -8,6 +15,7 @@
 </head>
 <link href="<%=request.getContextPath()%>/resource/Mypage_detail1css.css" rel="stylesheet" type="text/css">
 <body>
+
 	<div id="menu_top">
 		<div id="mypage">
 			<p>ooo님 | <a href="#">Logout | </a><a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do"> Mypage</a></p>
@@ -43,7 +51,7 @@
 		</div>
 		<div id="page_main">
 			<div>
-				<p>견적 내역이 없습니다.</p>
+			
 			</div>
 		</div>
 	</div>
