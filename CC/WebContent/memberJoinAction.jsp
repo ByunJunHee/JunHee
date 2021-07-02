@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="css/header.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath() %>/resource/header.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 </head>
 <body>

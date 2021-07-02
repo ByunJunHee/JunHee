@@ -8,7 +8,7 @@
 	MemberDAO1 md = new MemberDAO1();
 	String m_id = md.findId(m_name, m_email);
 %>
-<link href="css/header.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath() %>/resourceheader.css" rel="stylesheet" type="text/css">
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,13 +40,13 @@
 		<div id="menu_top">
 			<div id="mypage">
 				<p>
-					<a href="<%=request.getContextPath()%>/memberJoin.do">회원가입</a>
-					<a href="<%=request.getContextPath()%>/memberLogin.do">로그인</a>
+					<a href="<%=request.getContextPath()%>/Member/memberJoin.do">회원가입</a>
+					<a href="<%=request.getContextPath()%>/Member/memberLogin.do">로그인</a>
 				</p>
 			</div>
 			<ul id="navi">
-				<li><a href="main.do">Logoimage</a></li>
-				<li><a href="introduce.do">회사소개</a></li>
+				<li><a href="/Memeber/main.do">Logoimage</a></li>
+				<li><a href="/Member/introduce.do">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
 				<li><a href="#">렌트</a></li>
 				<li><a href="#">커뮤니티</a></li>

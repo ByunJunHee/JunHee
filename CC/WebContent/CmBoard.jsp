@@ -82,6 +82,7 @@
 				for (CmBoardVo cbv : alist) { %>
 				<tr>
 					<p>1</p>
+					<td><%=cbv.getbNum() %></td>
 					<td><%=cbv.getbTitle() %></td>
 					 
 					 

@@ -5,8 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="jquery-3.6.0.js"></script>
-<link href="css/header.css" rel="stylesheet" type="text/css">
-<link href="css/Join.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath() %>/resource/header.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath() %>/resource/Join.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 <script language = "javascript">
 function check(){
@@ -74,8 +74,8 @@ function check(){
 				<p>ooo님 | <a href="#">Logout | </a><a href="#"> Mypage</a></p>
 			</div>
 			<ul id="navi">
-				<li><a href="main.do">Logoimage</a></li>
-				<li><a href="introduce.do">회사소개</a></li>
+				<li><a href="/Member/main.do">Logoimage</a></li>
+				<li><a href="/Member/introduce.do">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
 				<li><a href="#">렌트</a></li>
 				<li><a href="#">커뮤니티</a></li>
