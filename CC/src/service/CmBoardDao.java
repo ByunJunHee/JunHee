@@ -45,6 +45,8 @@ public class CmBoardDao {
 	}
 	public ArrayList<CmBoardVo> list(String bTitle, String bContents){
 	ArrayList<CmBoardVo> alist = new ArrayList<CmBoardVo>();
+	
+	ResultSet rs = null;
 	return alist;
 	}
 }
