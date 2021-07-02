@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <script src="jquery-3.6.0.js"></script>
-<link href="css/header.css" rel="stylesheet" type="text/css">
+< <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/header.css">
 <title>Insert title here</title>
 <script>
 var time; // 슬라이드 넘어가는 시간
@@ -223,33 +223,33 @@ text-align:left;
 	</header>
 		 <div id="carousel_section">
 		        <ul>
-		            <li> <img src="image/1.jpg"> </li>
-		            <li> <img src="image/2.jpg"> </li>
-		            <li> <img src="image/3.jpg"> </li>
-		            <li> <img src="image/4.jpg"> </li>
+		            <li> <img src="<%=request.getContextPath()%>/image/1.jpg"> </li>
+		            <li> <img src="<%=request.getContextPath()%>/image/2.jpg"> </li>
+		            <li> <img src="<%=request.getContextPath()%>/image/3.jpg"> </li>
+		            <li> <img src="<%=request.getContextPath()%>/image/4.jpg"> </li>
 		        </ul>
 		  </div>	
 		  <div id="carimage_section" style="margin-top:5%;  object-fit: cover;">
 		  	<table>
 		  		<tr>
-		  		<td><a href="#"><img src="image/5.jpg" style="width:200px; height:200px;"></a></td>
-		  		<td><a href="#"><img src="image/5.jpg" style="width:200px; height:200px;"></a></td>
-		  		<td><a href="#"><img src="image/5.jpg" style="width:200px; height:200px;"></a></td>
-		  		<td><a href="#"><img src="image/5.jpg" style="width:200px; height:200px;"></a></td>
+		  		<td><a href="#"><img src="<%=request.getContextPath()%>/image/5.jpg" style="width:200px; height:200px;"></a></td>
+		  		<td><a href="#"><img src="<%=request.getContextPath()%>/image/5.jpg" style="width:200px; height:200px;"></a></td>
+		  		<td><a href="#"><img src="<%=request.getContextPath()%>/image/5.jpg" style="width:200px; height:200px;"></a></td>
+		  		<td><a href="#"><img src="<%=request.getContextPath()%>/image/5.jpg" style="width:200px; height:200px;"></a></td>
 		  		<div id="best_img">
 		  			<td rowspan="2">
 		  					  		<h4>TOP 6 렌트</h4>
 		  			<button type="button" class="lt" style="position:absolute; lgft:5px; top:85%;">&lt</button>
-		  			<a href="#"><img src="image/1.jpg" id="best" style="width:100%; height:400px; min-width:50%;"></a>
+		  			<a href="#"><img src="<%=request.getContextPath()%>/image/1.jpg" id="best" style="width:100%; height:400px; min-width:50%;"></a>
 		  			<button type="button" class="gt" style="position:absolute; right:5px; top:85%;">&gt</button>
 		  			</td>
 		  		</div>
 		  		</tr>
 		  		<tr>
-				<td><a href="#"><img src="image/5.jpg" style="width:200px; height:200px;"></a></td>
-		  		<td><a href="#"><img src="image/5.jpg" style="width:200px; height:200px;"></a></td>
-		  		<td><a href="#"><img src="image/5.jpg" style="width:200px; height:200px;"></a></td>
-		  		<td><a href="#"><img src="image/5.jpg" style="width:200px; height:200px;"></a></td>
+				<td><a href="#"><img src="<%=request.getContextPath()%>/image/5.jpg" style="width:200px; height:200px;"></a></td>
+		  		<td><a href="#"><img src="<%=request.getContextPath()%>/image/5.jpg" style="width:200px; height:200px;"></a></td>
+		  		<td><a href="#"><img src="<%=request.getContextPath()%>/image/5.jpg" style="width:200px; height:200px;"></a></td>
+		  		<td><a href="#"><img src="<%=request.getContextPath()%>/image/5.jpg" style="width:200px; height:200px;"></a></td>
 		  		<td></td>
 		  		</tr>
 		  	</table>

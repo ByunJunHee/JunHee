@@ -53,11 +53,11 @@
 				</p>
 			</div>
 			<ul id="navi">
-				<li><a href="/Member/main.do">Logoimage</a></li>
-				<li><a href="/Member/introduce.do">회사소개</a></li>
+				<li><a href="<%=request.getContextPath()%>/Member/main.do">Logoimage</a></li>
+				<li><a href="<%=request.getContextPath()%>/Member/introduce.do">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="#">렌트</a></li>
-				<li><a href="#">커뮤니티</a></li>
+				<li><a href="<%=request.getContextPath()%>/Rentpage_main.do">렌트</a></li>
+				<li><a href="<%=request.getContextPath()%>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
 	</header>
