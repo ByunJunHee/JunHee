@@ -64,7 +64,7 @@
 			</ul>	
 		</div>
 	</header>
-<img id="img" src="image/3.jpg">
+<img id="img" src="<%=request.getContextPath()%>/image/3.jpg">
 <div class="content">
 <h3 id="title">인사말</h3>
 <center>인사말
@@ -75,7 +75,7 @@
 인사말인사말인사말인사말인사말인사말인사말.
 </center>
 </div>
-<img id="img2" src="image/5.jpg">
+<img id="img2" src="<%=request.getContextPath()%>/image/5.jpg">
 <div class="content">
 <center id="intro">
 소개소개소개소개소개소개소개소개소개소개소개소개소개소개소개소개소개소개소개<br>
