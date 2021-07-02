@@ -1,0 +1,24 @@
+body{
+	margin:center;
+}
+
+#header{
+	font-size:45px;
+	font-weight:100px;
+	
+	text-align:center;
+	
+	padding:5%;		
+}
+
+#join{
+	min-width:500px;
+	
+	text-align:center;
+	
+}
+
+#btn{
+	text-align:center;
+}
+

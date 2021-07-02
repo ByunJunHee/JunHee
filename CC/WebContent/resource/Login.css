@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+body{
+	margin:0px;
+}
+
+#header{
+	font-size:45px;
+	font-weight: 100;
+	
+	text-align:center;
+	
+	padding:5%;
+}
+
+#login{
+	min-width:500px;
+	height:200px;
+	margin-left:25%;
+	margin-right:25%;
+	padding:auto;
+	
+	text-align:center;
+	line-height:280px;
+	
+	border:1px solid gray;
+	background-size:cover;
+	background-position:center;
+}
+
+#login form{
+	min-width:363px;
+	text-align:left;
+	line-height:40px;
+	display:inline-block;
+}
+
+#login form div{
+	width:250px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+#login form div input{
+	width:100%;
+	height:31px;
+	display:inline-block;
+}
+
+
+#submit{
+	width:100px;
+	height:77px;
+	
+	font-size:20px;
+	
+	outline:0;
+	border:1px solid black;
+	border-radius:1px;
+	
+	margin-left:7px;
+	vertical-align:middle;
+}
+
+#find{
+	font-size:9px;
+	
+	text-align:center;
+}
+
+a{
+	text-decoration:none;
+	color:gray;
+}
+
+a:hover{
+	color:black;
+	text-decoration:underline;
+}
