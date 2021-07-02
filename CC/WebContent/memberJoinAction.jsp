@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="service.MemberDAO1"%>
+<%@ page import="service.MemberDAO"%>
 <%@ page import = "java.sql.*" %>    
 <%@ page import = "java.net.*" %>  
 <%@ page import = "dbconn.DBconn" %>    

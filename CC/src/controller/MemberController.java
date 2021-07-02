@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import service.MemberDAO1;
-import service.MemberVO1;
+import service.MemberDAO;
+import service.MemberVO;
 
 
 @WebServlet("/MemberController")
@@ -65,7 +65,7 @@ public class MemberController extends HttpServlet {
 			
 			String ip = InetAddress.getLocalHost().getHostAddress();
 			
-			MemberDAO1 md = new MemberDAO1();
+			MemberDAO md = new MemberDAO();
 			md.memberInsert(m_id, m_pass, m_name, m_gender, m_phone1, m_phone2, m_email, m_addr1, m_addr2, m_addr3);
 			
 			response.sendRedirect(request.getContextPath()+"/memberJoinAction.jsp");

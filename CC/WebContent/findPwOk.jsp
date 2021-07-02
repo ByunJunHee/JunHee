@@ -6,7 +6,7 @@
 	String m_id = request.getParameter("m_id");
 	String m_name = request.getParameter("m_name");
 	String m_email = request.getParameter("m_email");
-	MemberDAO1 md = new MemberDAO1();
+	MemberDAO md = new MemberDAO();
 	String m_pass = md.findPw(m_id,m_name, m_email);
 %>
 <link href="<%=request.getContextPath() %>/resource/header.css" rel="stylesheet" type="text/css">

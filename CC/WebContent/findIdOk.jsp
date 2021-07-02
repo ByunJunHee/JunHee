@@ -5,7 +5,7 @@
 <%
 	String m_name = request.getParameter("m_name");
 	String m_email = request.getParameter("m_email");
-	MemberDAO1 md = new MemberDAO1();
+	MemberDAO md = new MemberDAO();
 	String m_id = md.findId(m_name, m_email);
 %>
 <link href="<%=request.getContextPath() %>/resourceheader.css" rel="stylesheet" type="text/css">
