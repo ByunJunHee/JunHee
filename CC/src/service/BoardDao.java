@@ -20,7 +20,7 @@ public class BoardDao {
 		this.conn = dbconn.getConnection();
 	}
 	
-	public int boardInsert1(String b_title, String b_contents, String b_writer) {
+	public int boardInsert(String b_title, String b_contents, String b_writer) {
 		int value=0;
 		
 		String sql="insert into board_api(b_num,b_title,b_contents,b_writer) "
@@ -251,8 +251,5 @@ public class BoardDao {
 		return cnt;
 	}
 
-	public int boardInsert(String title, String contents, String writer) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 }

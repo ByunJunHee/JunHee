@@ -30,6 +30,7 @@ public class MypageController extends HttpServlet {
 		rd.forward(request, response);
 	}else if(str.equals("/Mypage/Mypage_detail1.do")) {
 		System.out.println("test");
+		
 		RequestDispatcher rd = request.getRequestDispatcher("/Mypage_detail1.jsp");
 		rd.forward(request, response);
 		

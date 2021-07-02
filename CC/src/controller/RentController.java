@@ -56,9 +56,9 @@ public class RentController extends HttpServlet {
 			
 			
 			if(value >0) {
-				response.sendRedirect(request.getContextPath()+"/Mypage/Mypage_detail1.do?r_num="+r_num);	
+				response.sendRedirect(request.getContextPath()+"/Mypage/Mypage_detail1.do");	
 			}else{
-				response.sendRedirect(request.getContextPath()+"/Rent_Estimate.do?r_num="+r_num);
+				response.sendRedirect(request.getContextPath()+"/Rent_Estimate.do");
 			}
 			
 		}
