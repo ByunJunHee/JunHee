@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="service.MemberDAO1"%>
+<%@ page import="service.MemberDAO"%>
 <%@ page import = "java.sql.*" %>    
 <%@ page import = "java.net.*" %>  
 <%@ page import = "dbconn.DBconn" %>    
@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="css/header.css" rel="stylesheet" type="text/css">
+<link href="resource/header.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 </head>
 <body>

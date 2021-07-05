@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="css/header.css" rel="stylesheet" type="text/css">
-<link href="css/Login.css" rel="stylesheet" type="text/css">
+<link href="resource/header.css" rel="stylesheet" type="text/css">
+<link href="resource/Login.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 <script>
 	function check(){

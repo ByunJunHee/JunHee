@@ -5,8 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="jquery-3.6.0.js"></script>
-<link href="css/header.css" rel="stylesheet" type="text/css">
-<link href="css/Join.css" rel="stylesheet" type="text/css">
+<link href="resource/header.css" rel="stylesheet" type="text/css">
+<link href="resource/Join.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 <script language = "javascript">
 function check(){
@@ -91,7 +91,6 @@ function check(){
 					<td id="title">아이디</td>
 					<td>
 						<input type="text" name="m_id" maxlength="12" required>
-						<input type="button" value="중복확인">
 					</td>
 				</tr>
 				<tr>
@@ -127,8 +126,8 @@ function check(){
 							<option>011</option>
 							<option>017</option>
 						</select>
-						<input type="text" name="m_phone1" required size="1" id="m_phone">-
-						<input type="text" name="m_phone2" required size="1" id="m_phone2">
+						<input type="text" name="m_phone1" required size="1" id="m_phone" maxlength="4">-
+						<input type="text" name="m_phone2" required size="1" id="m_phone2" maxlength="4">
 					</td>
 				</tr>
 				<tr>

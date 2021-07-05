@@ -51,7 +51,6 @@
 		</div>
 		<div id="page_main">
 			<div>
-				<%= %>
 			</div>
 		</div>
 	</div>

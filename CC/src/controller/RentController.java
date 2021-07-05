@@ -29,13 +29,13 @@ public class RentController extends HttpServlet {
 		String str = uri.substring(pnamelength);
 		System.out.println("url주소:"+str);
 
-		if(str.equals("/Rentpage_main.do")) {		
+		if(str.equals("/Rent/Rentpage_main.do")) {		
 			RequestDispatcher rd = request.getRequestDispatcher("/Rentpage_main.jsp");
 			rd.forward(request, response);
-		}else if(str.equals("/Rent_Estimate.do")) {
+		}else if(str.equals("/Rent/Rent_Estimate.do")) {
 			RequestDispatcher rd = request.getRequestDispatcher("/Rent_Estimate.jsp");
 			rd.forward(request, response);
-		}else if(str.equals("/Rent_EstimateAction.do")) {
+		}else if(str.equals("/Rent/Rent_EstimateAction.do")) {
 			String r_name = request.getParameter("r_name");
 			String r_phone = request.getParameter("r_phone");
 			String r_addr = request.getParameter("r_addr");
@@ -58,7 +58,7 @@ public class RentController extends HttpServlet {
 			if(value >0) {
 				response.sendRedirect(request.getContextPath()+"/Mypage/Mypage_detail1.do");	
 			}else{
-				response.sendRedirect(request.getContextPath()+"/Rent_Estimate.do");
+				response.sendRedirect(request.getContextPath()+"/Rent/Rent_Estimate.do");
 			}
 			
 		}

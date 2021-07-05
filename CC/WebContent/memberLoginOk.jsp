@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "service.MemberDAO1" %>
+<%@ page import = "service.MemberDAO" %>
 <%@ page import = "java.io.PrintWriter" %>
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
-<jsp:useBean id="cc_member" class="service.MemberVO1" scope="page"/>
+<jsp:useBean id="cc_member" class="service.MemberVO" scope="page"/>
 <jsp:setProperty name ="cc_member" property="m_id" />
 <jsp:setProperty name ="cc_member" property="m_pass" />
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
 		script.println("location.href='main.jsp'");
 		script.println("</script>");
 	}
-	MemberDAO1 memberDAO = new MemberDAO1();
+	MemberDAO memberDAO = new MemberDAO();
 	int result = memberDAO.memberLoginCheck(cc_member.getM_id(),cc_member.getM_pass());
 	if(result == 1){
 		session.setAttribute("m_id", cc_member.getM_id());

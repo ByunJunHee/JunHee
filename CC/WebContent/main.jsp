@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <script src="jquery-3.6.0.js"></script>
-<link href="css/header.css" rel="stylesheet" type="text/css">
+<link href="resource/header.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 <script>
 var time; // 슬라이드 넘어가는 시간
@@ -206,7 +206,7 @@ text-align:left;
 				%>
 					<%= m_id %>님
 					<a href="<%=request.getContextPath()%>/memberLogout.do">로그아웃</a>
-					<a href="<%=request.getContextPath()%>#">마이페이지</a>
+					<a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do">마이페이지</a>
 				<%
 					}
 				%>
@@ -215,9 +215,9 @@ text-align:left;
 			<ul id="navi">
 				<li><a href="<%=request.getContextPath()%>/main.do">Logoimage</a></li>
 				<li><a href="<%=request.getContextPath()%>/introduce.do">회사소개</a></li>
-				<li><a href="#">차량비교</a></li>
-				<li><a href="#">렌트</a></li>
-				<li><a href="#">커뮤니티</a></li>
+				<li><a href="<%=request.getContextPath()%>/carDetail.do">차량비교</a></li>
+				<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
+				<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
 	</header>

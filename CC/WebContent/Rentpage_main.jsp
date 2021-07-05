@@ -51,7 +51,7 @@
 					<p class="p4">월 33만원대~</p>
 					<p class="p5">(세금/보험료/방문정비 포함)</p>
 					<div class="btn">
-					<a href="<%=request.getContextPath()%>/Rent_Estimate.do"><button type="button">간편견적신청</button></a>
+					<a href="<%=request.getContextPath()%>/Rent/Rent_Estimate.do"><button type="button">간편견적신청</button></a>
 					</div>
 				</div>
 

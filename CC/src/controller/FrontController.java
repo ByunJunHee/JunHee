@@ -39,9 +39,15 @@ public class FrontController extends HttpServlet {
 		}else if(str2.equals("Board")) {
 			BoardController bc = new BoardController();
 			bc.doGet(request, response);
-		}else {
+		}else if(str2.equals("Rent")){
 			RentController rc = new RentController();
 			rc.doGet(request,response);	
+		}else if(str2.equals("")){
+			MemberController mc = new MemberController();
+			mc.doGet(request, response);
+		}else {
+			MemberController mc = new MemberController();
+			mc.doGet(request, response);
 		}
 	}
 

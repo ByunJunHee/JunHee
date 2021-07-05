@@ -1,6 +1,6 @@
 package service;
 
-public class MemberVO1 {
+public class MemberVO {
 
 	private int m_num;
 	private String m_id;
