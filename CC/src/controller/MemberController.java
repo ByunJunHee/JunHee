@@ -38,7 +38,7 @@ public class MemberController extends HttpServlet {
 		
 		System.out.println("url�ּ�:"+str);
 		
-	if(str.equals("/Member/memberJoinAction.do")){
+	if(str.equals("/memberJoinAction.do")){
 			
 			String m_id = request.getParameter("m_id");
 			String m_pass = request.getParameter("m_pass");

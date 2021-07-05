@@ -53,6 +53,7 @@
 							<th width="30%">아이디</th>
 							<th width="30%">핸드폰</th>
 						</tr>
+						
 						<tr>
 							<td></td>
 							<td></td>

@@ -30,23 +30,25 @@ public class FrontController extends HttpServlet {
 		System.out.println("str2:"+str2);
 		
 		if(str2.equals("Mypage")) {
-			MypageController mpc = new MypageController();
-			mpc.doGet(request,response);
-		}else if(str2.equals("Manager")){
-			ManagerController mc = new ManagerController();
-			mc.doGet(request,response);
-			
-		}else if(str2.equals("Board")) {
-			BoardController bc = new BoardController();
-			bc.doGet(request, response);
-		}else if(str2.equals("Member")) {
-			MemberController mc = new MemberController();
-			mc.doGet(request, response);	
-			
-		}else {
-			RentController rc = new RentController();
-			rc.doGet(request,response);	
-		}
+	         MypageController mpc = new MypageController();
+	         mpc.doGet(request,response);
+	      }else if(str2.equals("Manager")){
+	         ManagerController mc = new ManagerController();
+	         mc.doGet(request,response);
+	         
+	      }else if(str2.equals("Board")) {
+	         BoardController bc = new BoardController();
+	         bc.doGet(request, response);
+	      }else if(str2.equals("Rent")){
+	         RentController rc = new RentController();
+	         rc.doGet(request,response);   
+	      }else if(str2.equals("")){
+	         MemberController mc = new MemberController();
+	         mc.doGet(request, response);
+	      }else {
+	         MemberController mc = new MemberController();
+	         mc.doGet(request, response);
+	      }
 	}
 
 	
