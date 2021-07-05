@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Rentpage_main</title>
-<link rel="stylesheet" href="./resource/Rentpage_maincss.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/Rentpage_maincss.css">
 </head>
 <body>
 	<header>
@@ -17,7 +17,7 @@
 				<li><a href="#">Logoimage</a></li>
 				<li><a href="#">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
+				<li><a href="<%=request.getContextPath() %>/Rent/Rentpage_main.do">렌트</a></li>
 				<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
@@ -51,7 +51,7 @@
 					<p class="p4">월 33만원대~</p>
 					<p class="p5">(세금/보험료/방문정비 포함)</p>
 					<div class="btn">
-					<a href="<%=request.getContextPath()%>/Rent_Estimate.do"><button type="button">간편견적신청</button></a>
+					<a href="<%=request.getContextPath()%>/Rent/Rent_Estimate.do"><button type="button">간편견적신청</button></a>
 					</div>
 				</div>
 

@@ -24,7 +24,7 @@
 				<li><a href="#">Logoimage</a></li>
 				<li><a href="#">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
+				<li><a href="<%=request.getContextPath() %>/Rent/Rentpage_main.do">렌트</a></li>
 				<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>

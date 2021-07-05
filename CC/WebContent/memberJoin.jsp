@@ -68,10 +68,29 @@ function check(){
 </head>
 <body>
 <% request.setCharacterEncoding("UTF-8"); %>
+<%
+		String m_id = null;
+		if(session.getAttribute("m_id") != null){
+			m_id = (String) session.getAttribute("m_id");
+		}
+	%>
 <header>
 		<div id="menu_top">
 			<div id="mypage">
-				<p>ooo님 | <a href="#">Logout | </a><a href="#"> Mypage</a></p>
+				<p>
+				<% if (m_id == null){%>
+					<a href="<%=request.getContextPath()%>/memberJoin.do">회원가입</a>
+					<a href="<%=request.getContextPath()%>/memberLogin.do">로그인</a>
+				<%
+					}else{
+				%>
+					<%= m_id %>님
+					<a href="<%=request.getContextPath()%>/memberLogout.do">로그아웃</a>
+					<a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do">마이페이지</a>
+				<%
+					}
+				%>
+				</p>
 			</div>
 			<ul id="navi">
 				<li><a href="/Member/main.do">Logoimage</a></li>

@@ -39,13 +39,13 @@
 			<div id="mypage">
 				<p>
 				<% if (m_id == null){%>
-					<a href="<%=request.getContextPath()%>/Member/memberJoin.do">회원가입</a>
-					<a href="<%=request.getContextPath()%>/Member/memberLogin.do">로그인</a>
+					<a href="<%=request.getContextPath()%>/memberJoin.do">회원가입</a>
+					<a href="<%=request.getContextPath()%>/memberLogin.do">로그인</a>
 				<%
 					}else{
 				%>
 					<%= m_id %>님
-					<a href="<%=request.getContextPath()%>/Member/memberLogout.do">로그아웃</a>
+					<a href="<%=request.getContextPath()%>/memberLogout.do">로그아웃</a>
 					<a href="<%=request.getContextPath()%>#">마이페이지</a>
 				<%
 					}
@@ -53,10 +53,10 @@
 				</p>
 			</div>
 			<ul id="navi">
-				<li><a href="<%=request.getContextPath()%>/Member/main.do">Logoimage</a></li>
-				<li><a href="<%=request.getContextPath()%>/Member/introduce.do">회사소개</a></li>
+				<li><a href="<%=request.getContextPath()%>/main.do">Logoimage</a></li>
+				<li><a href="<%=request.getContextPath()%>/introduce.do">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="<%=request.getContextPath()%>/Rentpage_main.do">렌트</a></li>
+				<li><a href="<%=request.getContextPath()%>/Rent/Rentpage_main.do">렌트</a></li>
 				<li><a href="<%=request.getContextPath()%>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>

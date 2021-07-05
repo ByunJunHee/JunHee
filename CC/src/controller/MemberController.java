@@ -70,51 +70,51 @@ public class MemberController extends HttpServlet {
 			
 			response.sendRedirect(request.getContextPath()+"/memberJoinAction.jsp");
 		
-		}else if(str.equals("/Member/memberJoin.do")) {
+		}else if(str.equals("/memberJoin.do")) {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/memberJoin.jsp");
 			rd.forward(request, response);	
-		}else if(str.equals("/Member/memberLogin.do")) {
+		}else if(str.equals("/memberLogin.do")) {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/memberLogin.jsp");
 			rd.forward(request, response);
 		
-		}else if(str.equals("/Member/main.do")) {
+		}else if(str.equals("/main.do")) {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/main.jsp");
 			rd.forward(request, response);
 		
-		}else if(str.equals("/Member/introduce.do")) {
+		}else if(str.equals("/introduce.do")) {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/introduce.jsp");
 			rd.forward(request, response);
 		
-		}else if(str.equals("/Member/findId.do")) {
+		}else if(str.equals("/findId.do")) {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/findId.jsp");
 			rd.forward(request, response);
 		
-		}else if(str.equals("/Member/findPw.do")) {
+		}else if(str.equals("/findPw.do")) {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/findPw.jsp");
 			rd.forward(request, response);
 		
-		}else if(str.equals("/Member/memberLoginOk.do")) {
+		}else if(str.equals("/memberLoginOk.do")) {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/memberLoginOk.jsp");
 			rd.forward(request, response);
 		
-		}else if(str.equals("/Member/memberLogout.do")) {
+		}else if(str.equals("/memberLogout.do")) {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/memberLogout.jsp");
 			rd.forward(request, response);
 		
-		}else if(str.equals("/Member/findIdOk.do")) {
+		}else if(str.equals("/findIdOk.do")) {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/findIdOk.jsp");
 			rd.forward(request, response);
 		
-		}else if(str.equals("/Member/findPwOk.do")) {
+		}else if(str.equals("/findPwOk.do")) {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/findPwOk.jsp");
 			rd.forward(request, response);

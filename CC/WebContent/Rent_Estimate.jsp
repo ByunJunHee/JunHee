@@ -11,7 +11,7 @@
 		
 		var fm = document.frm;	
 
-		fm.action ="<%=request.getContextPath()%>/Rent_EstimateAction.do";
+		fm.action ="<%=request.getContextPath()%>/Rent/Rent_EstimateAction.do";
 		fm.method = "post";
 		fm.submit();	
 
@@ -19,7 +19,7 @@
 	}
 	
 </script>
- <link rel="stylesheet" href="./resource/Estimatecss.css">
+ <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/Estimatecss.css">
  </head>
 <body>
 	<form name="frm">
