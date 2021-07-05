@@ -48,7 +48,7 @@
 				%>
 					<%= m_id %>님
 					<a href="<%=request.getContextPath()%>/Member/memberLogout.do">로그아웃</a>
-					<a href="<%=request.getContextPath()%>#">마이페이지</a>
+					<a href="<%=request.getContextPath()%>/Mypage/Mypage_main">마이페이지</a>
 				<%
 					}
 				%>

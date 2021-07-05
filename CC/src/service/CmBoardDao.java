@@ -43,10 +43,76 @@ public class CmBoardDao {
 		
 		return value;
 	}
-	public ArrayList<CmBoardVo> list(String bTitle, String bContents){
-	ArrayList<CmBoardVo> alist = new ArrayList<CmBoardVo>();
-	
-	ResultSet rs = null;
-	return alist;
+
+	public ArrayList<CmBoardVo> boardSelectAll(int page, String keyword) {
+		System.out.println("boardSelectAll page"+page);
+		
+		ArrayList<CmBoardVo> alist = new ArrayList<CmBoardVo>();
+		
+		/*
+		 * String sql =
+		 * "select * from board_api where delYn='N' order by originbidx desc, depth asc "
+		 * ;
+		 */
+		ResultSet rs = null;
+		String sql = "select * from ("
+				+ "select rownum as bnum("
+				+ "select * from cm_board where b_title like ? order by b_writeday)"
+				+ "where rownum <= ?)   "
+				+ "where bnum >=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql); // ���� ���ڿ��� ��Ƽ� ����ȭ(����ȭ)��Ű�°�
+			pstmt.setString(1, "%"+keyword+"%");
+			pstmt.setInt(2, page*15);
+			pstmt.setInt(3, 1+(page-1)*15);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println(rs.getInt("bNum"));
+				CmBoardVo cbv = new CmBoardVo();
+				cbv.setbNum(rs.getInt("bNum"));
+				cbv.setbTitle(rs.getString("bTitle"));
+				cbv.setbContents(rs.getString("bContents"));
+				cbv.setbWriteday(rs.getNString("bWriteday"));
+				alist.add(cbv);
+				
+			}
+			
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {				
+				e.printStackTrace();
+			}
+		}
+		
+		return alist;
 	}
+
+	public int boardTotalCount(String keyword) {
+		 int cnt = 0;
+		 ResultSet rs = null;
+		 String sql = "select count(*) as cnt from cm_board where btitle like ?";
+		 
+		 try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "%"+keyword+"%");
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				cnt = rs.getInt("cnt");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return cnt;
+	}
+		
 }

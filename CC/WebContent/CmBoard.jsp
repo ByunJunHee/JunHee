@@ -82,8 +82,7 @@
 				for (CmBoardVo cbv : alist) { %>
 				<tr>
 					<p>1</p>
-					<td><%=cbv.getbNum() %></td>
-					<td><%=cbv.getbTitle() %></td>
+					<td><%=cbv.getbNum()%></td>
 					 
 					 
 				
@@ -107,15 +106,16 @@
 			</div>
 			<br>
 			<div class="search">
-				<form action="#" method="get">
-					<select name="searchType">
-						<option value="1">제목</option>
-						<option value="2">제목+내용</option>
-						<option value="3">작성자</option>
-					</select>
-					<input type="text" name="searchText">
-					<input type="submit" value="검색">
-				</form>
+			
+			<form name="frm" action='<%=request.getContextPath()%>/Board/CmBoard.do' method='post'>
+				<select name="searchType">
+					<option value="1">제목</option>
+					<option value="2">제목+내용</option>
+					<option value="3">작성자</option>
+				</select>
+				<input type="text" name="keyword" size=10>
+				<input type="button" name="submit" value="검색">
+			</form>
 			</div>
 		</div>
 	</section>
