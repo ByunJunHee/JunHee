@@ -71,7 +71,7 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 		return -2;
-	}
+	}  
 	
 	public String findId(String m_name,String m_email) {
 			String id = null;

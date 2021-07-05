@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <script src="jquery-3.6.0.js"></script>
 < <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/header.css">
-<title>Insert title here</title>
+<title>Choice Car</title>
 <script>
 var time; // 슬라이드 넘어가는 시간
 var $carouselLi;
@@ -206,7 +206,7 @@ text-align:left;
 				%>
 					<%= m_id %>님
 					<a href="<%=request.getContextPath()%>/Member/memberLogout.do">로그아웃</a>
-					<a href="<%=request.getContextPath()%>#">마이페이지</a>
+					<a href="<%=request.getContextPath()%>/Mypage/Mypage_main">마이페이지</a>
 				<%
 					}
 				%>
