@@ -14,9 +14,9 @@
 				<p>ooo님 | <a href="#">Logout | </a><a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do"> Mypage</a></p>
 			</div>
 			<ul id="navi">
-				<li><a href="#">Logoimage</a></li>
-				<li><a href="#">회사소개</a></li>
-				<li><a href="#">차량비교</a></li>
+				<li><a href="<%=request.getContextPath()%>/main.do">Logoimage</a></li>
+				<li><a href="<%=request.getContextPath()%>/introduce.do">회사소개</a></li>
+				<li><a href="<%=request.getContextPath()%>/carDetail.do">차량비교</a></li>
 				<li><a href="<%=request.getContextPath() %>/Rent/Rentpage_main.do">렌트</a></li>
 				<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
