@@ -9,13 +9,14 @@
 
 
 </head>
-	<%
+
+<body>
+<%
 		String m_id = null;
 		if(session.getAttribute("m_id") != null){
 			m_id = (String) session.getAttribute("m_id");
 		}
 	%>
-<body>
 	<div id="menu_top">
 		<div id="mypage">
 			<p>
@@ -37,7 +38,7 @@
 			<li><a href="<%=request.getContextPath()%>/main.do">Logoimage</a></li>
 			<li><a href="<%=request.getContextPath()%>/introduce.do">회사소개</a></li>
 			<li><a href="#">차량비교</a></li>
-			<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
+			<li><a href="<%=request.getContextPath() %>/Rent/Rentpage_main.do">렌트</a></li>
 			<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">커뮤니티</a></li>
 		</ul>	
 	</div>
@@ -64,7 +65,11 @@
 		</div>
 		
 			<div id="page_main">
+
 				<p><%=m_id %>님</p>
+
+				<p><%= m_id %>님 일반회원</p>
+
 				<div id="d1" align="center">견적내역
 					<br><br><br>
 					<div><a href="<%=request.getContextPath() %>/Mypage/Mypage_detail1.do" style="text-decoration:none" class="click">?</a>건</div>

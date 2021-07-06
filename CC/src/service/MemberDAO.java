@@ -72,7 +72,7 @@ public class MemberDAO {
 		}
 		return -2;
 	}
-	
+
 	public String findId(String m_name,String m_email) {
 			String id = null;
 		try{
@@ -111,5 +111,19 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 		return pw;
+	}
+	
+	public boolean checkId(String m_id) {
+		boolean check = false;
+		try {
+			String sql = "select m_id from cc_member where m_id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, m_id);
+			rs = pstmt.executeQuery();
+			check = rs.next();
+		}catch(Exception e) {
+			System.out.println("checkId() 호출 에러" + e);
+		}
+		return check;
 	}
 }

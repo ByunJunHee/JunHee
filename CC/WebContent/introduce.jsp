@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="resource/header.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath() %>/resource/header.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 <style>
 	#title{
@@ -49,22 +50,22 @@
 				%>
 					<%= m_id %>님
 					<a href="<%=request.getContextPath()%>/memberLogout.do">로그아웃</a>
-					<a href="<%=request.getContextPath()%>#">마이페이지</a>
+					<a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do">마이페이지</a>
 				<%
 					}
 				%>
 				</p>
 			</div>
 			<ul id="navi">
-				<li><a href="main.do">Logoimage</a></li>
-				<li><a href="introduce.do">회사소개</a></li>
+				<li><a href="<%=request.getContextPath() %>/main.do">Logoimage</a></li>
+				<li><a href="<%=request.getContextPath() %>/introduce.do">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="#">렌트</a></li>
-				<li><a href="#">커뮤니티</a></li>
+				<li><a href="<%=request.getContextPath() %>/Rent/Rentpage_main.do">렌트</a></li>
+				<li><a href="<%=request.getContextPath() %>/Board/Cmboard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
 	</header>
-<img id="img" src="image/3.jpg">
+<img id="img" src="<%=request.getContextPath()%>/image/3.jpg">
 <div class="content">
 <h3 id="title">인사말</h3>
 <center>인사말
@@ -75,7 +76,7 @@
 인사말인사말인사말인사말인사말인사말인사말.
 </center>
 </div>
-<img id="img2" src="image/5.jpg">
+<img id="img2" src="<%=request.getContextPath()%>/image/5.jpg">
 <div class="content">
 <center id="intro">
 소개소개소개소개소개소개소개소개소개소개소개소개소개소개소개소개소개소개소개<br>

@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <link href="resource/header.css" rel="stylesheet" type="text/css">
 <link href="resource/Login.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath() %>/resource/header.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath() %>/resource/Login.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 <script>
 	function check(){
@@ -41,25 +43,25 @@
 			<div id="mypage">
 				<p>
 				<% if (m_id == null){%>
-					<a href="<%=request.getContextPath()%>/memberJoin.do">회원가입</a>
-					<a href="<%=request.getContextPath()%>/memberLogin.do">로그인</a>
+					<a href="<%=request.getContextPath()%>/Member/memberJoin.do">회원가입</a>
+					<a href="<%=request.getContextPath()%>/Member/memberLogin.do">로그인</a>
 				<%
 					}else{
 				%>
 					<%= m_id %>님
-					<a href="<%=request.getContextPath()%>/memberLogout.do">로그아웃</a>
-					<a href="<%=request.getContextPath()%>#">마이페이지</a>
+					<a href="<%=request.getContextPath()%>/Member/memberLogout.do">로그아웃</a>
+					<a href="<%=request.getContextPath()%>/Mypage/Mypage_main">마이페이지</a>
 				<%
 					}
 				%>
 				</p>
 			</div>
 			<ul id="navi">
-				<li><a href="main.do">Logoimage</a></li>
-				<li><a href="introduce.do">회사소개</a></li>
+				<li><a href="<%=request.getContextPath()%>/main.do">Logoimage</a></li>
+				<li><a href="<%=request.getContextPath()%>/introduce.do">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="#">렌트</a></li>
-				<li><a href="#">커뮤니티</a></li>
+				<li><a href="<%=request.getContextPath()%>/Rent/Rentpage_main.do">렌트</a></li>
+				<li><a href="<%=request.getContextPath()%>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
 	<div id="header">로그인</div>

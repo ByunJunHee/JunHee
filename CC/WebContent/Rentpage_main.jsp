@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Rentpage_main</title>
-<link rel="stylesheet" href="./resource/Rentpage_maincss.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resource/Rentpage_maincss.css">
 </head>
 <body>
 	<header>
@@ -17,7 +17,7 @@
 				<li><a href="#">Logoimage</a></li>
 				<li><a href="#">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
+				<li><a href="<%=request.getContextPath() %>/Rent/Rentpage_main.do">렌트</a></li>
 				<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>

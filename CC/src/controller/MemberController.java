@@ -17,7 +17,6 @@ import service.MemberDAO;
 import service.MemberVO;
 
 
-
 @WebServlet("/MemberController")
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,7 +36,11 @@ public class MemberController extends HttpServlet {
 		int pnamelength = request.getContextPath().length();
 		String str = uri.substring(pnamelength);
 		
+
 		System.out.println("urlÁÖ¼Ò:"+str);
+
+		System.out.println("urlï¿½Ö¼ï¿½:"+str);
+
 		
 	if(str.equals("/memberJoinAction.do")){
 			

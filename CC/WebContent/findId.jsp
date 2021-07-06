@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <link href="resource/header.css" rel="stylesheet" type="text/css">
 <link href="resource/find.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath() %>/resource/header.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath() %>/resource/find.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 <script>
 	function findId(){
@@ -53,11 +55,11 @@
 				</p>
 			</div>
 			<ul id="navi">
-				<li><a href="main.do">Logoimage</a></li>
-				<li><a href="introduce.do">회사소개</a></li>
+				<li><a href="<%=request.getContextPath()%>/main.do">Logoimage</a></li>
+				<li><a href="<%=request.getContextPath()%>/introduce.do">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="#">렌트</a></li>
-				<li><a href="#">커뮤니티</a></li>
+				<li><a href="<%=request.getContextPath()%>/Rent/Rentpage_main.do">렌트</a></li>
+				<li><a href="<%=request.getContextPath()%>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
 	</header>

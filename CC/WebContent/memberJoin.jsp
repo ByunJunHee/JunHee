@@ -7,6 +7,8 @@
 <script src="jquery-3.6.0.js"></script>
 <link href="resource/header.css" rel="stylesheet" type="text/css">
 <link href="resource/Join.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath() %>/resource/header.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath() %>/resource/Join.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 <script language = "javascript">
 function check(){
@@ -64,21 +66,49 @@ function check(){
 	
 	return;
 }
+function idCheck(m_id){
+	if(m_id == ""){
+		alert("아이디를 먼저 입력하세요.");
+		document.frm.m_id.focus();
+	}else{
+		url="idCheck.jsp?m_id=" + m_id;
+		window.open(url,"post","width=300, hright=150");
+	}
+}
 </script>
 </head>
 <body>
 <% request.setCharacterEncoding("UTF-8"); %>
+<%
+		String m_id = null;
+		if(session.getAttribute("m_id") != null){
+			m_id = (String) session.getAttribute("m_id");
+		}
+	%>
 <header>
 		<div id="menu_top">
 			<div id="mypage">
-				<p>ooo님 | <a href="#">Logout | </a><a href="#"> Mypage</a></p>
+				<p>
+				<% if (m_id == null){%>
+					<a href="<%=request.getContextPath()%>/memberJoin.do">회원가입</a>
+					<a href="<%=request.getContextPath()%>/memberLogin.do">로그인</a>
+				<%
+					}else{
+				%>
+					<%= m_id %>님
+					<a href="<%=request.getContextPath()%>/memberLogout.do">로그아웃</a>
+					<a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do">마이페이지</a>
+				<%
+					}
+				%>
+				</p>
 			</div>
 			<ul id="navi">
-				<li><a href="main.do">Logoimage</a></li>
-				<li><a href="introduce.do">회사소개</a></li>
+				<li><a href="<%=request.getContextPath()%>/main.do">Logoimage</a></li>
+				<li><a href="<%=request.getContextPath()%>/introduce.do">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="#">렌트</a></li>
-				<li><a href="#">커뮤니티</a></li>
+				<li><a href="<%=request.getContextPath()%>/Rent/Rentpage_main.do">렌트</a></li>
+				<li><a href="<%=request.getContextPath()%>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
 	</header>
@@ -91,6 +121,7 @@ function check(){
 					<td id="title">아이디</td>
 					<td>
 						<input type="text" name="m_id" maxlength="12" required>
+						<input type="button" value="ID중복확인" onclick="idCheck(this.form.m_id.value)">
 					</td>
 				</tr>
 				<tr>
@@ -133,13 +164,14 @@ function check(){
 				<tr>
 					<td id="title">이메일</td>
 					<td>
-						<input type="text" name="m_email" id="m_email" required>@
-						<select name="mail2">
+						<input type="text" name="m_email" id="m_email" required>
+						<%-- <select name="mail2">
 							<option>naver.com</option>
 							<option>daum.net</option>
 							<option>gmail.com</option>
 							<option>nate.com</option>
 						</select>
+						--%>
 					</td>
 				</tr>
 				<tr>

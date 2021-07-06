@@ -10,6 +10,7 @@
 	String m_pass = md.findPw(m_id,m_name, m_email);
 %>
 <link href="resource/header.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath() %>/resource/header.css" rel="stylesheet" type="text/css">
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,11 +47,11 @@
 				</p>
 			</div>
 			<ul id="navi">
-				<li><a href="main.do">Logoimage</a></li>
-				<li><a href="introduce.do">회사소개</a></li>
+				<li><a href="/main.do">Logoimage</a></li>
+				<li><a href="/introduce.do">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="#">렌트</a></li>
-				<li><a href="#">커뮤니티</a></li>
+				<li><a href="/Rent/Rentpage_main.do">렌트</a></li>
+				<li><a href="/Board/Cmboard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
 	</header>

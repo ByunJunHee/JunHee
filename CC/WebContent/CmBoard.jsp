@@ -27,7 +27,7 @@
 				<li><a href="#">Logoimage</a></li>
 				<li><a href="#">회사소개</a></li>
 				<li><a href="#">차량비교</a></li>
-				<li><a href="<%=request.getContextPath() %>/Rentpage_main.do">렌트</a></li>
+				<li><a href="<%=request.getContextPath() %>/Rent/Rentpage_main.do">렌트</a></li>
 				<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
@@ -86,6 +86,11 @@
 					<td><%=cbv.getbTitle() %></td>
 					<td><%=cbv.getbWriter() %></td>
 					<td><%=cbv.getbWriteday() %></td>
+					<p>1</p>
+					<td><%=cbv.getbNum()%></td>
+					 
+					 
+				
 				</tr>
 				 <% } %>
 				
@@ -106,15 +111,16 @@
 			</div>
 			<br>
 			<div class="search">
-				<form action="#" method="get">
-					<select name="searchType">
-						<option value="1">제목</option>
-						<option value="2">제목+내용</option>
-						<option value="3">작성자</option>
-					</select>
-					<input type="text" name="searchText">
-					<input type="submit" value="검색">
-				</form>
+			
+			<form name="frm" action='<%=request.getContextPath()%>/Board/CmBoard.do' method='post'>
+				<select name="searchType">
+					<option value="1">제목</option>
+					<option value="2">제목+내용</option>
+					<option value="3">작성자</option>
+				</select>
+				<input type="text" name="keyword" size=10>
+				<input type="button" name="submit" value="검색">
+			</form>
 			</div>
 		</div>
 	</section>
