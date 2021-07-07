@@ -106,35 +106,35 @@ $(window).resize(function(){
 });
 
 $(document).ready(function(){
-				$(".gt").click(function(){
-					var src = $("#best").attr("src");
+    $(".gt").click(function(){
+       var src = $("#best").attr("src");
 
-					var strArr = src.split("/");
+       var strArr = src.split("/");
 
-                    var strArr2 = strArr[1].split(".");
+            var strArr2 = strArr[1].split(".");
 
-					var result = Number(strArr2[0]) + 1;
+       var result = Number(strArr2[0]) + 1;
 
-     
-					if(result < 7){
-						$("#best").attr("src",strArr[0]+"/"+result+".jpg");
-					}else{
-						$("#best").attr("src",strArr[0]+"/1.jpg");
-					}
-				});
-				
-				$(".lt").click(function(){
-					var src2 = $("#best").attr("src");
-					var strArr2 = src2.split("/");
-                    var strArr3 = strArr2[1].split(".");
-					var result2 = strArr3[0] - 1;
-					if(result2 > 0){
-						$("#best").attr("src",strArr2[0]+"/"+result2+".jpg");
-					}else{
-						$("#best").attr("src",strArr2[0]+"/6.jpg");
-					}
-				});
-			});
+
+       if(result < 7){
+          $("#best").attr("src",strArr[0]+"/"+result+".jpg");
+       }else{
+          $("#best").attr("src",strArr[0]+"/1.jpg");
+       }
+    });
+    
+    $(".lt").click(function(){
+       var src2 = $("#best").attr("src");
+       var strArr2 = src2.split("/");
+            var strArr3 = strArr2[1].split(".");
+       var result2 = strArr3[0] - 1;
+       if(result2 > 0){
+          $("#best").attr("src",strArr2[0]+"/"+result2+".jpg");
+       }else{
+          $("#best").attr("src",strArr2[0]+"/6.jpg");
+       }
+    });
+ });
 </script>
 <style>
     body{
@@ -243,7 +243,7 @@ text-align:left;
 		  			<td rowspan="2">
 		  					  		<h4>TOP 6 렌트</h4>
 		  			<button type="button" class="lt" style="position:absolute; lgft:5px; top:85%;">&lt</button>
-		  			<a href="#"><img src="<%=request.getContextPath()%>/image/1.jpg" id="best" style="width:100%; height:400px; min-width:50%;"></a>
+		  			<a href="#"><img src="image/1.jpg" id="best" style="width:100%; height:400px; min-width:50%;"></a>
 		  			<button type="button" class="gt" style="position:absolute; right:5px; top:85%;">&gt</button>
 		  			</td>
 		  		</div>
