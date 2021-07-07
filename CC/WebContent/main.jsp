@@ -162,6 +162,7 @@ $(document).ready(function(){
     width: 100%;
     height: 100%;
 }
+
 #board{
     width: 90%;
     margin: 10px auto;
