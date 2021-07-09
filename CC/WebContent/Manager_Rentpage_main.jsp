@@ -4,6 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script>
+	function modify(){
+		location.href="Manager/Manager_rentcar_modify.do";
+	}
+</script>
 <title>관리자 렌트관리</title>
  <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/Manager_Rentpage_maincss.css">
 </head>
@@ -52,7 +57,7 @@
 					<p class="p5">(세금/보험료/방문정비 포함)</p>
 					<div class="btn">
 					<button type="button">간편견적신청</button>
-					<button type="button">수정</button>
+					<button type="button" onclick="modify()">수정</button>
 					</div>
 				</div>
 
@@ -72,7 +77,7 @@
 					<p class="p5">(세금/보험료/방문정비 포함)</p>
 					<div class="btn">
 					<button type="button">간편견적신청</button>
-					<button type="button">수정</button>
+					<button type="button" onclick="modify()">수정</button>
 					</div>
 				</div>
 			</li>
@@ -91,7 +96,7 @@
 					<p class="p5">(세금/보험료/방문정비 포함)</p>
 					<div class="btn">
 					<button type="button">간편견적신청</button>
-					<button type="button">수정</button>
+					<button type="button" onclick="modify()">수정</button>
 					</div>
 				</div>
 			</li>
@@ -110,7 +115,7 @@
 						<p class="p5">(세금/보험료/방문정비 포함)</p>
 						<div class="btn">
 						<button type="button">간편견적신청</button>
-						<button type="button">수정</button>
+						<button type="button" onclick="modify()">수정</button>
 						</div>
 				</div>
 			</li>
@@ -129,7 +134,7 @@
 					<p class="p5">(세금/보험료/방문정비 포함)</p>
 					<div class="btn">
 					<button type="button">간편견적신청</button>
-					<button type="button">수정</button>
+					<button type="button" onclick="modify()">수정</button>
 					</div>
 				</div>
 			</li>
@@ -148,12 +153,14 @@
 					<p class="p5">(세금/보험료/방문정비 포함)</p>
 					<div class="btn">
 					<button type="button">간편견적신청</button>
-					<button type="button">수정</button>
+					<button type="button" onclick="modify()">수정</button>
 					</div>
 				</div>
 			</li>
 		</ul>
 	</div>
+	<div>
 	<a href="<%=request.getContextPath()%>/Manager/Manager_rentcar_write.do"><button type="button" id="submit">글등록</button></a>
+	</div>
 </body>
 </html>

@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import service.RentDao;
+
 @WebServlet("/ManagerController")
 public class ManagerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -42,6 +44,32 @@ public class ManagerController extends HttpServlet {
 		}else if(str.equals("/Manager/Manager_cardb2.do")) {
 			RequestDispatcher rd =request.getRequestDispatcher("/Manager_cardb2.jsp");
 			rd.forward(request, response);
+		}else if(str.equals("/Manager/Manager_rentcar_modify.do")) {
+			RequestDispatcher rd =request.getRequestDispatcher("/Manager_rentcar_modify.jsp");
+			rd.forward(request, response);
+		}else if(str.equals("/Manager/Manager_rentcar_writeAction.do")) {
+			
+			String kr_name = request.getParameter("kr_name");	
+			String kr_spec = request.getParameter("kr_spec");
+			String kr_price	= request.getParameter("kr_price");
+			String kr_discount = request.getParameter("kr_discount");
+			String kr_dtoption = request.getParameter("kr_dtoption");
+			String kr_dbenefit = request.getParameter("kr_dbenefit");
+			
+			System.out.println("kr_name = "+kr_name);
+			System.out.println("kr_spec = "+kr_spec);
+			System.out.println("kr_price = "+kr_price);
+			System.out.println("kr_discount = "+kr_discount);
+			System.out.println("kr_dtoption = "+kr_dtoption);
+			System.out.println("kr_dbenefit = "+kr_dbenefit);
+			
+			
+			RentDao rda = new RentDao();
+			rda.RentResisterInsert(kr_name, kr_spec, kr_price, kr_discount, kr_dtoption, kr_dbenefit);
+			
+			
+			response.sendRedirect(request.getContentType()+"/Manager_rentcar_writeAction.jsp");
+		
 		}
 	}
 

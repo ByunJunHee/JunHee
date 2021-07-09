@@ -75,7 +75,7 @@
 				<h4>등록된 정보가 없습니다</h4>
 			</div>
 			<div class="find-login">
-				<input type="button" id="btnback" value="다시찾기" onclick="history.back()".>
+				<input type="button" id="btnback" value="다시찾기" onclick="history.back()"/>
 				<input type="button" id="btnjoin" value="회원가입" onclick="join()"/>
 			</div>
 		</div>	
