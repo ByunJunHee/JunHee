@@ -16,19 +16,20 @@ public class RentDao {
 		this.conn = dbconn.getConnection();
 	}
 	
-	public int RentInsert(String r_name, String r_phone, String r_addr, String r_interest , String r_division) {
+	public int RentInsert(String r_name, String r_phone, String r_addr, String r_interest , String r_division, String inpt_Id) {
 		int value=0;
 		
-		String sql="insert into Rent_Estimate(r_num,r_phone,r_addr,r_interest,r_division) "
-				+ "values(r_num.nextval,?,?,?,?)";
+		String sql="insert into Rent_Estimate(r_num,r_phone,r_addr,r_interest,r_division,inpt_Id) "
+				+ "values(r_num.nextval,?,?,?,?,?)";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			//pstmt.setString(1, r_name);
+			//pstmt.setString(0, r_name);
 			pstmt.setString(1, r_phone);
 			pstmt.setString(2, r_addr);
 			pstmt.setString(3, r_interest);
 			pstmt.setString(4, r_division);
+			pstmt.setString(5, inpt_Id);
 
 			value= pstmt.executeUpdate();
 			

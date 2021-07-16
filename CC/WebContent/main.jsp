@@ -1,8 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="service.*" %>
+<%@ page import ="domain.*" %> 
 <%@ page import="java.io.PrintWriter" %>
+<% ArrayList<CmBoardVo> alist = (ArrayList<CmBoardVo>)request.getAttribute("alist");
+
+%>
+<%ArrayList<CmCarGalleryVo> alist1 = (ArrayList<CmCarGalleryVo>)request.getAttribute("alist1"); %>
+<%ArrayList<CmFactoryCerticationVo> alist2 = (ArrayList<CmFactoryCerticationVo>)request.getAttribute("alist2"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -263,19 +269,19 @@ text-align:left;
 		  	<table border="1px solid black">
 		  	<h5>자유게시판</h5>
 		  		<tr>
-		  			<td colspan="5"><a href="#">자유게시판</a></td>
+		  			<td colspan="5"><a href="#">차량게시판</a></td>
 		  		</tr>
 		  		<tr>
-		  			<td colspan="5"><a href="#">자유게시판</a></td>
+		  			<td colspan="5"><a href="#">차량게시판</a></td>
 		  		</tr>
 		  		<tr>
-		  			<td colspan="5"><a href="#">자유게시판</a></td>
+		  			<td colspan="5"><a href="#">차량게시판</a></td>
 		  		</tr>
 		  		<tr>
-		  			<td colspan="5"><a href="#">자유게시판</a></td>
+		  			<td colspan="5"><a href="#">차량게시판</a></td>
 		  		</tr>
 		  		<tr>
-		  			<td colspan="5"><a href="#">자유게시판</a></td>
+		  			<td colspan="5"><a href="#">차량게시판</a></td>
 		  		</tr>
 		  	</table>
 		  </div>

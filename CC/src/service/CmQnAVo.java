@@ -1,48 +1,48 @@
 package service;
 
 public class CmQnAVo {
-	private int qIdx;
-	private String qTitle;
-	private String qContents;
-	private String qWriter;
-	private String qWriteday;
-	private String qHit;
-	public int getqIdx() {
-		return qIdx;
+	private int QIdx;
+	private String QTitle;
+	private String QContents;
+	private String QWriter;
+	private String QWriteday;
+	private String QHit;
+	public int getQIdx() {
+		return QIdx;
 	}
-	public void setqIdx(int qIdx) {
-		this.qIdx = qIdx;
+	public void setQIdx(int qIdx) {
+		QIdx = qIdx;
 	}
-	public String getqTitle() {
-		return qTitle;
+	public String getQTitle() {
+		return QTitle;
 	}
-	public void setqTitle(String qTitle) {
-		this.qTitle = qTitle;
+	public void setQTitle(String qTitle) {
+		QTitle = qTitle;
 	}
-	public String getqContents() {
-		return qContents;
+	public String getQContents() {
+		return QContents;
 	}
-	public void setqContents(String qContents) {
-		this.qContents = qContents;
+	public void setQContents(String qContents) {
+		QContents = qContents;
 	}
-	public String getqWriter() {
-		return qWriter;
+	public String getQWriter() {
+		return QWriter;
 	}
-	public void setqWriter(String qWriter) {
-		this.qWriter = qWriter;
+	public void setQWriter(String qWriter) {
+		QWriter = qWriter;
 	}
-	public String getqWriteday() {
-		return qWriteday;
+	public String getQWriteday() {
+		return QWriteday;
 	}
-	public void setqWriteday(String qWriteday) {
-		this.qWriteday = qWriteday;
+	public void setQWriteday(String qWriteday) {
+		QWriteday = qWriteday;
 	}
-	public String getqHit() {
-		return qHit;
+	public String getQHit() {
+		return QHit;
 	}
-	public void setqHit(String qHit) {
-		this.qHit = qHit;
+	public void setQHit(String qHit) {
+		QHit = qHit;
 	}
-
+	
 	
 }

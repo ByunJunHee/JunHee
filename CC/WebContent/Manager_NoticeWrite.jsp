@@ -10,7 +10,7 @@
 	function check(){
 		
 		alert("등록합니다.");
-			document.frm.action ="<%=request.getContextPath()%>/Board/CmBoardWriteAction.do";
+			document.frm.action ="<%=request.getContextPath()%>/Manager/Manager_NoticeWriteAction.do";
 			document.frm.method = "post";
 			document.frm.submit(); 
 			return;
@@ -34,7 +34,7 @@
 		</div>
 	</header>
 	<section>
-		<div id="menu_sub">
+	<div id="menu_sub">
 		      <ul id="navi2">
 		         <li class="group2">
 		            <div class="title">자유 게시판</div>
@@ -49,7 +49,7 @@
 		            <ul class="sub2">
 		               <li><a href="<%=request.getContextPath() %>/Board/QnA.do">-Q&A</a></li>
 		               <li><a href="<%=request.getContextPath() %>/Board/Faq.do">-FAQ</a></li>
-		               <li><a href="#">-공지사항</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Manager/Manager_Notice.do">-공지사항</a></li>
 		               <li><a href="#">-이벤트</a></li>
 		            </ul>
 		         </li>
@@ -64,11 +64,11 @@
 			<table border="1" class="board2-2" width="600" height="450">
 				<tr>
 					<th height="5%" >제목</th>
-					<td><input type="text" name="bTitle" id="title"></td>
+					<td><input type="text" name="NTitle" id="title"></td>
 				</tr>
 				<tr>
 					<th height="75%">내용</th>
-					<td><textarea name="bContents"></textarea></td>
+					<td><textarea name="NContents"></textarea></td>
 				</tr>
 				<tr>
 					<th height="20%">파일첨부</th>

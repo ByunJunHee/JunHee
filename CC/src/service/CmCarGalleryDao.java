@@ -9,29 +9,28 @@ import java.util.ArrayList;
 import dbconn.DBconn;
 //import oracle.net.aso.b;
 
-public class CmBoardDao {
+public class CmCarGalleryDao {
 
 	
 	private PreparedStatement pstmt;
 	private Connection conn;
 	
-	public CmBoardDao() {
+	public CmCarGalleryDao() {
 		DBconn dbconn = new DBconn();
 		this.conn = dbconn.getConnection();
 	}
 	
-	public int boardInsert(String bTitle, String bContents ) {
+	public int boardInsert(String CgTitle, String CgContents) {
 		int value=0;
 		
-		String sql="insert into Cm_Board(bnum,btitle,bcontents,bWriteday,BHIT) "
-				+ "values(bnum.nextval,?,?,sysdate,1)";
+		String sql="insert into Cm_CarGallery (CGIDX,CGTITLE,CGCONTENTS,CGWRITEDAY,CGHIT) "
+				+ "values(CGIDX.nextval,?,?,sysdate,1)";
 		
 		try {
 			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, bTitle);
-			pstmt.setString(2, bContents);
-			
+			pstmt.setString(1, CgTitle);
+			pstmt.setString(2, CgContents);
 			
 			
 			
@@ -44,15 +43,14 @@ public class CmBoardDao {
 		
 		
 		return value;
-		
 	}
 
 
 
-	public ArrayList<CmBoardVo> boardSelectAll(int page, String keyword) {
+	public ArrayList<CmCarGalleryVo> boardSelectAll(int page, String keyword) {
 		System.out.println("boardSelectAll page"+page);
 		
-		ArrayList<CmBoardVo> alist = new ArrayList<CmBoardVo>();
+		ArrayList<CmCarGalleryVo> alist = new ArrayList<CmCarGalleryVo>();
 		
 		/*
 		 * String sql =
@@ -62,9 +60,9 @@ public class CmBoardDao {
 		ResultSet rs = null;
 		String sql = "select B.* from ("
 				+ "select rownum as rnum, A.* from("
-				+ "select * from cm_board where btitle like ? order by bwriteday)A "
+				+ "select * from Cm_CarGallery where cgtitle like ? order by cgwriteday)A "
 				+ "where rownum <= ?)B   "
-				+ "where B.bnum >=?";
+				+ "where B.cgidx >=?";
 		
 		try {
 			pstmt = conn.prepareStatement(sql); // 
@@ -74,14 +72,14 @@ public class CmBoardDao {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
-				System.out.println(rs.getInt("bNum"));
-				CmBoardVo cbv = new CmBoardVo();
-				cbv.setbNum(rs.getInt("bNum"));
-				cbv.setbTitle(rs.getString("bTitle"));
-				cbv.setbContents(rs.getString("bContents"));
-				cbv.setbWriteday(rs.getNString("bWriteday"));
-				cbv.setbHit(rs.getNString("bHit"));
-				alist.add(cbv);
+				System.out.println(rs.getInt("CgIdx"));
+				CmCarGalleryVo cgv = new CmCarGalleryVo();
+				cgv.setCgIdx(rs.getInt("CgIdx"));
+				cgv.setCgTitle(rs.getString("CgTitle"));
+				cgv.setCgContents(rs.getString("CgContents"));
+				cgv.setCgWriteday(rs.getNString("CgWriteday"));
+				cgv.setCgHit(rs.getNString("CgHit"));
+				alist.add(cgv);
 				
 			}
 			
@@ -105,7 +103,7 @@ public class CmBoardDao {
 	public int boardTotalCount(String keyword) {
 		 int cnt = 0;
 		 ResultSet rs = null;
-		 String sql = "select count(*) as cnt from cm_board where btitle like ?";
+		 String sql = "select count(*) as cnt from Cm_CarGallery where cgtitle like ?";
 		 
 		 try {
 			pstmt = conn.prepareStatement(sql);
@@ -122,24 +120,24 @@ public class CmBoardDao {
 		return cnt;
 	}
 
-	public CmBoardVo boardSelectOne(int bNum) {
-		CmBoardVo cbv = null;
+	public CmCarGalleryVo boardSelectOne(int CgIdx) {
+		CmCarGalleryVo cgv = null;
 		ResultSet rs = null;
 		
-		String sql="select * from Cm_board where bNum=?";
+		String sql="select * from Cm_CarGallery where CGIdx=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bNum);
+			pstmt.setInt(1, CgIdx);
 			rs = pstmt.executeQuery();
 			
 			//���� ���� �����ϸ�
 			if (rs.next()) {
-				cbv = new CmBoardVo();
-				cbv.setbNum(rs.getInt("bNum"));
-				cbv.setbTitle(rs.getString("bTitle"));
-				cbv.setbContents(rs.getString("bContents"));
-				cbv.setbWriteday(rs.getNString("bWriteday"));
-				cbv.setbHit(rs.getString("bHit"));
+				cgv = new CmCarGalleryVo();
+				cgv.setCgIdx(rs.getInt("CgIdx"));
+				cgv.setCgTitle(rs.getString("CgTitle"));
+				cgv.setCgContents(rs.getString("CgContents"));
+				cgv.setCgWriteday(rs.getNString("CgWriteday"));
+				cgv.setCgHit(rs.getString("CgHit"));
 
 			}	
 			
@@ -155,15 +153,15 @@ public class CmBoardDao {
 			}			
 		}	
 		
-		return cbv;
+		return cgv;
 	}
-	public int boardViewCount(int bNum) {
+	public int boardViewCount(int CgIdx) {
 		int value=0;
 		
-		String sql="update cm_board set bhit = nvl(bhit,0)+1 where bnum=?";
+		String sql="update Cm_CarGallery set cghit = nvl(cghit,0)+1 where cgidx=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bNum);
+			pstmt.setInt(1, CgIdx);
 			value= pstmt.executeUpdate();			
 			
 		} catch (SQLException e) {			
@@ -172,15 +170,15 @@ public class CmBoardDao {
 		
 		return value;
 	}
-	public int boardModify(int bNum, String bTitle, String bContents) {
+	public int boardModify(int CgIdx, String CgTitle, String CgContents) {
 		int value = 0;
 		
-		String sql="update CM_BOARD set BTITLE=?, bContents=? where bNum=?";
+		String sql="update Cm_CarGallery set CGTITLE=?, CGContents=? where CGIdx=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, bTitle);
-			pstmt.setString(2, bContents);
-			pstmt.setInt(3, bNum);
+			pstmt.setString(1, CgTitle);
+			pstmt.setString(2, CgContents);
+			pstmt.setInt(3, CgIdx);
 	
 			value = pstmt.executeUpdate();
 			
@@ -193,13 +191,13 @@ public class CmBoardDao {
 		
 		return value;
 	}
-	public int boardDelete(int bNum) {
+	public int boardDelete(int CgIdx) {
 		int value = 0;
 		
-		String sql = "DELETE FROM CM_BOARD WHERE BNUM=? ";
+		String sql = "DELETE FROM Cm_CarGallery WHERE CGIDX=? ";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bNum);
+			pstmt.setInt(1, CgIdx);
 			value = pstmt.executeUpdate();
 			
 		

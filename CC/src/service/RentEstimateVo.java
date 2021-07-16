@@ -7,6 +7,7 @@ public class RentEstimateVo {
 	private String reAddr;
 	private String reInterest;
 	private String reDivision;
+	private String inpt_Id;
 	public int getReIdx() {
 		return reIdx;
 	}
@@ -42,6 +43,12 @@ public class RentEstimateVo {
 	}
 	public void setReDivision(String reDivision) {
 		this.reDivision = reDivision;
+	}
+	public String getInpt_Id() {
+		return inpt_Id;
+	}
+	public void setInpt_Id(String inpt_Id) {
+		this.inpt_Id = inpt_Id;
 	}
 	
 }

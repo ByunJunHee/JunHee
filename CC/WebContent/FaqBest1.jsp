@@ -181,16 +181,16 @@
 				</p>
 			</div>
 			<ul id="navi">
-				<li><a href="#">Logoimage</a></li>
-				<li><a href="#">회사소개</a></li>
-				<li><a href="#">차량비교</a></li>
-				<li><a href="#">렌트</a></li>
-				<li><a href="#">커뮤니티</a></li>
+				<li><a href="<%=request.getContextPath()%>/main.do">Logoimage</a></li>
+				<li><a href="<%=request.getContextPath()%>/introduce.do">회사소개</a></li>
+				<li><a href="<%=request.getContextPath()%>/carDetail.do">차량비교</a></li>
+				<li><a href="<%=request.getContextPath() %>/Rent/Rentpage_main.do">렌트</a></li>
+				<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
 	</header>
 	<section>
-		<div id="menu_sub">
+	<div id="menu_sub">
 		      <ul id="navi2">
 		         <li class="group2">
 		            <div class="title">자유 게시판</div>
@@ -216,15 +216,12 @@
 			FAQ
 		</div>
 		<div class="board2">
-			<div class="search">
-				<input type="text" id="input">
-				<input type="submit" id="d1" value="검색">
-			</div>
+			
 			<hr>
 			<div class="board3" >
-				<h3>자주 하는 질문  BEST</h3>
+				<h3>예약/취소 수수료</h3>
 				<ol>
-					<li><a href="<%=request.getContextPath()%>/Board/FaqBest1.do">예약/취소 수수료</li>
+					<li><a href="">예약/취소 수수료</li>
 					<li><a href="#">대여 자격(나이, 면허) 기준</li>
 					<li><a href="#">보험</li>
 					<li><a href="#">대여요금/ 무료이용권</li>

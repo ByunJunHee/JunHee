@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import = "service.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +17,12 @@
 		if(session.getAttribute("m_id") != null){
 			m_id = (String) session.getAttribute("m_id");
 		}
+		
+		MypageDao md = new MypageDao();
+		//String m_id = md.MypageSelectBoard(inpt_Id);
+		
+		
+		
 	%>
 	<div id="menu_top">
 		<div id="mypage">

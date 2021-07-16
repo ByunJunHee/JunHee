@@ -21,10 +21,18 @@
 </script>
  <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/Estimatecss.css">
  </head>
+ <%
+		String m_id = null;
+		if(session.getAttribute("m_id") != null){
+			m_id = (String) session.getAttribute("m_id");
+		}
+	%>
 <body>
 	<form name="frm">
+	<p><%= m_id %></p>
 	<div id="content">
 	<!-- NAME -->
+	<input type="hidden" name="inpt_id" id="inpt_id" class="int" maxlength="20" value="<%= m_id %>">
 	<div>
 		<h3>
 			<label for="name">이름</label>

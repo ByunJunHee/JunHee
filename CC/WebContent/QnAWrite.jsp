@@ -4,32 +4,34 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>커뮤니티 글쓰기</title>
+<title>Q&A 글쓰기</title>
 
 <script>
 	function check(){
 		
 		alert("등록합니다.");
-			document.frm.action ="<%=request.getContextPath()%>/Board/CmBoardWriteAction.do";
+			document.frm.action ="<%=request.getContextPath()%>/Board/QnAWriteAction.do";
 			document.frm.method = "post";
 			document.frm.submit(); 
 			return;
 			}
 </script>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resource/CmBoardWritecss.css">
+ <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/Q&AWritecss.css">
+
 </head>
 <body>
+<form name="frm">
 	<header>
 		<div id="menu_top">
 			<div id="mypage">
-				<p>ooo님 | <a href="#">Logout | </a><a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do"> Mypage</a></p>
+				<p>ooo님 | <a href="#">Logout | </a><a href="#"> Mypage</a></p>
 			</div>
 			<ul id="navi">
-				<li><a href="#">Logoimage</a></li>
-				<li><a href="#">회사소개</a></li>
-				<li><a href="#">차량비교</a></li>
+				<li><a href="<%=request.getContextPath()%>/main.do">Logoimage</a></li>
+				<li><a href="<%=request.getContextPath()%>/introduce.do">회사소개</a></li>
+				<li><a href="<%=request.getContextPath()%>/carDetail.do">차량비교</a></li>
 				<li><a href="<%=request.getContextPath() %>/Rent/Rentpage_main.do">렌트</a></li>
-				<li><a href="#">커뮤니티</a></li>
+				<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
 	</header>
@@ -57,31 +59,30 @@
 		      </ul>
 		</div>
 		<div class="board">
-			자유 게시판
+			Q&A
 		</div>
 		<div class="board2">
-		<form name="frm">
 			<table border="1" class="board2-2" width="600" height="450">
 				<tr>
 					<th height="5%" >제목</th>
-					<td><input type="text" name="bTitle" id="title"></td>
+					<td><input type="text" name="QTitle" id="title"></td>
 				</tr>
 				<tr>
 					<th height="75%">내용</th>
-					<td><textarea name="bContents"></textarea></td>
+					<td><textarea name="QContents"></textarea></td>
 				</tr>
 				<tr>
 					<th height="20%">파일첨부</th>
 					<td><input type="file" onchange=""></td>
 				</tr>
+				
 			</table>
 			<div class="btnArea">
-				<input type="button" value="확인" onClick="check()"> 
+				<input type="button" value="저장" onClick="check()"> 
 				<button type="button" href="#">취소</button>
 			</div>
-			</form>
 		</div>
-		
 	</section>
+	</form>
 </body>
 </html>

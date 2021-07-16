@@ -122,8 +122,11 @@ public class MemberDAO {
 			rs = pstmt.executeQuery();
 			check = rs.next();
 		}catch(Exception e) {
-			System.out.println("checkId() È£Ãâ ¿¡·¯" + e);
+			System.out.println("checkId() È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" + e);
 		}
 		return check;
 	}
-}
+	
+		
+	}
+

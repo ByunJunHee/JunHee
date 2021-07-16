@@ -9,29 +9,28 @@ import java.util.ArrayList;
 import dbconn.DBconn;
 //import oracle.net.aso.b;
 
-public class CmBoardDao {
+public class CmFactoryCerticationDao {
 
 	
 	private PreparedStatement pstmt;
 	private Connection conn;
 	
-	public CmBoardDao() {
+	public CmFactoryCerticationDao() {
 		DBconn dbconn = new DBconn();
 		this.conn = dbconn.getConnection();
 	}
 	
-	public int boardInsert(String bTitle, String bContents ) {
+	public int boardInsert(String FcTitle, String FcContents) {
 		int value=0;
 		
-		String sql="insert into Cm_Board(bnum,btitle,bcontents,bWriteday,BHIT) "
-				+ "values(bnum.nextval,?,?,sysdate,1)";
+		String sql="insert into Cm_FactoryCertication (FCIDX,FCTITLE,FCCONTENTS,FCWRITEDAY,FCHIT) "
+				+ "values(FCIDX.nextval,?,?,sysdate,1)";
 		
 		try {
 			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, bTitle);
-			pstmt.setString(2, bContents);
-			
+			pstmt.setString(1, FcTitle);
+			pstmt.setString(2, FcContents);
 			
 			
 			
@@ -44,15 +43,14 @@ public class CmBoardDao {
 		
 		
 		return value;
-		
 	}
 
 
 
-	public ArrayList<CmBoardVo> boardSelectAll(int page, String keyword) {
+	public ArrayList<CmFactoryCerticationVo> boardSelectAll(int page, String keyword) {
 		System.out.println("boardSelectAll page"+page);
 		
-		ArrayList<CmBoardVo> alist = new ArrayList<CmBoardVo>();
+		ArrayList<CmFactoryCerticationVo> alist = new ArrayList<CmFactoryCerticationVo>();
 		
 		/*
 		 * String sql =
@@ -62,9 +60,9 @@ public class CmBoardDao {
 		ResultSet rs = null;
 		String sql = "select B.* from ("
 				+ "select rownum as rnum, A.* from("
-				+ "select * from cm_board where btitle like ? order by bwriteday)A "
+				+ "select * from Cm_FactoryCertication where fctitle like ? order by fcwriteday)A "
 				+ "where rownum <= ?)B   "
-				+ "where B.bnum >=?";
+				+ "where B.fcidx >=?";
 		
 		try {
 			pstmt = conn.prepareStatement(sql); // 
@@ -74,14 +72,14 @@ public class CmBoardDao {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
-				System.out.println(rs.getInt("bNum"));
-				CmBoardVo cbv = new CmBoardVo();
-				cbv.setbNum(rs.getInt("bNum"));
-				cbv.setbTitle(rs.getString("bTitle"));
-				cbv.setbContents(rs.getString("bContents"));
-				cbv.setbWriteday(rs.getNString("bWriteday"));
-				cbv.setbHit(rs.getNString("bHit"));
-				alist.add(cbv);
+				System.out.println(rs.getInt("FcIdx"));
+				CmFactoryCerticationVo cfv = new CmFactoryCerticationVo();
+				cfv.setFcIdx(rs.getInt("FcIdx"));
+				cfv.setFcTitle(rs.getString("FcTitle"));
+				cfv.setFcContents(rs.getString("FcContents"));
+				cfv.setFcWriteday(rs.getNString("FcWriteday"));
+				cfv.setFcHit(rs.getNString("FcHit"));
+				alist.add(cfv);
 				
 			}
 			
@@ -105,7 +103,7 @@ public class CmBoardDao {
 	public int boardTotalCount(String keyword) {
 		 int cnt = 0;
 		 ResultSet rs = null;
-		 String sql = "select count(*) as cnt from cm_board where btitle like ?";
+		 String sql = "select count(*) as cnt from Cm_FactoryCertication where fctitle like ?";
 		 
 		 try {
 			pstmt = conn.prepareStatement(sql);
@@ -122,24 +120,24 @@ public class CmBoardDao {
 		return cnt;
 	}
 
-	public CmBoardVo boardSelectOne(int bNum) {
-		CmBoardVo cbv = null;
+	public CmFactoryCerticationVo boardSelectOne(int FcIdx) {
+		CmFactoryCerticationVo cfv = null;
 		ResultSet rs = null;
 		
-		String sql="select * from Cm_board where bNum=?";
+		String sql="select * from Cm_FactoryCertication where FcIdx=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bNum);
+			pstmt.setInt(1, FcIdx);
 			rs = pstmt.executeQuery();
 			
 			//���� ���� �����ϸ�
 			if (rs.next()) {
-				cbv = new CmBoardVo();
-				cbv.setbNum(rs.getInt("bNum"));
-				cbv.setbTitle(rs.getString("bTitle"));
-				cbv.setbContents(rs.getString("bContents"));
-				cbv.setbWriteday(rs.getNString("bWriteday"));
-				cbv.setbHit(rs.getString("bHit"));
+				cfv = new CmFactoryCerticationVo();
+				cfv.setFcIdx(rs.getInt("FcIdx"));
+				cfv.setFcTitle(rs.getString("FcTitle"));
+				cfv.setFcContents(rs.getString("FcContents"));
+				cfv.setFcWriteday(rs.getNString("FcWriteday"));
+				cfv.setFcHit(rs.getString("FcHit"));
 
 			}	
 			
@@ -155,15 +153,15 @@ public class CmBoardDao {
 			}			
 		}	
 		
-		return cbv;
+		return cfv;
 	}
-	public int boardViewCount(int bNum) {
+	public int boardViewCount(int FcIdx) {
 		int value=0;
 		
-		String sql="update cm_board set bhit = nvl(bhit,0)+1 where bnum=?";
+		String sql="update Cm_FactoryCertication set fchit = nvl(fchit,0)+1 where fcidx=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bNum);
+			pstmt.setInt(1, FcIdx);
 			value= pstmt.executeUpdate();			
 			
 		} catch (SQLException e) {			
@@ -172,15 +170,15 @@ public class CmBoardDao {
 		
 		return value;
 	}
-	public int boardModify(int bNum, String bTitle, String bContents) {
+	public int boardModify(int FcIdx, String FcTitle, String FcContents) {
 		int value = 0;
 		
-		String sql="update CM_BOARD set BTITLE=?, bContents=? where bNum=?";
+		String sql="update Cm_FactoryCertication set FcTITLE=?, FcContents=? where FcIdx=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, bTitle);
-			pstmt.setString(2, bContents);
-			pstmt.setInt(3, bNum);
+			pstmt.setString(1, FcTitle);
+			pstmt.setString(2, FcContents);
+			pstmt.setInt(3, FcIdx);
 	
 			value = pstmt.executeUpdate();
 			
@@ -193,13 +191,13 @@ public class CmBoardDao {
 		
 		return value;
 	}
-	public int boardDelete(int bNum) {
+	public int boardDelete(int FcIdx) {
 		int value = 0;
 		
-		String sql = "DELETE FROM CM_BOARD WHERE BNUM=? ";
+		String sql = "DELETE FROM Cm_FactoryCertication WHERE FCIDX=? ";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bNum);
+			pstmt.setInt(1, FcIdx);
 			value = pstmt.executeUpdate();
 			
 		

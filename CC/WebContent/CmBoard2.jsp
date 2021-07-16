@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import ="java.util.*" %>    
+<%@ page import ="service.*" %> 
+<%@ page import ="domain.*" %> 
+    <% ArrayList<CmFactoryCerticationVo> alist = (ArrayList<CmFactoryCerticationVo>)request.getAttribute("alist");
+    PageMaker pm =(PageMaker)request.getAttribute("pm");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +15,29 @@
 
 </head>
 <body>
+<%
+		String m_id = null;
+		if(session.getAttribute("m_id") != null){
+			m_id = (String) session.getAttribute("m_id");
+		}
+	%>
 	<header>
 		<div id="menu_top">
 			<div id="mypage">
-				<p>ooo님 | <a href="#">Logout | </a><a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do"> Mypage</a></p>
+			<p>
+				<% if (m_id == null){%>
+					<a href="<%=request.getContextPath()%>/memberJoin.do">회원가입</a>
+					<a href="<%=request.getContextPath()%>/memberLogin.do">로그인</a>
+				<%
+					}else{
+				%>
+					<%= m_id %>님
+					<a href="<%=request.getContextPath()%>/memberLogout.do">로그아웃</a>
+					<a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do">마이페이지</a>
+				<%
+					}
+				%>
+				</p>
 			</div>
 			<ul id="navi">
 				<li><a href="#">Logoimage</a></li>
@@ -24,39 +49,27 @@
 		</div>
 	</header>
 	<section>
-		<div class="cm">
-			<table border="1" >
-				<tr class="c1">
-					<th width="120px" height="30px">게시판</th>
-				</tr>
-				<tr class="c2">
-					<td><a href="<%=request.getContextPath() %>/Board/CmBoard.do">-자유 게시판</a></td>
-				</tr>
-				<tr class="c2">
-					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard2.do">-출고인증</a></td>
-				</tr>
-				<tr>
-					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard3.do">-차량 갤러리</a></td>
-				</tr>
-				<tr class="c1">
-					<th height="30px">고객센터</th>
-				</tr>
-				<tr class="c2">
-					<td><a href="#">-Q&A</a></td>
-				</tr>
-				<tr>
-					<td class="c3"><a href="#">-FAQ</a></td>
-				</tr>
-				<tr class="c1">
-					<th height="30px">자유 게시판</th>
-				</tr>
-				<tr class="c2">
-					<td><a href="#">-이벤트</a></td>
-				</tr>
-				<tr class="c3">
-					<td><a href="#">-공지사항</a></td>
-				</tr>
-			</table>
+		<div id="menu_sub">
+		      <ul id="navi2">
+		         <li class="group2">
+		            <div class="title">자유 게시판</div>
+		            <ul class="sub2">
+		               <li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">-자유게시판</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Board/CmBoard2.do">-출고인증</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Board/CmBoard3.do">-차량 갤러리</a></li>
+		            </ul>
+		         </li>
+		         <li class="group2">
+		            <div class="title">고객센터</div>
+		            <ul class="sub2">
+		               <li><a href="<%=request.getContextPath() %>/Board/QnA.do">-Q&A</a></li>
+		               <li><a href="<%=request.getContextPath() %>/Board/Faq.do">-FAQ</a></li>
+		               <li><a href="#">-공지사항</a></li>
+		               <li><a href="#">-이벤트</a></li>
+		            </ul>
+		         </li>
+		         
+		      </ul>
 		</div>
 		<div class="board">
 			출고인증
@@ -70,39 +83,59 @@
 					<th width="15%">작성일</th>
 					<th width="10%">조회수</th>
 				</tr>
+				 <%for (CmFactoryCerticationVo cfv : alist) { %>
 				<tr>
-					<td>1</td>
-					<td>반갑습니다</td>
-					<td>홍길동</td>
-					<td>2021-05-05</td>
-					<td>11</td>
+					<td><%=cfv.getFcIdx()%></td>
+					<td><a href="<%=request.getContextPath()%>/Board/CmBoard2Contents.do?FcIdx=<%=cfv.getFcIdx()%>"><%=cfv.getFcTitle()%></a></td>
+					<td><%=m_id %></td>
+					<td><%=cfv.getFcWriteday() %></td>
+					<td><%=cfv.getFcHit() %></td>
+				
 				</tr>
+				 <% } %>
+				
 			</table>
 			<br>
 			<div class="button">
-				<a href="<%=request.getContextPath() %>/Board/CmBoardWrite.do"><button type="button">글쓰기</button></a>
+				<a href="<%=request.getContextPath() %>/Board/CmBoard2Write.do"><button type="button">글쓰기</button></a>
 			</div>
 			<br>
 			<div class="pagingArea">
-				<a href="">&lt;</a>
-				<a href="">1</a>
-				<a href="">2</a>
-				<a href="">3</a>
-				<a href="">4</a>
-				<a href="">5</a>
-				<a href="">&gt;</a>
+				<table border=0 style="text-align:left;width:800px;height:80px">
+					<tr>
+						<td width="50px">
+						<% if(pm.isPrev() == true) { %>
+						<a href="<%=request.getContextPath()%>/Board/CmBoard2.do?page=<%=pm.getStartPage()-1%>">◀</a>
+						<% } %>
+						</td>
+						<td>
+						<%
+						for(int i = pm.getStartPage(); i<=pm.getEndPage(); i++){	
+						%>
+						&nbsp;&nbsp;<a href="<%=request.getContextPath()%>/Board/CmBoard2.do?page=<%=i%>&keyword=<%=pm.encoding(pm.getScri().getKeyword())%>"><%=i%></a>
+						<%} %>
+						</td>
+						<td width="50px">
+						<%if (pm.isNext() == true){ %>
+						<a href="<%=request.getContextPath()%>/Board/CmBoard2.do?page=<%=pm.getEndPage()+1%>&keyword=<%=pm.encoding(pm.getScri().getKeyword())%>">
+						▶</a>
+						<%} %>
+						</td>
+					</tr>
+				</table>
 			</div>
 			<br>
 			<div class="search">
-				<form action="#" method="get">
+					<form name='frm' action='<%=request.getContextPath()%>/Board/CmBoard.do' method='post'>
 					<select name="searchType">
 						<option value="1">제목</option>
 						<option value="2">제목+내용</option>
 						<option value="3">작성자</option>
 					</select>
-					<input type="text" name="searchText">
-					<input type="submit" value="검색">
+					<input type='text' name='keyword' size=10>
+					<input type='submit' name='submit' value='검색'>
 				</form>
+
 			</div>
 		</div>
 	</section>

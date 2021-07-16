@@ -1,21 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import ="java.util.*" %>    
+    <%@ page import ="java.util.*" %>    
 <%@ page import ="service.*" %> 
 <%@ page import ="domain.*" %> 
-<% ArrayList<CmBoardVo> alist = (ArrayList<CmBoardVo>)request.getAttribute("alist");
+<% ArrayList<CmQnAVo> alist = (ArrayList<CmQnAVo>)request.getAttribute("alist");
 PageMaker pm =(PageMaker)request.getAttribute("pm");
-%>
-<%
-	request.setCharacterEncoding("UTF-8");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>커뮤니티 자유게시판</title>
- <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/CmBoardcss.css">
+<title>Q&A</title>
 
+ <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/Q&Acss.css">
 </head>
 <body>
 <%
@@ -27,7 +24,7 @@ PageMaker pm =(PageMaker)request.getAttribute("pm");
 	<header>
 		<div id="menu_top">
 			<div id="mypage">
-				<p>
+			<p>
 				<% if (m_id == null){%>
 					<a href="<%=request.getContextPath()%>/memberJoin.do">회원가입</a>
 					<a href="<%=request.getContextPath()%>/memberLogin.do">로그인</a>
@@ -43,16 +40,16 @@ PageMaker pm =(PageMaker)request.getAttribute("pm");
 				</p>
 			</div>
 			<ul id="navi">
-				<li><a href="#">Logoimage</a></li>
-				<li><a href="#">회사소개</a></li>
-				<li><a href="#">차량비교</a></li>
+				<li><a href="<%=request.getContextPath()%>/main.do">Logoimage</a></li>
+				<li><a href="<%=request.getContextPath()%>/introduce.do">회사소개</a></li>
+				<li><a href="<%=request.getContextPath()%>/carDetail.do">차량비교</a></li>
 				<li><a href="<%=request.getContextPath() %>/Rent/Rentpage_main.do">렌트</a></li>
 				<li><a href="<%=request.getContextPath() %>/Board/CmBoard.do">커뮤니티</a></li>
 			</ul>	
 		</div>
 	</header>
 	<section>
-	<div id="menu_sub">
+		<div id="menu_sub">
 		      <ul id="navi2">
 		         <li class="group2">
 		            <div class="title">자유 게시판</div>
@@ -74,35 +71,35 @@ PageMaker pm =(PageMaker)request.getAttribute("pm");
 		         
 		      </ul>
 		</div>
-		
 		<div class="board">
-			자유 게시판
+			Q&A
 		</div>
 		<div class="board2">
 			<table border="1">
-				
 				<tr>
 					<th width="7%">번호</th>
-					<th>제목</th>
+					<th >제목</th>
 					<th width="12%">작성자</th>
 					<th width="15%">작성일</th>
-					<th width="10%">조회수</th>
+					<th width="12%">조회수</th>
+					<th width="10%">답변여부</th>
 				</tr>
-				 <%for (CmBoardVo cbv : alist) { %>
+				 <%for (CmQnAVo cqv : alist) { %>
 				<tr>
-					<td><%=cbv.getbNum()%></td>
-					<td><a href="<%=request.getContextPath()%>/Board/CmBoardContents.do?bNum=<%=cbv.getbNum()%>"><%=cbv.getbTitle()%></a></td>
+					<td><%=cqv.getQIdx()%></td>
+					<td><a href="<%=request.getContextPath()%>/Board/QnAContents.do?QIdx=<%=cqv.getQIdx()%>"><%=cqv.getQTitle()%></a></td>
 					<td><%=m_id %></td>
-					<td><%=cbv.getbWriteday() %></td>
-					<td><%=cbv.getbHit() %></td>
-				
+					<td><%=cqv.getQWriteday() %></td>
+					<td><%=cqv.getQHit() %></td>
+					<td><button type="button" >대기</button></td>
 				</tr>
 				 <% } %>
 				
+
 			</table>
 			<br>
 			<div class="button">
-				 <a href="<%=request.getContextPath() %>/Board/CmBoardWrite.do"><button type="button">글쓰기</button></a>
+				 <a href="<%=request.getContextPath() %>/Board/QnAWrite.do"><button type="button">글쓰기</button></a>
 			</div>
 			<br>
 			<div class="pagingArea">
@@ -110,19 +107,19 @@ PageMaker pm =(PageMaker)request.getAttribute("pm");
 					<tr>
 						<td width="50px">
 						<% if(pm.isPrev() == true) { %>
-						<a href="<%=request.getContextPath()%>/Board/CmBoard.do?page=<%=pm.getStartPage()-1%>">◀</a>
+						<a href="<%=request.getContextPath()%>/Board/QnA.do?page=<%=pm.getStartPage()-1%>">◀</a>
 						<% } %>
 						</td>
 						<td>
 						<%
 						for(int i = pm.getStartPage(); i<=pm.getEndPage(); i++){	
 						%>
-						&nbsp;&nbsp;<a href="<%=request.getContextPath()%>/Board/CmBoard.do?page=<%=i%>&keyword=<%=pm.encoding(pm.getScri().getKeyword())%>"><%=i%></a>
+						&nbsp;&nbsp;<a href="<%=request.getContextPath()%>/Board/QnA.do?page=<%=i%>&keyword=<%=pm.encoding(pm.getScri().getKeyword())%>"><%=i%></a>
 						<%} %>
 						</td>
 						<td width="50px">
 						<%if (pm.isNext() == true){ %>
-						<a href="<%=request.getContextPath()%>/Board/CmBoard.do?page=<%=pm.getEndPage()+1%>&keyword=<%=pm.encoding(pm.getScri().getKeyword())%>">
+						<a href="<%=request.getContextPath()%>/Board/QnA.do?page=<%=pm.getEndPage()+1%>&keyword=<%=pm.encoding(pm.getScri().getKeyword())%>">
 						▶</a>
 						<%} %>
 						</td>
@@ -131,8 +128,7 @@ PageMaker pm =(PageMaker)request.getAttribute("pm");
 			</div>
 			<br>
 			<div class="search">
-			
-				<form name='frm' action='<%=request.getContextPath()%>/Board/CmBoard.do' method='post'>
+					<form name='frm' action='<%=request.getContextPath()%>/Board/QnA.do' method='post'>
 					<select name="searchType">
 						<option value="1">제목</option>
 						<option value="2">제목+내용</option>
@@ -142,7 +138,7 @@ PageMaker pm =(PageMaker)request.getAttribute("pm");
 					<input type='submit' name='submit' value='검색'>
 				</form>
 
-			</div>
+			</div>    
 		</div>
 	</section>
 </body>

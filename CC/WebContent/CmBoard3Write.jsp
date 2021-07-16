@@ -10,7 +10,7 @@
 	function check(){
 		
 		alert("등록합니다.");
-			document.frm.action ="<%=request.getContextPath()%>/Board/CmBoardWriteAction.do";
+			document.frm.action ="<%=request.getContextPath()%>/Board/CmBoard3WriteAction.do";
 			document.frm.method = "post";
 			document.frm.submit(); 
 			return;
@@ -64,11 +64,11 @@
 			<table border="1" class="board2-2" width="600" height="450">
 				<tr>
 					<th height="5%" >제목</th>
-					<td><input type="text" name="bTitle" id="title"></td>
+					<td><input type="text" name="CgTitle" id="title"></td>
 				</tr>
 				<tr>
 					<th height="75%">내용</th>
-					<td><textarea name="bContents"></textarea></td>
+					<td><textarea name="CgContents"></textarea></td>
 				</tr>
 				<tr>
 					<th height="20%">파일첨부</th>

@@ -1,17 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import ="java.util.*" %>    
+<%@ page import ="service.*" %> 
+<%@ page import ="domain.*" %> 
+    <% ArrayList<CmQnAVo> alist = (ArrayList<CmQnAVo>)request.getAttribute("alist");
+
+%>
+ <% CmQnAVo cqv = (CmQnAVo)request.getAttribute("cqv"); %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>커뮤니티 자유게시판</title>
- <link rel="stylesheet" href="./resource/Q&AAnswercss.css">
+ <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/Q&AAnswercss.css">
 </head>
 <body>
+<%
+		String m_id = null;
+		if(session.getAttribute("m_id") != null){
+			m_id = (String) session.getAttribute("m_id");
+		}
+	%>
 	<header>
 		<div id="menu_top">
 			<div id="mypage">
-				<p>ooo님 | <a href="#">Logout | </a><a href="#"> Mypage</a></p>
+				<p>
+				<% if (m_id == null){%>
+					<a href="<%=request.getContextPath()%>/memberJoin.do">회원가입</a>
+					<a href="<%=request.getContextPath()%>/memberLogin.do">로그인</a>
+				<%
+					}else{
+				%>
+					<%= m_id %>님
+					<a href="<%=request.getContextPath()%>/memberLogout.do">로그아웃</a>
+					<a href="<%=request.getContextPath()%>/Mypage/Mypage_main.do">마이페이지</a>
+				<%
+					}
+				%>
+				</p>
 			</div>
 			<ul id="navi">
 				<li><a href="<%=request.getContextPath()%>/main.do">Logoimage</a></li>
@@ -29,19 +55,19 @@
 					<th width="120px" height="30px">게시판</th>
 				</tr>
 				<tr class="c2">
-					<td><a href="#">-자유 게시판</a></td>
+					<td><a href="<%=request.getContextPath() %>/Board/CmBoard">-자유 게시판</a></td>
 				</tr>
 				<tr class="c2">
-					<td height="20px"><a href="#">-출고인증</td>
+					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard2">-출고인증</a></td>
 				</tr>
 				<tr>
-					<td height="20px"><a href="#">-차량 갤러리</td>
+					<td height="20px"><a href="<%=request.getContextPath() %>/Board/CmBoard3">-차량 갤러리</a></td>
 				</tr>
 				<tr class="c1">
 					<th height="30px">고객센터</th>
 				</tr>
 				<tr class="c2">
-					<td><a href="#">-Q&A</td>
+					<td><a href="<%=request.getContextPath() %>/Board/QnA">-Q&A</a></td>
 				</tr>
 				<tr>
 					<td class="c3"><a href="#">-FAQ</td>
@@ -58,18 +84,20 @@
 			</table>
 		</div>
 		<div class="board">
-			자유 게시판
+			QnA
 		</div>
 		<div class="board2">
+		<input type="hidden">
 			<table border="1">
 				<tr>
-					<td width="500px">[Q]렌터가 문의 합니다.</td>
-					<td width="100px">홍길동</td>
-					<td width="100px">2021-05-05</td>
+					<td width="500px">[Q]<%=cqv.getQTitle()%></td>
+					<td width="100px"><%=m_id %></td>
+					<td width="200px"><%=cqv.getQWriteday()%></td>
 				</tr>
 				<tr>
-					<td colspan="3" height="100px">렌터카 견적 신청하면 차량을 몇일만에 받을 수 있나요?</td>
+					<td colspan="3" width="600px"><%=cqv.getQContents()%></td>
 				</tr>
+			
 			</table>
 			<div>
 				<h5>A</h5>

@@ -41,17 +41,19 @@ public class RentController extends HttpServlet {
 			String r_addr = request.getParameter("r_addr");
 			String r_interest = request.getParameter("r_interest");
 			String r_division = request.getParameter("r_division");
+			String inpt_Id = request.getParameter("inpt_id");
 			
 			System.out.println("r_name->"+r_name);
 			System.out.println("r_phone->"+r_phone);
 			System.out.println("r_addr->"+r_addr);
 			System.out.println("r_interest->"+r_interest);
 			System.out.println("r_division->"+r_division);
+			System.out.println("inpt_Id->"+inpt_Id);
 			
 			int r_num = 0;
 			
 			RentDao rd = new RentDao();
-			int value = rd.RentInsert(r_name, r_phone, r_addr, r_interest, r_division);
+			int value = rd.RentInsert(r_name, r_phone, r_addr, r_interest, r_division, inpt_Id);
 			System.out.println("value:"+value);
 			
 			

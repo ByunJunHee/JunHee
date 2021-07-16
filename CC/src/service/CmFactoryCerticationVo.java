@@ -1,55 +1,55 @@
 package service;
 
 public class CmFactoryCerticationVo {
-	private int fcIdx;
-	private String fcTitle;
-	private String fcContents;
-	private String fcWriter;
-	private String fcWriteday;
-	private String fcHit;
-	private String fcImage;
+	private int FcIdx;
+	private String FcTitle;
+	private String FcContents;
+	private String FcWriter;
+	private String FcWriteday;
+	private String FcHit;
+	private String FcImage;
 	public int getFcIdx() {
-		return fcIdx;
+		return FcIdx;
 	}
 	public void setFcIdx(int fcIdx) {
-		this.fcIdx = fcIdx;
+		FcIdx = fcIdx;
 	}
 	public String getFcTitle() {
-		return fcTitle;
+		return FcTitle;
 	}
 	public void setFcTitle(String fcTitle) {
-		this.fcTitle = fcTitle;
+		FcTitle = fcTitle;
 	}
 	public String getFcContents() {
-		return fcContents;
+		return FcContents;
 	}
 	public void setFcContents(String fcContents) {
-		this.fcContents = fcContents;
+		FcContents = fcContents;
 	}
 	public String getFcWriter() {
-		return fcWriter;
+		return FcWriter;
 	}
 	public void setFcWriter(String fcWriter) {
-		this.fcWriter = fcWriter;
+		FcWriter = fcWriter;
 	}
 	public String getFcWriteday() {
-		return fcWriteday;
+		return FcWriteday;
 	}
 	public void setFcWriteday(String fcWriteday) {
-		this.fcWriteday = fcWriteday;
+		FcWriteday = fcWriteday;
 	}
 	public String getFcHit() {
-		return fcHit;
+		return FcHit;
 	}
 	public void setFcHit(String fcHit) {
-		this.fcHit = fcHit;
+		FcHit = fcHit;
 	}
 	public String getFcImage() {
-		return fcImage;
+		return FcImage;
 	}
 	public void setFcImage(String fcImage) {
-		this.fcImage = fcImage;
+		FcImage = fcImage;
 	}
-	
+
 	
 }

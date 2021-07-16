@@ -1,55 +1,56 @@
 package service;
 
 public class CmCarGalleryVo {
-	private int cgIdx;
-	private String cgTitle;
-	private String cgContents;
-	private String cgWriter;
-	private String cgWriteday;
-	private String cgHit;
-	private String cgImage;
+	private int CgIdx;
+	private String CgTitle;
+	private String CgContents;
+	private String CgWriter;
+	private String CgWriteday;
+	private String CgHit;
+	private String CgImage;
 	public int getCgIdx() {
-		return cgIdx;
+		return CgIdx;
 	}
 	public void setCgIdx(int cgIdx) {
-		this.cgIdx = cgIdx;
+		CgIdx = cgIdx;
 	}
 	public String getCgTitle() {
-		return cgTitle;
+		return CgTitle;
 	}
 	public void setCgTitle(String cgTitle) {
-		this.cgTitle = cgTitle;
+		CgTitle = cgTitle;
 	}
 	public String getCgContents() {
-		return cgContents;
+		return CgContents;
 	}
 	public void setCgContents(String cgContents) {
-		this.cgContents = cgContents;
+		CgContents = cgContents;
 	}
 	public String getCgWriter() {
-		return cgWriter;
+		return CgWriter;
 	}
 	public void setCgWriter(String cgWriter) {
-		this.cgWriter = cgWriter;
+		CgWriter = cgWriter;
 	}
 	public String getCgWriteday() {
-		return cgWriteday;
+		return CgWriteday;
 	}
 	public void setCgWriteday(String cgWriteday) {
-		this.cgWriteday = cgWriteday;
+		CgWriteday = cgWriteday;
 	}
 	public String getCgHit() {
-		return cgHit;
+		return CgHit;
 	}
 	public void setCgHit(String cgHit) {
-		this.cgHit = cgHit;
+		CgHit = cgHit;
 	}
 	public String getCgImage() {
-		return cgImage;
+		return CgImage;
 	}
 	public void setCgImage(String cgImage) {
-		this.cgImage = cgImage;
+		CgImage = cgImage;
 	}
+	
 	
 	
 }

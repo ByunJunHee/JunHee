@@ -1,10 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% MemberVO mv = (MemberVO)request.getAttribute("mv"); %>
+<%@ page import ="java.util.*" %>    
+<%@ page import ="service.*" %> 
+<%@ page import ="domain.*" %>     
+
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="#">
+
 <meta charset="UTF-8">
 <title>회원 정보 수정</title>
+<script src="../jquery-3.6.0.min.js"></script>
+
+
+<script>
+	$(document).ready(function(){
+	
+		$("input[name=pwdRd]").blur(function(){
+			var pwd = $("input[name=pwd]").val();
+			var pwdRe = $(this).val();
+			if(pwd == pwdRe){
+				$(this).next().show().text("비밀번호가 일치합니다.").css("color","green");
+				
+			}else{
+				$(this).next().show().text("비밀번호가 일치하지 않습니다.").css("color","red");
+				
+			}
+			
+		})
+	})
+</script>
 </head>
  <link href="<%=request.getContextPath()%>/resource/Mypage_detail4css.css" rel="stylesheet" type="text/css">
 <body>
@@ -62,15 +89,16 @@
 		</div>
 		<div id="page_main">
 		<div id="modify">
-			<form name="frm" action="#" method="post">
+		<form name="frm" action="#" method="post">
 				<table>
 					<tr class="box">
 						<th>비밀번호</th>
-						<td><input type="text" size="20"><span>(영문 대소문자/숫자/!@#,8자~16자</span></td>
+						<td><input type="password" size="20" name="pwd"><span>(영문 대소문자/숫자8자~16자</span></td>
 					</tr>
 					<tr>
 						<th>비밀번호 확인 <span class="impred">*</span></th>
-						<td><input type="text" size="20"></td>
+						<td><input type="password" size="20" name="pwdRe"><span>비밀번호를 입력해주세요</span></td>
+					
 					</tr>
 					<tr>
 						<th>휴대전화</th>
@@ -88,13 +116,15 @@
 						<td><input type="email" size="20"></td>
 					</tr>
 				</table>
-			</form>
+			
 			<div>
 				<button id="submit"name="submit" value="submit">등록</button>
 				<button id="cancle"name="cancle">취소</button>
 			</div>
+		</form>
 		</div>
 		</div>
 	</div>
 </body>
+
 </html>

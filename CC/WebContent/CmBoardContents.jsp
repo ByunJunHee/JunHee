@@ -4,8 +4,9 @@
 <%@ page import ="service.*" %> 
 <%@ page import ="domain.*" %> 
 <% ArrayList<CmBoardVo> alist = (ArrayList<CmBoardVo>)request.getAttribute("alist");
-PageMaker pm =(PageMaker)request.getAttribute("pm");
+
 %>
+ <% CmBoardVo cbv = (CmBoardVo)request.getAttribute("cbv"); %>
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
@@ -14,11 +15,13 @@ PageMaker pm =(PageMaker)request.getAttribute("pm");
 <head>
 <meta charset="UTF-8">
 <title>커뮤니티 자유게시판</title>
+
  <link rel="stylesheet" href="<%=request.getContextPath() %>/resource/CmBoardcss.css">
 
 </head>
 <body>
-<%
+<form name="frm">
+	<%
 		String m_id = null;
 		if(session.getAttribute("m_id") != null){
 			m_id = (String) session.getAttribute("m_id");
@@ -27,7 +30,7 @@ PageMaker pm =(PageMaker)request.getAttribute("pm");
 	<header>
 		<div id="menu_top">
 			<div id="mypage">
-				<p>
+			<p>
 				<% if (m_id == null){%>
 					<a href="<%=request.getContextPath()%>/memberJoin.do">회원가입</a>
 					<a href="<%=request.getContextPath()%>/memberLogin.do">로그인</a>
@@ -67,14 +70,13 @@ PageMaker pm =(PageMaker)request.getAttribute("pm");
 		            <ul class="sub2">
 		               <li><a href="<%=request.getContextPath() %>/Board/QnA.do">-Q&A</a></li>
 		               <li><a href="<%=request.getContextPath() %>/Board/Faq.do">-FAQ</a></li>
-		               <li><a href="<%=request.getContextPath() %>/Manager/Manager_Notice.do">-공지사항</a></li>
+		               <li><a href="#">-공지사항</a></li>
 		               <li><a href="#">-이벤트</a></li>
 		            </ul>
 		         </li>
 		         
 		      </ul>
 		</div>
-		
 		<div class="board">
 			자유 게시판
 		</div>
@@ -82,68 +84,34 @@ PageMaker pm =(PageMaker)request.getAttribute("pm");
 			<table border="1">
 				
 				<tr>
-					<th width="7%">번호</th>
-					<th>제목</th>
-					<th width="12%">작성자</th>
-					<th width="15%">작성일</th>
-					<th width="10%">조회수</th>
+					<td>제목</td>
+					<td colspan="7"><%=cbv.getbTitle()%></td>
 				</tr>
-				 <%for (CmBoardVo cbv : alist) { %>
 				<tr>
-					<td><%=cbv.getbNum()%></td>
-					<td><a href="<%=request.getContextPath()%>/Board/CmBoardContents.do?bNum=<%=cbv.getbNum()%>"><%=cbv.getbTitle()%></a></td>
-					<td><%=m_id %></td>
-					<td><%=cbv.getbWriteday() %></td>
-					<td><%=cbv.getbHit() %></td>
-				
+					<td>작성자</td>
+					<td><%= m_id %></td>
+					<td>작성일</td>
+					<td><%=cbv.getbWriteday()%></td>
+					<td>조회수</td>
+					<td><%=cbv.getbHit()%></td>
 				</tr>
-				 <% } %>
 				
+				<tr>
+					<td style="height:300px;">내용</td>
+					<td colspan=5>
+					<%=cbv.getbContents() %>
+					</td>
+				</tr>
 			</table>
 			<br>
 			<div class="button">
-				 <a href="<%=request.getContextPath() %>/Board/CmBoardWrite.do"><button type="button">글쓰기</button></a>
+				<button type="button"><a href="<%=request.getContextPath() %>/Board/CmBoardModify.do?bNum=<%=cbv.getbNum()%>">수정</a></button>
+				<button type="button"><a href="<%=request.getContextPath() %>/Board/CmBoardDelete.do?bNum=<%=cbv.getbNum()%>">삭제</a></button>
 			</div>
 			<br>
-			<div class="pagingArea">
-				<table border=0 style="text-align:left;width:800px;height:80px">
-					<tr>
-						<td width="50px">
-						<% if(pm.isPrev() == true) { %>
-						<a href="<%=request.getContextPath()%>/Board/CmBoard.do?page=<%=pm.getStartPage()-1%>">◀</a>
-						<% } %>
-						</td>
-						<td>
-						<%
-						for(int i = pm.getStartPage(); i<=pm.getEndPage(); i++){	
-						%>
-						&nbsp;&nbsp;<a href="<%=request.getContextPath()%>/Board/CmBoard.do?page=<%=i%>&keyword=<%=pm.encoding(pm.getScri().getKeyword())%>"><%=i%></a>
-						<%} %>
-						</td>
-						<td width="50px">
-						<%if (pm.isNext() == true){ %>
-						<a href="<%=request.getContextPath()%>/Board/CmBoard.do?page=<%=pm.getEndPage()+1%>&keyword=<%=pm.encoding(pm.getScri().getKeyword())%>">
-						▶</a>
-						<%} %>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<br>
-			<div class="search">
-			
-				<form name='frm' action='<%=request.getContextPath()%>/Board/CmBoard.do' method='post'>
-					<select name="searchType">
-						<option value="1">제목</option>
-						<option value="2">제목+내용</option>
-						<option value="3">작성자</option>
-					</select>
-					<input type='text' name='keyword' size=10>
-					<input type='submit' name='submit' value='검색'>
-				</form>
-
-			</div>
+		
 		</div>
 	</section>
+	</form>
 </body>
 </html>

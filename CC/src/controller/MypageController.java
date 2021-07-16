@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import service.MemberDAO;
+import service.MemberVO;
+import service.MypageDao;
+
 
 @WebServlet("/MypageController")
 public class MypageController extends HttpServlet {
@@ -26,8 +30,18 @@ public class MypageController extends HttpServlet {
 	System.out.println("url주소:"+str);
 
 	if(str.equals("/Mypage/Mypage_main.do")) {		
+		
+		String inpt_id = request.getParameter("inpt_id");
+		
+		MypageDao md = new MypageDao();
+		String value = md.MypageSelectBoard(inpt_id);
+		System.out.println("value:"+value);
+		
+		//request.setAttribute("value", value);
+		
 		RequestDispatcher rd = request.getRequestDispatcher("/Mypage_main.jsp");
 		rd.forward(request, response);
+		
 	}else if(str.equals("/Mypage/Mypage_detail1.do")) {
 		System.out.println("test");
 		
@@ -41,6 +55,7 @@ public class MypageController extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("/Mypage_detail3.jsp");
 		rd.forward(request, response);
 	}else if(str.equals("/Mypage/Mypage_detail4.do")) {
+	
 		RequestDispatcher rd = request.getRequestDispatcher("/Mypage_detail4.jsp");
 		rd.forward(request, response);
 	}else if(str.equals("/Mypage/Mypage_detail5.do")) {

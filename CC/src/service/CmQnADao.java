@@ -9,29 +9,28 @@ import java.util.ArrayList;
 import dbconn.DBconn;
 //import oracle.net.aso.b;
 
-public class CmBoardDao {
+public class CmQnADao {
 
 	
 	private PreparedStatement pstmt;
 	private Connection conn;
 	
-	public CmBoardDao() {
+	public CmQnADao() {
 		DBconn dbconn = new DBconn();
 		this.conn = dbconn.getConnection();
 	}
 	
-	public int boardInsert(String bTitle, String bContents ) {
+	public int boardInsert(String QTitle, String QContents) {
 		int value=0;
 		
-		String sql="insert into Cm_Board(bnum,btitle,bcontents,bWriteday,BHIT) "
-				+ "values(bnum.nextval,?,?,sysdate,1)";
+		String sql="insert into Cm_QNA(QIDX,QTITLE,QCONTENTS,QWRITEDAY,QDEPTH) "
+				+ "values(QIDX.nextval,?,?,sysdate,1)";
 		
 		try {
 			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, bTitle);
-			pstmt.setString(2, bContents);
-			
+			pstmt.setString(1, QTitle);
+			pstmt.setString(2, QContents);
 			
 			
 			
@@ -44,15 +43,14 @@ public class CmBoardDao {
 		
 		
 		return value;
-		
 	}
 
 
 
-	public ArrayList<CmBoardVo> boardSelectAll(int page, String keyword) {
+	public ArrayList<CmQnAVo> boardSelectAll(int page, String keyword) {
 		System.out.println("boardSelectAll page"+page);
 		
-		ArrayList<CmBoardVo> alist = new ArrayList<CmBoardVo>();
+		ArrayList<CmQnAVo> alist = new ArrayList<CmQnAVo>();
 		
 		/*
 		 * String sql =
@@ -62,9 +60,9 @@ public class CmBoardDao {
 		ResultSet rs = null;
 		String sql = "select B.* from ("
 				+ "select rownum as rnum, A.* from("
-				+ "select * from cm_board where btitle like ? order by bwriteday)A "
+				+ "select * from cm_QNA where Qtitle like ? order by Qwriteday)A "
 				+ "where rownum <= ?)B   "
-				+ "where B.bnum >=?";
+				+ "where B.QIDX >=?";
 		
 		try {
 			pstmt = conn.prepareStatement(sql); // 
@@ -74,14 +72,14 @@ public class CmBoardDao {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
-				System.out.println(rs.getInt("bNum"));
-				CmBoardVo cbv = new CmBoardVo();
-				cbv.setbNum(rs.getInt("bNum"));
-				cbv.setbTitle(rs.getString("bTitle"));
-				cbv.setbContents(rs.getString("bContents"));
-				cbv.setbWriteday(rs.getNString("bWriteday"));
-				cbv.setbHit(rs.getNString("bHit"));
-				alist.add(cbv);
+				System.out.println(rs.getInt("QIDX"));
+				CmQnAVo cqv = new CmQnAVo();
+				cqv.setQIdx(rs.getInt("QIdx"));
+				cqv.setQTitle(rs.getString("QTitle"));
+				cqv.setQContents(rs.getString("QContents"));
+				cqv.setQWriteday(rs.getNString("QWriteday"));
+				cqv.setQHit(rs.getNString("QHit"));
+				alist.add(cqv);
 				
 			}
 			
@@ -105,7 +103,7 @@ public class CmBoardDao {
 	public int boardTotalCount(String keyword) {
 		 int cnt = 0;
 		 ResultSet rs = null;
-		 String sql = "select count(*) as cnt from cm_board where btitle like ?";
+		 String sql = "select count(*) as cnt from cm_qna where qtitle like ?";
 		 
 		 try {
 			pstmt = conn.prepareStatement(sql);
@@ -122,24 +120,24 @@ public class CmBoardDao {
 		return cnt;
 	}
 
-	public CmBoardVo boardSelectOne(int bNum) {
-		CmBoardVo cbv = null;
+	public CmQnAVo boardSelectOne(int QIdx) {
+		CmQnAVo cqv = null;
 		ResultSet rs = null;
 		
-		String sql="select * from Cm_board where bNum=?";
+		String sql="select * from Cm_QNA where QIDX=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bNum);
+			pstmt.setInt(1, QIdx);
 			rs = pstmt.executeQuery();
 			
 			//���� ���� �����ϸ�
 			if (rs.next()) {
-				cbv = new CmBoardVo();
-				cbv.setbNum(rs.getInt("bNum"));
-				cbv.setbTitle(rs.getString("bTitle"));
-				cbv.setbContents(rs.getString("bContents"));
-				cbv.setbWriteday(rs.getNString("bWriteday"));
-				cbv.setbHit(rs.getString("bHit"));
+				cqv = new CmQnAVo();
+				cqv.setQIdx(rs.getInt("QIdx"));
+				cqv.setQTitle(rs.getString("QTitle"));
+				cqv.setQContents(rs.getString("QContents"));
+				cqv.setQWriteday(rs.getNString("QWriteday"));
+				cqv.setQHit(rs.getString("QHit"));
 
 			}	
 			
@@ -155,15 +153,15 @@ public class CmBoardDao {
 			}			
 		}	
 		
-		return cbv;
+		return cqv;
 	}
-	public int boardViewCount(int bNum) {
+	public int boardViewCount(int QIdx) {
 		int value=0;
 		
-		String sql="update cm_board set bhit = nvl(bhit,0)+1 where bnum=?";
+		String sql="update cm_QNA set qhit = nvl(qhit,0)+1 where QIDX=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bNum);
+			pstmt.setInt(1, QIdx);
 			value= pstmt.executeUpdate();			
 			
 		} catch (SQLException e) {			
@@ -172,15 +170,15 @@ public class CmBoardDao {
 		
 		return value;
 	}
-	public int boardModify(int bNum, String bTitle, String bContents) {
+	public int boardModify(int QIdx, String QTitle, String QContents) {
 		int value = 0;
 		
-		String sql="update CM_BOARD set BTITLE=?, bContents=? where bNum=?";
+		String sql="update CM_QNA set QTITLE=?, QContents=? where QNum=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, bTitle);
-			pstmt.setString(2, bContents);
-			pstmt.setInt(3, bNum);
+			pstmt.setString(1, QTitle);
+			pstmt.setString(2, QContents);
+			pstmt.setInt(3, QIdx);
 	
 			value = pstmt.executeUpdate();
 			
@@ -193,13 +191,13 @@ public class CmBoardDao {
 		
 		return value;
 	}
-	public int boardDelete(int bNum) {
+	public int boardDelete(int QIdx) {
 		int value = 0;
 		
-		String sql = "DELETE FROM CM_BOARD WHERE BNUM=? ";
+		String sql = "DELETE FROM CM_QNA WHERE QIDX=? ";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bNum);
+			pstmt.setInt(1, QIdx);
 			value = pstmt.executeUpdate();
 			
 		
